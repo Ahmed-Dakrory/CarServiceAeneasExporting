@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/dashboard2.xhtml">
+
+
+	<ui:define name="title"> Aeneas Exporting LLC</ui:define>
+	
+	 <ui:define name="mainHead"> 
+			       <ul class="mn-sub"><li class="mn-sub-item mn-item-freight"><a href="vehicleList.jsf" class="mn-sub-item-current"><b>Freight List</b></a></li></ul>
+           
+			</ui:define>
+
+	<ui:define name="content">
+
+	
+    <link rel="stylesheet" href="#{resource['css:dashboard/primifaces.css']}" />
+    <link rel="stylesheet" href="#{resource['css:dashboard/primeicons.css']}" />
+	
+    	<style>
+    	button, input, optgroup, select, textarea {
+    color: black;
+    font: inherit;
+    margin: 0;
+}
+    	</style>
+    	
+    	<style>
+	
+	.table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+	vertical-align: middle;
+    border: 1px solid #dddddd;
+    font-size: 13px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+body .ui-button {
+    background-color: #007ad9;
+    color: #ffffff;
+    border: 1px solid #007ad9;
+    font-size: 14px;
+    margin: 0;
+    margin-right: .1em;
+    outline: 0 none;
+    -moz-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+
+.ui-datatable .ui-datatable-header {
+        text-align: right !important;
+    }
+     
+    .ui-selectcheckboxmenu-panel .ui-selectcheckboxmenu-header .ui-chkbox {
+        display: none;
+    }
+    
+    body .ui-chkbox .ui-chkbox-box .ui-chkbox-icon.ui-icon-check:before {
+    content: "\f046";
+    font-family: FontAwesome;
+}
+
+.classNegative{
+background: red  !important ;
+}
+
+.classNormal{
+
+}
+	</style>
+        <h:form name="aspnetForm" id="aspnetForm">
+
+
+#{loginBean.refreshTheDataMain()}
+            <div id="content">
+            
+            
+    
+          
+
+      
+    <!-- page src -->
+    <table border="0" class="content-table" cellspacing="0" cellpadding="5" >
+        <tbody>
+            <tr valign="top">
+                <td width="100%">
+                    <!-- Table 1 -->
+                    <table width="100%" cellspacing="0" cellpadding="1" border="0" bgcolor="#003399">
+                        <tr>
+                            <td>
+                                <table width="100%" cellspacing="0" cellpadding="8" border="0" bgcolor="#ffffff">
+                                    <tr>
+                                        <td>
+                                            <!-- Table name block -->
+                                            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                <tr>
+                                                    <td class="blkname" style="width: 20%; height: 22px;">
+                                                        <nobr>&nbsp;Money Boxs List<span id="ctl00_BodyHolder_lblCount">: #{loginBean.listOfAllUsersMoneyBox.size()}</span></nobr>
+                                                    </td>
+                                                    <td style="height: 22px">
+                                                        
+                                                    </td>
+                                                    <td style="height: 22px">
+                                                        &nbsp;
+                                                    </td>
+                                                   
+                                                </tr>
+                                            </table>
+                                         
+                                            <img src="#{resource['images:dumb.gif']}" width="1" height="3"/><br></br>
+                                            <table cellspacing="4" cellpadding="0" border="0" width="100%">
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%" cellspacing="0" cellpadding="1" border="0" bgcolor="#cccccc">
+                                                            <tr>
+                                                                <td>
+                                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#f7f7f7">
+                                                                        <tr height="25" bgcolor="#dcdcdc" >
+                                                                            <td>
+                                                                                &nbsp; <font class="tblhdr">Filter</font><a href="editlist?group=-1" class="navlink">
+                                                                                </a>
+                                                                            </td>
+                                                                            <td colspan="4">
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr height="2">
+                                                                            <td colspan="5" bgcolor="#ffffff">
+                                                                            </td>
+                                                                        </tr>
+                                                                       
+                                                                        
+                                                                        
+                                                                        <tr height="2">
+                                                                            <td colspan="4">
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <img src="#{resource['images:dumb.gif']}" width="1" height="3"/><br></br>
+                                            <!-- Client DataGrid-->
+                                            <section class="panel">
+                                            
+							<div class="panel-body">
+						
+
+    						
+    						
+    					<h:form id="tableForm">
+    						 <p:dataTable id="dataTable" var="row" value="#{loginBean.listOfAllUsersMoneyBox}" widgetVar="dataTable" 
+                 rows="50" paginator="true" resizableColumns="true" sortMode="multiple" 
+                 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                 rowsPerPageTemplate="10,50,100,200,500,1000"  editable="true"
+                 rowKey="#{row.id}" rowStyleClass="#{row.availableMoney &lt; 0?'classNegative':'classNormal'}"
+                 emptyMessage="No users found with given criteria" filteredValue="#{loginBean.selectedlistOfAllUsersMoneyBox}" >
+ 
+        <f:facet name="header">
+            <p:outputPanel>
+            <div class="container" style="margin: 0;    width: 100%;">
+	            <div class="row">
+	            	<div class="col-md-3" style="text-align: left;">
+	            	
+	            	</div>
+	            	<div class="col-md-4" style="text-align: left;">
+	            	
+	            	
+	            	</div> 
+	            	
+	            	
+	            	<div class="col-md-4" style="text-align: right;">
+	            		<h:outputText value="Search all fields:" />
+	            		<p:inputText id="globalFilter" onkeyup="PF('dataTable').filter()" style="width:150px" placeholder="Enter keyword"/>
+	            	</div>
+	            	<div class="col-md-1" style="text-align: left;">
+	            		<p:commandButton id="toggler" type="button" value="Columns" style="float:right" icon="pi pi-align-justify" />
+       		 	<p:columnToggler datasource="dataTable" trigger="toggler" />
+	            	</div>
+	            </div>
+            </div>
+                
+				
+            </p:outputPanel>
+        </f:facet>
+        
+         <p:ajax event="rowEdit" listener="#{loginBean.onRowEdit}"  />
+ 
+		
+		
+		<p:column headerText="Id" style="font-size: 13px;    text-align: center;" width="130" id="id" sortBy="#{row.id}" filterBy="#{row.id}">
+		<p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{row.id}" /></f:facet>
+                <f:facet name="input"><h:outputText value="#{row.id}" /></f:facet>
+			</p:cellEditor>
+		</p:column>
+		
+		
+		
+		<p:column headerText="Username" style="font-size: 13px;    text-align: center;" width="130" id="userName" sortBy="#{row.userId.userName}" filterBy="#{row.userId.userName}">
+			<p:cellEditor>
+			<f:facet name="output"><h:outputText value="#{row.userId.userName}" /></f:facet>
+                <f:facet name="input"><h:outputText value="#{row.userId.userName}" /></f:facet>
+			</p:cellEditor>
+		</p:column>
+		
+		
+		
+		<p:column headerText="Email" style="font-size: 13px;    text-align: center;" width="130" id="email" sortBy="#{row.userId.email}" filterBy="#{row.userId.email}">
+			<p:cellEditor>
+			
+			<f:facet name="output"><h:outputText value="#{row.userId.email}" /></f:facet>
+                <f:facet name="input"><h:outputText value="#{row.userId.email}" /></f:facet>
+			</p:cellEditor>
+		</p:column>
+		
+		<p:column headerText="Available Money" style="font-size: 13px;    text-align: center;" width="130" id="currentBid" sortBy="#{row.availableMoney}" filterBy="#{row.availableMoney}">
+			<p:cellEditor>
+			
+			<f:facet name="output"><h:outputText value="$#{row.availableMoney}" /></f:facet>
+                <f:facet name="input"><h:inputText value="#{row.availableMoney}" /></f:facet>
+			</p:cellEditor>
+		</p:column>
+		
+		
+		
+		<p:column headerText="Total Used" style="font-size: 13px;    text-align: center;" width="130" id="totalUser" sortBy="#{row.totalUsed}" filterBy="#{row.totalUsed}">
+		<p:cellEditor>
+			
+			<f:facet name="output"><h:outputText value="$#{row.totalUsed}" /></f:facet>
+                <f:facet name="input"><h:inputText value="#{row.totalUsed}" /></f:facet>
+			</p:cellEditor>
+		</p:column>
+		
+		
+		
+		
+		
+		
+		<p:column headerText="Statue" style="font-size: 13px;    text-align: center;" width="130" id="active" sortBy="#{row.active}" filterBy="#{row.active}">
+			<p:cellEditor>
+			
+                <f:facet name="output"><img src="/resources/images/#{row.active?'check_on.gif':'check_off.gif'}"></img></f:facet>
+			
+                <f:facet name="input">
+                    <h:selectOneMenu value="#{row.active}" style="width:100%">
+                        <f:selectItem itemLabel="Active" itemValue="true" />
+                        <f:selectItem itemLabel="In-Active" itemValue="false" />
+                    </h:selectOneMenu>
+                </f:facet>
+                
+            </p:cellEditor>
+		</p:column>
+		
+		
+		 <p:column style="width:35px">
+            <p:rowEditor />
+        </p:column>
+		
+		
+		
+		
+    </p:dataTable>
+							
+	            	
+							
+					</h:form>
+    <br /><br />
+   
+							</div>
+						</section>
+						
+                                       
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- End of Table 1 -->
+                    <img src="#{resource['images:dumb.gif']}" width="1" height="3"/><br></br>
+                    <p>
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+            </div>  
+            
+            
+        </h:form>
+        
+     
+	</ui:define>
+	
+		
+	
+</ui:composition>
+</html>

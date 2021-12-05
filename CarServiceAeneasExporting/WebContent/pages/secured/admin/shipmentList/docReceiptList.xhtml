@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/dashboard2.xhtml">
+
+
+	<ui:define name="title"> Aeneas Exporting LLC</ui:define>
+ <ui:define name="mainHead"> 
+			       <ul class="mn-sub"><li class="mn-sub-item mn-item-vendors"><a href="customsSettingsList.jsf" class="mn-sub-item-current"><b>Followers List</b></a></li></ul>
+           
+			</ui:define>
+
+	<ui:define name="content">
+     #{customBean.refresh()}
+             <h:form name="aspnetForm" id="aspnetForm">
+
+
+            <div id="content">
+                
+    <!-- page src -->
+    <table border="0" class="content-table" cellspacing="0" cellpadding="5">
+        <tbody>
+            <tr valign="top">
+                <td width="100%">
+                
+                
+                
+						
+                    <!-- Table 1 -->
+                    <table width="100%" cellspacing="0" cellpadding="1" border="0" bgcolor="#003399">
+                        <tr>
+                            <td>
+                                <table width="100%" cellspacing="0" cellpadding="8" border="0" bgcolor="#ffffff">
+                                    <tr>
+                                        <td>
+                                            <!-- Table name block -->
+                                            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                <tr>
+                                                    <td class="blkname" width="100%">
+                                                        &nbsp;DocReceipt List
+                                                    </td>
+                                                    
+                                                </tr>
+                                            </table>
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-top: 4px">
+                                                <tr>
+                                                    <td style="height: 22px">
+                                                        &nbsp;
+                                  						 <h:commandButton name="ctl00$BodyHolder$cmdAddcustomsSettings" value="Add New DocReceipt" id="ctl00_BodyHolder_cmdAddcustomsSettings" action="#{customBean.goToAddNewDocReceipt()}" class="btn btn-default" style=" font-family:Verdana;font-size:10px;font-weight:bold;width:190px;"></h:commandButton>
+								                    </td>
+                                                    
+                                                </tr>
+                                            </table>
+                                            <!-- End of Table name block -->
+                                           <img src="#{resource['images:dumb.gif']}" width="1" height="3"/><br></br>
+                                            <!-- Client DataGrid-->
+                                            
+                                            <section class="panel">
+							
+							<div class="panel-body">
+								<table class="table table-bordered table-striped mb-none" id="datatable-tabletools" data-swf-path="assets/customsSettings/jquery-datatables/extras/TableTools/swf/copy_csv_xls_pdf.swf">
+									<thead>
+										<tr>
+											<th>Id#</th>
+											
+											<th class="hidden-phone">USPPI </th>
+											<th class="hidden-phone">Ultimate Consignee</th>
+											<th class="hidden-phone">Intermediate Consignee</th>
+											<th class="hidden-phone">Freight Forwarder </th>
+											<th class="hidden-phone">Estimated Arrival time</th>
+										</tr>
+									</thead>
+									<tbody>
+										
+											<ui:repeat var="var" value="#{customBean.docReceiptListForThisUser}">
+											<tr align="left" class="gradeX">
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+												<h:commandLink value="#{var.id}" action="#{customBean.selectDocReceipt(var.id)}"/>
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													#{var.usppiId.userId.company}
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													#{var.ultiConsignee.userId.company}
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													#{var.intermConsignee.userId.company}
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													#{var.freightForwarderId.userId.company}
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+												#{customBean.getFormatedDate(var.date)}
+												</td>
+												
+												
+												
+											</tr>
+											
+											</ui:repeat>
+											
+											
+											
+										
+									</tbody>
+								</table>
+							
+							
+							</div>
+						</section>
+                                            
+                                            
+                                            <img src="#{resource['images:dumb.gif']}" width="1" height="3"/><br></br>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- End of Table 1 -->
+                    <img src="#{resource['images:dumb.gif']}" width="1" height="3"/><br></br>
+                    <!-- Buttons block -->
+                    <!--
+			<table width="100%" cellspacing="0" cellpadding="1" border="0" bgcolor="#CCCCCC">
+				<tr>
+					<td>
+						<table width="100%" cellspacing="0" cellpadding="5" border="0" bgcolor="#F7F7F7">
+							<tr>
+								<td>
+									<table cellspacing="0" cellpadding="0" border="0">
+										<tr>
+		 									<TD width="100%"><IMG src="#{resource['images:dumb.gif']}" width="10" height="1"/></TD>
+											<TD class="blkhdr" height="23"></TD>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			-->
+                    <!-- End of Buttons block -->
+                </td>
+            </tr>
+            <p>
+                <tr>
+                    <td colspan="2" bgcolor="white">
+                    </td>
+                </tr>
+            </p>
+        </tbody>
+    </table>
+
+            </div>  
+        </h:form>
+        
+     
+     
+	</ui:define>
+	
+		
+	
+</ui:composition>
+</html>

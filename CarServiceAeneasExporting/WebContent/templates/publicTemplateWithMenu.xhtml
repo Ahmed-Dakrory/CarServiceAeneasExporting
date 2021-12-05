@@ -1,0 +1,676 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" 
+	lang="en">
+
+
+
+<h:head>
+   
+   
+   <meta name="theme-color" content="#073473"/>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+ <ui:insert name="tagsMeta"  > 
+    	 
+  </ui:insert>
+<title>Aeneas Exporting LLC</title>
+		<link rel="icon" type="image/png" href="#{resource['images:logo.png']}"/>
+   
+   
+		  <link rel="stylesheet" href="#{resource['css:dashboard/assets/vendor/font-awesome/css/font-awesome.css']}" />
+		  <link rel="stylesheet" href="#{resource['css:dashboard/assets/vendor/magnific-popup/magnific-popup.css']}" />
+		  <link rel="stylesheet" href="#{resource['css:dashboard/assets/vendor/bootstrap-datepicker/css/datepicker3.css']}" />
+		
+		
+	<!-- Skin CSS -->
+    <link rel="stylesheet" href="#{resource['css:public/vendorb315.css']}" />
+   <!--  <link rel="stylesheet" href="#{resource['css:public/designMain.css']}" />-->
+    
+    	
+    	
+    	
+		<!-- Vendor CSS -->
+		
+    <link rel="stylesheet" href="#{resource['css:dashboard/assets/vendor/font-awesome/css/font-awesome.css']}" />
+    	
+    	
+   
+    <!-- Specific Page Vendor CSS -->
+	<link rel="stylesheet" href="#{resource['css:dashboard/assets/vendor/pnotify/pnotify.custom.css']}" />
+	
+	
+	
+	
+	
+    	
+	<link rel="stylesheet" href="#{resource['css:dashboard/theme.css']}" />
+   
+		  
+		  
+		<link rel="stylesheet" href="#{resource['css:public/flickity.css']}" />
+	
+	<!-- Skin CSS -->
+    <link rel="stylesheet" href="#{resource['css:dashboard/assets/stylesheets/skins/default.css']}" />
+    
+    
+	<!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="#{resource['css:dashboard/assets/stylesheets/theme-custom.css']}" />
+	
+	
+	
+		<h:outputScript name="js/dashboard/assets/vendor/modernizr/modernizr.js"/>
+	
+	
+     
+   
+    	
+    
+	
+	
+		
+	
+    <!-- Specific Page Vendor -->		
+		<h:outputScript name="js/dashboard/assets/vendor/select2/select2.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jquery-datatables/media/js/jquery.dataTables.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jquery-datatables-bs3/assets/js/datatables.js"/>
+		
+		
+		<!-- Examples -->
+		<h:outputScript name="js/dashboard/assets/javascripts/tables/examples.datatables.default.js"/>
+		<h:outputScript name="js/dashboard/assets/javascripts/tables/examples.datatables.row.with.details.js"/>
+		<h:outputScript name="js/dashboard/assets/javascripts/tables/examples.datatables.tabletools.js"/>
+	
+ 
+    
+    
+    
+		<h:outputScript name="js/dashboard/assets/javascripts/theme.init.js"/>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<h:outputScript name="js/dashboard2/assets/deleteCheckScripts.js"/>
+
+	<script src="/javax.faces.resource/Scripts/bootbox.all.js.xhtml"></script>
+    
+		  <link rel="stylesheet" href="#{resource['css:public/app.css']}" />
+	  
+	
+	
+	
+	<link rel="stylesheet" href="#{resource['css:dashboardPrime/all.min.css']}" />
+		<link rel="stylesheet" href="#{resource['css:dashboardPrime/bootstrap.min.css']}" />
+		<link rel="stylesheet" href="#{resource['css:dashboardPrime/owl.carousel.min.css']}" />
+		<link rel="stylesheet" href="#{resource['css:dashboardPrime/index_style.css']}" />
+		
+	
+	
+</h:head>
+
+
+<h:body>
+      <style>
+  
+.carousel-cell {
+  width: 307px;
+  height: 275px;
+}
+
+   </style>
+   
+<div class="main-wrapper">
+   <style>
+.num +  .top {
+   height: inherit;
+	 background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.ui-autocomplete-panel {
+    position: absolute;
+    background: white;
+    overflow: auto;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.ui-autocomplete-panel .ui-autocomplete-item {
+    cursor: pointer;
+    border-style: outset;
+    border-width: 2px;
+    border-color: #fdfdfd;
+}
+
+
+ body{
+   font-weight: 700;
+   font-family: calibri;
+   }
+   
+   label{
+   font-weight: 700;
+   }
+
+    </style>
+   
+    <!-- Start of Header -->
+   
+   
+      
+   
+  
+ 
+ 
+ 
+<div id="responsive_menu_block" style="display:none">
+
+<div class="responsive_menu" id="responsive_menu"></div>
+</div>
+
+
+<div id="responsive_account_block" style="display:none">
+<div class="block active">
+<div class="block_content">
+
+
+
+
+
+
+
+
+<!-- Mobile login Form -->
+
+<h:form id="m-top-login-form" class="site-form"  >
+ <input name="TopLoginMobileForm[topLoginForm]" id="TopLoginMobileForm_topLoginForm" type="hidden" value="1" />
+<div class="form-row">
+<p:inputText type="email" id="Mail_Mobile" placeholder="Email" style="width:100%" name="TopLoginMobileForm[email]" value="#{loginBean.userNameOfUserLoggedIn}"/>
+									
+</div>
+<div class="form-row">
+<p:inputText placeholder="Password" style="width:100%" name="TopLoginMobileForm[password]" type="password" id="Password_Mobile" required="true" class="form-control input-lg" value="#{loginBean.passwordOfUserLoggedIn}"/>
+									
+ </div>
+ <h:commandButton action="#{loginBean.login}" value="LogIn to my account" type="submit" class="button yBtn" id="m-top-login-form__submit" style="width:100%; margin-bottom: 10px">
+	<f:ajax execute="@form" render="m-top-login-form" />
+ </h:commandButton>
+						
+<div class="block-content__bottom">
+<div class="remember-me"><input id="ytTopLoginMobileForm_rememberMe" type="hidden" value="0" name="TopLoginMobileForm[rememberMe]" /><input name="TopLoginMobileForm[rememberMe]" id="TopLoginMobileForm_rememberMe" value="1" type="checkbox" /> <span>Remember me</span></div>
+</div>
+<div class="clearfix"></div>
+</h:form>
+
+
+<!-- Mobile login Form End-->
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+</div>
+
+</div>
+
+
+<div class="responsive-style__overlay"></div>
+     
+     
+     <header>
+     <title>
+			<ui:insert name="title"> 
+					   
+		   		ALMZZAD
+			</ui:insert>
+		</title>
+	
+		<link rel="icon" type="image/png" href="#{resource['images:logo.png']}"/>
+			
+			 <section id="logo">
+		        <div class="w-95 mt-3 mb-1 mr-5 ml-5">
+		        	<div class="d-block d-sm-none">
+		        	
+		            <div class="row">
+		                <div class="w-50 text-left mt-3">
+		                    <a class="logo" href="index.html">
+		                        <img src="/resources/Image/caromoto logo-04.png" alt="logo" /></a>
+		            
+		                </div>
+		              
+		                
+		                <div class="w-50 text-right mt-1">
+		                    <a class="logo" href="index.html">
+		                        <img src="/resources/Image/eldawlia.jpeg" alt="logo"/></a>
+		            
+		                </div>
+		            </div>
+		        	
+		        	</div>
+		        	
+		        	<div class="d-none d-sm-block ">
+		        	
+		            <div class="row">
+		                <div class="col-md-3 text-center">
+		                    <a class="logo" href="index.html">
+		                        <img src="/resources/Image/caromoto logo-04.png" alt="logo" /></a>
+		            
+		                </div>
+		                <div class="col-md-4 ">
+		                    <p class="mt-4"><i class="fas fa-map-marker-alt mr-2"></i> 2817 Tremont Rd. Savannah, GA 31405</p>
+		
+		                </div>
+		                <div class="col-md-3 ">
+		                    <p class="mt-4"> <i class="fas fa-phone-alt mr-2"></i>00353894435368</p>
+		                </div>
+		                
+		                <div class="col-md-2 text-center">
+		                    <a class="logo" href="index.html">
+		                        <img src="/resources/Image/eldawlia.jpeg" alt="logo"/></a>
+		            
+		                </div>
+		            </div>
+		        	
+		        	</div>
+		        </div>
+		    </section>
+		  
+		    <nav class="navbar navbar-expand-lg navbar-dark justify-content-md-center  ">
+		        <div class="row w-100 mr-1 ml-1 pr-1 pl-1" style="direction:rtl">
+		         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		          <span class="navbar-toggler-icon"></span>
+		        </button>
+		      
+		        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+		          <ul class="navbar-nav mr-auto w-100" style="direction:rtl" >
+		            <li class="nav-item active">
+		              <a class="nav-link" href="/">الرئيسية <span class="sr-only">(current)</span></a>
+		            </li>
+		            <li class="nav-item active">
+		              <a class="nav-link" href="/pages/public/about.jsf?faces-redirect=true">من نحن</a>
+		            </li>
+		
+		            <li class="nav-item active">
+		              <a class="nav-link" href="/pages/public/carCost.jsf?faces-redirect=true">حساب التكاليف</a>
+		            </li>
+		
+		            <li class="nav-item active">
+		              <a class="nav-link" href="/pages/public/carsForType.jsf?category=0">ادخل المزاد</a>
+		            </li>
+		
+		            <li class="nav-item active">
+		              <a class="nav-link" href="/pages/public/contactUs.jsf?faces-redirect=true">اتصل بنا</a>
+		            </li>
+		
+					<li class="nav-item dropdown ">
+					<a class="nav-link dropdown-toggle" style="color: #e6e6e6;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			          اسعار الشحن
+			        </a>
+			        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			          <a class="dropdown-item" href="/pages/public/priceList1.jsf?faces-redirect=true">أسعار النقل الداخلى</a>
+			          <a class="dropdown-item" href="/pages/public/priceList2.jsf?faces-redirect=true">أسعار الشحن البحرى</a>
+			          <a class="dropdown-item" href="/pages/public/priceList3.jsf?faces-redirect=true">أسعار الخدمات الأضافية</a>
+			        </div>
+					</li>
+					
+					
+		            <li class="nav-item active" style="display:#{loginBean.loggedIn?'none':'block'};">
+		              <a class="nav-link" href="/pages/public/registeration.jsf?faces-redirect=true">حساب جديد</a>
+		            </li>
+		            
+		           <li class="nav-item active" style="display:#{loginBean.loggedIn &amp;&amp;loginBean.theUserOfThisAccount.role!=6?'block':'none'};">
+		              <a class="nav-link" href="/pages/secured/userData/userProfile.jsf?faces-redirect=true">وحدة التحكم</a>
+		            </li>
+		            
+		            <li class="nav-item active" style="display:#{loginBean.loggedIn?'none':'block'};">
+		              <a class="nav-link" href="/pages/public/login.jsf?faces-redirect=true">تسجيل الدخول</a>
+		            </li>
+		            
+		            <li class="nav-item active" style="display:#{loginBean.loggedIn?'block':'none'};">
+		              <a class="nav-link" href="/pages/secured/userData/moneyBox2.jsf?faces-redirect=true">ايداع</a>
+		            </li>
+		            
+		            <li class="nav-item active" style="display:#{loginBean.loggedIn?'block':'none'};">
+		              <a class="nav-link" href="/pages/secured/userData/userProfileShow.jsf?faces-redirect=true">#{loginBean.theUserOfThisAccount.firstName} #{loginBean.theUserOfThisAccount.lastName} ##{loginBean.theUserOfThisAccount.id}</a>
+		            </li>
+		            
+		            
+		             
+		        
+		          </ul>
+		          
+		        </div>
+		        <div class="col-md-3">
+		            <!-- <input class="form-control m-2" placeholder="Search..."/>-->
+		            
+		          
+		        </div>
+		       
+		      </div>
+		      </nav>
+			
+			
+			<ui:insert name="headBack"  > 
+    	 		
+  			</ui:insert>
+		     
+		
+		</header>
+		
+    <!-- End of Header -->
+    <ui:insert name="headBack"  > 
+    	
+  </ui:insert>
+   <div style="width:100%;padding-left: 3%;padding-right: 3%;">
+   <div style="width:100%;">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="containerNew">
+<div class="clearfix"></div>
+
+
+<div id="content" dir="rtl">
+<div class="account-table row">
+
+
+
+<div class="col-sm-12 col-md-2 side-menu account-menu" style="text-align:right;">
+<div id="profile-side-menu" class="searchBox">
+<div class="group-title block_header responsive_header">القائمة </div>
+<div class="responsive_box">
+
+<div id="menu-header-profile" class="sublevel droparrow">حسابى</div>
+
+
+<ul id="menu-profile" class="level2" style="display: contents;">
+<li id="profile-Data"><a href="/pages/secured/userData/userProfileShow.jsf?faces-redirect=true">ملفى الشخصى </a></li>
+<li id="profile-account"><a href="/pages/secured/userData/userProfile2.jsf?faces-redirect=true">حسابى</a></li>
+<li id="profile-main"><a href="/pages/secured/userData/contactInfo2.jsf?faces-redirect=true">تعديل بياناتى</a></li>
+<li id="profile-transaction"><a href="/pages/secured/userData/moneyBox2.jsf?faces-redirect=true">المحفظة </a></li>
+</ul>
+
+
+<div id="menu-header-bid" class="sublevel droparrow">قائمة المزاد</div>
+
+
+<ul  id="menu-bid" class="level2" style="display: contents;">
+<li id="bid-main"><a href="/pages/secured/normalUsers/vehicleList.jsf?faces-redirect=true">السيارات الخاصة بى </a></li>
+<li id="bid-all"><a href="/pages/secured/normalUsers/vehicleListAllBids.jsf?faces-redirect=true">كل السيارات </a></li>
+<li id="bid-watchList"><a href="/pages/secured/normalUsers/vehicleListwatchList.jsf?faces-redirect=true">قأئمة المشاهدة </a></li>
+<li id="bid-invoice"><a href="/pages/secured/normalUsers/invoice/invoiceList2.jsf?faces-redirect=true">الفواتير الخاصة بى </a></li>
+</ul>
+
+
+
+<div id="menu-header-car" class="sublevel droparrow">قائمة السيارات</div>
+
+
+<ul  id="menu-car" class="level2" style="display: contents;">
+<li id="car-main"><a href="/pages/secured/normalUsers/car/vitView.jsf?faces-redirect=true">طلب شراء وشحن او شحن فقط</a></li>
+<li id="car-all"><a href="/pages/secured/normalUsers/car/vehicleList.jsf?faces-redirect=true">كل السيارات </a></li>
+</ul>
+
+
+<div id="menu-header-product" class="sublevel droparrow">قائمة السلع</div>
+
+
+<ul  id="menu-product" class="level2" style="display: contents;">
+<li id="product-main"><a href="/pages/secured/normalUsers/products/vitView.jsf?faces-redirect=true">طلب شراء وشحن او شحن فقط</a></li>
+<li id="product-all"><a href="/pages/secured/normalUsers/products/productsList.jsf?faces-redirect=true">كل السلع </a></li>
+</ul>
+
+
+
+<ul class="level1">
+<li>
+<a onclick="LogOutJS()" > 
+<i class="fa fa-power-off"></i> Log Out </a>
+</li>
+</ul>
+
+<h:form>
+					<p:remoteCommand name="LogOutJS" action="#{loginBean.logOut}"></p:remoteCommand>
+				</h:form>
+</div>
+</div>
+</div>
+
+
+
+     <script>
+
+  	$('#menu-profile').fadeToggle();
+ 	$('#menu-bid').fadeToggle();
+ 	$('#menu-car').fadeToggle();
+ 	$('#menu-product').fadeToggle();
+     </script>
+     
+     
+        <div class="col-sm-12 col-md-10" style="    text-align: justify;">
+        	<ui:insert name="content"  > 
+		    	 <ui:include src="content.xhtml" /> 
+		  </ui:insert>
+    	 		
+        
+        </div>
+
+</div>
+<img id="ajax-loader-account" src="/img/ajax-loader.gif" alt="Please Wait"/>
+</div>
+</div>
+	
+	
+	
+   </div>
+   </div>
+   
+   
+    <ui:insert name="footer"> 
+    	 <ui:include src="footerPublic.xhtml"/> 
+  </ui:insert>
+   
+</div>
+<div id="global-modal"></div>
+   
+   
+   
+   
+  
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+		
+		<!-- Specific Page Vendor -->
+		
+		
+		<h:outputScript name="js/dashboard/assets/vendor/nanoscroller/nanoscroller.js"/>
+		
+<h:outputScript  type="text/javascript" name="js/public/vendorb315.js"/>
+<h:outputScript  type="text/javascript" name="js/public/app.js"/>
+<h:outputScript  type="text/javascript" name="js/public/displayMain.js"/>
+	
+
+
+	<h:outputScript name="js/dashboard/assets/vendor/pnotify/pnotify.custom.js"/>
+	
+<!-- Theme Base, Components and Settings -->
+		<h:outputScript name="js/dashboard/assets/javascripts/theme.js"/>
+		
+
+    <!-- Vendor
+    <h:outputScript name="js/dashboard2/assets/vendor/bootstrap/js/bootstrap.js"/>
+		
+		
+     -->
+		<h:outputScript name="js/dashboard2/assets/vendor/jquery/jquery.js"/>
+		<h:outputScript name="js/dashboard2/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"/>
+		
+		<h:outputScript name="js/dashboardPrime/bootstrap.min.js"/>
+		<h:outputScript name="js/dashboard2/assets/vendor/nanoscroller/nanoscroller.js"/>
+		
+
+
+
+		<script>
+
+	   jQuery.noConflict();
+	   
+	   </script>
+  <ui:insert name="script"> 
+    	<script>
+    	
+    	</script>
+  </ui:insert>
+	
+	<script src="/javax.faces.resource/Scripts/scm_main.js.xhtml"></script>
+			 <h:outputScript name="js/public/flickity.pkgd.js"/>
+			 
+			 
+			 
+			 
+	
+			 
+			 	<script>
+		dialogLoader = bootbox.dialog({
+    	    message: '<p class="text-center mb-0"><i class="fa fa-spin fa-cog"></i> Loading '+data+'...</p>',
+    	    closeButton: false,
+    	    show: false
+    	});
+		function showDialog(data){
+        	dialogLoader = bootbox.dialog({
+        	    message: '<p class="text-center mb-0"><i class="fa fa-spin fa-cog"></i> Loading '+data+'...</p>',
+        	    closeButton: false,
+        	    show: true
+        	});
+        	
+                    	}
+		
+		function ErrorDialog(){
+        	dialogLoader = bootbox.dialog({
+        	    message: '<p class="text-center mb-0"><i class="fa fa-spin fa-cog"></i> Error</p>',
+        	    closeButton: true,
+        	    show: true,
+        	    onEscape:true
+        	});
+                	
+                	            
+                	
+                	}
+		
+		function ErrorDialog2(text){
+        	dialogLoader = bootbox.dialog({
+        	    message: '<p class="text-center mb-0"><i class="fa fa-spin fa-cog"></i> Error '+text+'</p>',
+        	    closeButton: true,
+        	    show: true,
+        	    onEscape:true
+        	});
+                	
+                	            
+                	
+                	}
+                    
+                    function hideDialog(){
+                    	// do something in the background
+                    	dialogLoader.modal('hide');
+                    	
+                    	
+                    }
+                    </script>
+		
+		
+		
+		
+		
+		
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+	<script src="/javax.faces.resource/Scripts/bootbox.all.js.xhtml"></script>
+		 <h:form>
+			<p:remoteCommand name="refreshMainViews" action="#{loginBean.reloadedParametersAndPanelRefresh}"></p:remoteCommand>
+			<p:remoteCommand name="refreshMainViews2" action="#{bidBean.refreshNotification}"></p:remoteCommand>
+			
+			
+			
+			<p:remoteCommand name="readNotification" action="#{bidBean.readNotification}"></p:remoteCommand>
+		</h:form>
+		<script>
+		setInterval(refreshMainViews, 600);
+		setInterval(refreshMainViews2, 600);
+			
+		</script>
+</h:body>
+
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+<ui:composition template="/templates/publicTemplate.xhtml">
+
+<ui:define name="tagsMeta">
+
+<meta property="og:image:height" content="370"/>
+<meta property="og:image:width" content="370"/>
+<meta property="og:url" content="http://adainter.com/pages/public/carsForDetails.jsf?id=#{carLandingBean.selectedCarPage.id}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="#{carLandingBean.selectedCarPage.mainImage}"/>
+
+
+</ui:define>	
+
+	<ui:define name="content">
+	#{carLandingBean.refresh()}
+	<style>
+	
+	img {
+    vertical-align: middle;
+}
+img {
+    border: 0;
+}
+
+
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+    float: left;
+}
+	hr {
+    margin-top: 4.1px;
+    margin-bottom: 4.1px;
+    }
+    
+.carousel {
+  position: relative;
+}
+.carousel-item img {
+  object-fit: cover;
+}
+#carousel-thumbs {
+  background: rgba(255,255,255,.3);
+  bottom: 0;
+  left: 0;
+  padding: 0 50px;
+  right: 0;
+}
+#carousel-thumbs img {
+  border: 5px solid transparent;
+  cursor: pointer;
+}
+#carousel-thumbs img:hover {
+  border-color: rgba(255,255,255,.3);
+}
+#carousel-thumbs .selected img {
+  border-color: #fff;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+}
+@media all and (max-width: 767px) {
+  .carousel-container #carousel-thumbs img {
+    border-width: 3px;
+  }
+}
+@media all and (min-width: 576px) {
+  .carousel-container #carousel-thumbs {
+    position: absolute;
+  }
+}
+@media all and (max-width: 576px) {
+  .carousel-container #carousel-thumbs {
+    background: #ccccce;
+  }
+}
+input:focus-visible{
+border:none;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+	</style>
+		
+		
+		
+		<div class="img-item">
+		<section id="contact">
+			
+		</section>
+
+
+		<section id="features" class="pb-5">
+		<div class="container">
+			
+		</div>
+		</section>
+
+
+
+		</div>
+		
+	<div class="container mt-5 ">
+	<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item"><a href="/">Home</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">Vehicle</li>
+	  </ol>
+	</nav>
+
+		<div class="row">
+			
+			
+			
+			
+			
+			<div class="col-md-7">
+				  
+				  
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				  <div class="carousel-inner">
+				  
+				    <div class="carousel-item active" data-slide-number="0">
+				      <img src="/images/?file=#{carLandingBean.imagesOfSelectedCarLanding.get(0).url}" class="d-block w-100" alt="..." data-remote="#{carLandingBean.images.get(0)}" data-type="image" data-toggle="lightbox" data-gallery="example-gallery"/>
+				    </div>
+				    <ui:repeat var="data" varStatus="status"  offset="1" value="#{carLandingBean.imagesOfSelectedCarLanding}">
+				    <div class="carousel-item" data-slide-number="#{status.index}">
+				      <img src="/images/?file=#{data.url}" class="d-block w-100" alt="..." data-remote="#{data}" data-type="image" data-toggle="lightbox" data-gallery="example-gallery"/>
+				    </div>
+				    </ui:repeat>
+				    
+				  </div>
+				  
+				  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+				    <span class="carousel-control-prev-icon"  style="width: 38px;height: 61px;background-color: #1c1d1dc2;" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+				    <span class="carousel-control-next-icon" style="width: 38px;height: 61px;background-color: #1c1d1dc2;" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				  </a>
+				</div>
+				
+				<!-- Carousel Navigation -->
+					<div>
+					  <div>
+				  
+					      <div id="carousel-selector-0" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="0">
+					          <img src="/images/?file=#{carLandingBean.imagesOfSelectedCarLanding.get(0).url}" class="img-fluid" alt="..."/>
+					        </div>
+					        <ui:repeat var="data" varStatus="status"  offset="1" value="#{carLandingBean.imagesOfSelectedCarLanding}">
+					   
+					        <div id="carousel-selector-#{status.index}" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="#{status.index}">
+					          <img src="/images/?file=#{data.url}" class="img-fluid" alt="..."/>
+					        </div>
+					     
+					       </ui:repeat>
+					  
+				    
+						
+				       
+				      </div>
+				    </div>
+				   
+				
+				
+
+			</div>
+			
+		
+		
+		
+			<div class="col-md-5 p-0" >
+				<div class="">
+				<div class="card" dir="ltr">
+					<div class="card-header text-left" style="    background-color: #4e4d4c;    color: white;">
+					 <p style="font-size: 19px;line-height: 10px;padding: 0px;margin: 0px;font-weight: 900;">LOT DETAILS</p>
+					</div>
+					<div class="card-body">
+						<div class="row divider">
+							<div class="col-md-5 text-left" style="font-size: 13px;color: gray;font-weight: 300;">
+								VIN:
+							</div>
+							<div class="col-md-7 text-right" style="font-size: 13px;color: #5d5454;font-weight: 900;" >
+							#{carLandingBean.selectedCarPage.uuid}
+							</div>
+						</div>
+						<hr/>
+						<div class="row divider">
+							<div class="col-md-5 text-left" style="font-size: 13px;color: gray;font-weight: 300;">
+								Doc Type:
+							</div>
+							<div class="col-md-7 text-right" style="font-size: 13px;color: #5d5454;font-weight: 900;" >
+							#{carLandingBean.selectedCarPage.docType}
+							</div>
+						</div>
+						<hr/>
+						<div class="row divider">
+							<div class="col-md-5 text-left" style="font-size: 13px;color: gray;font-weight: 300;">
+								Odometer:
+							</div>
+							<div class="col-md-7 text-right" style="font-size: 13px;color: #5d5454;font-weight: 900;" >
+							#{carLandingBean.selectedCarPage.odoMeter} miles
+							</div>
+						</div>
+						
+						<hr/>
+						<div class="row divider">
+							<div class="col-md-5 text-left" style="font-size: 13px;color: gray;font-weight: 300;">
+								Highlights:
+							</div>
+							<div class="col-md-7 text-right" style="font-size: 13px;color: #5d5454;font-weight: 900;" >
+							Nothing
+							</div>
+						</div>
+						
+						
+						
+						
+						
+						<hr/>
+						<div class="row divider">
+							<div class="col-md-6 text-left" style="font-size: 13px;color: gray;font-weight: 300;">
+								Secondary Damage:
+							</div>
+							<div class="col-md-6 text-right" style="font-size: 13px;color: #5d5454;font-weight: 900;" >
+							#{carLandingBean.selectedCarPage.secondaryDamage}
+							</div>
+						</div>
+						
+						
+						
+						
+						<hr/>
+						<div class="row divider">
+							<div class="col-md-5 text-left" style="font-size: 13px;color: gray;font-weight: 300;">
+								Body Style:
+							</div>
+							<div class="col-md-7 text-right" style="font-size: 13px;color: #5d5454;font-weight: 900;" >
+							#{carLandingBean.selectedCarPage.bodyStyle}
+							</div>
+						</div>
+						
+						<hr/>
+						<div class="row divider">
+							<div class="col-md-5 text-left" style="font-size: 13px;color: gray;font-weight: 300;">
+								Vehicle Type:
+							</div>
+							<div class="col-md-7 text-right" style="font-size: 13px;color: #5d5454;font-weight: 900;" >
+							#{carLandingBean.selectedCarPage.category}
+							</div>
+						</div>
+						
+						
+						<hr/>
+						<div class="row divider">
+							<div class="col-md-5 text-left" style="font-size: 13px;color: gray;font-weight: 300;">
+								Color:
+							</div>
+							<div class="col-md-7 text-right" style="font-size: 13px;color: #5d5454;font-weight: 900;" >
+							#{carLandingBean.selectedCarPage.color}
+							</div>
+						</div>
+						
+						
+						
+						
+						
+						<hr/>
+						<div class="row divider">
+							<div class="col-md-5 text-left" style="font-size: 13px;color: gray;font-weight: 300;">
+								Cylinders:
+							</div>
+							<div class="col-md-7 text-right" style="font-size: 13px;color: #5d5454;font-weight: 900;" >
+							#{carLandingBean.selectedCarPage.cylinder}
+							</div>
+						</div>
+						
+						
+						<hr/>
+						<div class="row divider">
+							<div class="col-md-5 text-left" style="font-size: 13px;color: gray;font-weight: 300;">
+								Transmission:
+							</div>
+							<div class="col-md-7 text-right" style="font-size: 13px;color: #5d5454;font-weight: 900;" >
+							#{carLandingBean.selectedCarPage.transmission}
+							</div>
+						</div>
+						
+						
+						
+						
+						<hr/>
+						<div class="row divider">
+							<div class="col-md-5 text-left" style="font-size: 13px;color: gray;font-weight: 300;">
+								Fuel:
+							</div>
+							<div class="col-md-7 text-right" style="font-size: 13px;color: #5d5454;font-weight: 900;" >
+							#{carLandingBean.selectedCarPage.fuel}
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				
+				<div class="mt-3">
+				<div class="card" dir="ltr">
+					<div class="card-header text-left" style="    background-color: #4e4d4c;    color: white;">
+					 <p style="font-size: 19px;line-height: 10px;padding: 0px;margin: 0px;font-weight: 900;">Social Media Share Now</p>
+					</div>
+					<div class="card-body">
+						<div class="row divider">
+							<div class="col-md-12 text-center" style="font-size: 13px;color: #5d5454;font-weight: 900;" >
+							<a class="facebook" style="color: #6146d0;font-size: 26px;" href="https://www.facebook.com/sharer/sharer.php?u=AeneasExportingllc.com/pages/public/carsForDetails.jsf?id=#{carLandingBean.selectedCarPage.id}" target="blank"><i class="fab fa-facebook"></i></a>
+							</div>
+						</div>
+					
+						
+						
+					
+						
+						
+						
+					</div>
+				</div>
+				</div>
+			</div>
+			
+			
+			
+				  
+		</div>
+	</div>
+		
+		 
+	</ui:define>
+	
+		
+	
+	
+</ui:composition>
+</html>

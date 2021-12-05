@@ -1,0 +1,514 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+<ui:composition template="/templates/dashboard2.xhtml">
+
+	
+	<ui:define name="title"> Aeneas Exporting LLC</ui:define>
+
+ <ui:define name="mainHead"> 
+			       <ul class="mn-sub"><li class="mn-sub-item mn-item-vendors"><a href="vitView.jsf" class="mn-sub-item-current"><b>Vehicle List</b></a></li></ul>
+           
+			</ui:define>
+
+	<ui:define name="content">
+	
+	
+		<style>
+					.ui-fileupload-choose {
+						    position: relative;
+						    overflow: hidden;
+						    outline: 0;
+						    display: none;
+						}
+						
+						.ui-button-icon-only {
+    width: 19px;
+    background: url(/resources/images/public/img/gr-error.png) no-repeat;
+    height: 19px;
+}
+
+.ui-datepicker {
+   border: black;
+    background: white;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8%;
+    }
+    .ui-datepicker .ui-icon {
+    display: block;
+    text-indent: 1px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    left: .5em;
+    top: .3em;
+}
+
+.ui-datepicker .ui-datepicker-next {
+    right: 17px;
+}
+					</style>
+	
+	#{carLandingBean.refresh()}
+              <h:form name="aspnetForm" id="aspnetForm">
+
+
+
+            <div id="content">
+    <!-- page src -->
+    <table cellspacing="0" cellpadding="5" class="content-table" border="0">
+        <tbody>
+            <tr valign="top">
+                <td width="100%">
+                    <!-- Table 1 -->
+                    
+                    
+                    
+                    <table cellspacing="0" cellpadding="1" width="100%" bgcolor="#003399" border="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table cellspacing="0" cellpadding="8" width="100%" bgcolor="#ffffff" border="0">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <!-- Table name block -->
+                                                    <table cellspacing="0" cellpadding="0" width="100%" border="0">
+                                                        <tr>
+                                                            <td class="blkname" width="100%">
+                                                                <nobr>&nbsp;Gallery:
+																					<span id="ctl00_BodyHolder_lblVIN">New Freight</span></nobr>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <img height="3" src="/resources/images/dumb.gif" width="1"/><br></br>
+                                                    <!-- End of Table name block -->
+                                           
+                                                    <table style="
+    border: black;
+    border-style: solid;
+    border-width: 1px;
+    padding: 15px;
+" cellspacing="4" cellpadding="0" width="100%" border="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <table cellspacing="0" cellpadding="1" width="100%" bgcolor="#cccccc" border="0">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                <h:panelGroup id="tableRendered">
+                                                                                
+                                                                                    <script>
+				
+            $(function() {
+				$('#aspnetForm\\:ctl00_BodyHolder_txtDVL').datepicker({
+				    dateFormat: 'yy-dd-mm',
+				    onSelect: function(datetext){
+
+				        var d = new Date(); // for now
+
+				        var h = d.getHours();
+				        h = (h &lt; 10) ? ("0" + h) : h ;
+
+				        var m = d.getMinutes();
+				        m = (m &lt; 10) ? ("0" + m) : m ;
+
+				        var s = d.getSeconds();
+				        s = (s &lt; 10) ? ("0" + s) : s ;
+
+				        datetext = datetext + " " + h + ":" + m + ":" + s;
+
+				        $('#aspnetForm\\:ctl00_BodyHolder_txtDVL').val(datetext);
+				    }
+				});
+				});
+            
+            $(function() {
+				$('#aspnetForm\\:ctl00_BodyHolder_txtETD').datepicker({
+				    dateFormat: 'yy-dd-mm',
+				    onSelect: function(datetext){
+
+				        var d = new Date(); // for now
+
+				        var h = d.getHours();
+				        h = (h &lt; 10) ? ("0" + h) : h ;
+
+				        var m = d.getMinutes();
+				        m = (m &lt; 10) ? ("0" + m) : m ;
+
+				        var s = d.getSeconds();
+				        s = (s &lt; 10) ? ("0" + s) : s ;
+
+				        datetext = datetext + " " + h + ":" + m + ":" + s;
+
+				        $('#aspnetForm\\:ctl00_BodyHolder_txtETD').val(datetext);
+				    }
+				});
+				});
+            
+            
+     
+
+            $(function() {
+				$('#aspnetForm\\:ctl00_BodyHolder_txtNameOfRecipient').datepicker({
+				    dateFormat: 'yy-dd-mm',
+				    onSelect: function(datetext){
+
+				        var d = new Date(); // for now
+
+				        var h = d.getHours();
+				        h = (h &lt; 10) ? ("0" + h) : h ;
+
+				        var m = d.getMinutes();
+				        m = (m &lt; 10) ? ("0" + m) : m ;
+
+				        var s = d.getSeconds();
+				        s = (s &lt; 10) ? ("0" + s) : s ;
+
+				        datetext = datetext + " " + h + ":" + m + ":" + s;
+
+				        $('#aspnetForm\\:ctl00_BodyHolder_txtNameOfRecipient').val(datetext);
+				    }
+				});
+				});
+					
+            
+            $(function() {
+				$('#aspnetForm\\:ctl00_BodyHolder_txtDateTitlesSentToUSCustoms').datepicker({
+				    dateFormat: 'yy-dd-mm',
+				    onSelect: function(datetext){
+
+				        var d = new Date(); // for now
+
+				        var h = d.getHours();
+				        h = (h &lt; 10) ? ("0" + h) : h ;
+
+				        var m = d.getMinutes();
+				        m = (m &lt; 10) ? ("0" + m) : m ;
+
+				        var s = d.getSeconds();
+				        s = (s &lt; 10) ? ("0" + s) : s ;
+
+				        datetext = datetext + " " + h + ":" + m + ":" + s;
+
+				        $('#aspnetForm\\:ctl00_BodyHolder_txtDateTitlesSentToUSCustoms').val(datetext);
+				    }
+				});
+				});
+					
+   
+            
+           
+            
+            $(function() {
+				$('#aspnetForm\\:ctl00_BodyHolder_txtStampedTitleReceived').datepicker({
+				    dateFormat: 'yy-dd-mm',
+				    onSelect: function(datetext){
+
+				        var d = new Date(); // for now
+
+				        var h = d.getHours();
+				        h = (h &lt; 10) ? ("0" + h) : h ;
+
+				        var m = d.getMinutes();
+				        m = (m &lt; 10) ? ("0" + m) : m ;
+
+				        var s = d.getSeconds();
+				        s = (s &lt; 10) ? ("0" + s) : s ;
+
+				        datetext = datetext + " " + h + ":" + m + ":" + s;
+
+				        $('#aspnetForm\\:ctl00_BodyHolder_txtStampedTitleReceived').val(datetext);
+				    }
+				});
+				});
+					
+						
+					</script>	
+                                                                                    <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#f7f7f7" border="0">
+                                                                                        <tbody>
+                                                                                            <tr height="23">
+                                                                                                <td class="tbltxt" width="130">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        Name or Vin:</div>
+                                                                                                </td>
+                                                                                                <td width="200">
+                                                                                                    <h:inputText name="ctl00$BodyHolder$txtVIN" type="text" value="#{carLandingBean.selectedFreight.uuid}" id="ctl00_BodyHolder_txtVIN" style="font-size:11px;height:19px;width:200px;" />
+                                                                                                                                                                      
+                                                                                                   
+                                                                                                    
+                                                                                                </td>
+                                                                                               
+                                                                                               
+                                                                                                <td width="200">
+                                                                                                </td>
+                                                                                                
+                                                                                               
+                                                                                            </tr>
+                                                                                         
+                                                                                            
+                                                                                             <tr height="2">
+                                                                                                <td bgcolor="#ffffff" colspan="6">
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                           
+                                                                                            <tr height="23">
+                                                                                                
+                                                                                                <td>
+                                                                                                </td>
+                                                                                                <td class="tbltxt">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                             <tr height="23">
+                                                                                                <td colspan="6" class="tbltxt">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                    <br></br>
+                                                                                                        <a onmouseover="this.style.cursor='hand'" onmouseout="this.style.cursor='default'"
+                                                                                                            onclick="ChangeVisibillity('picDivMain','picExpandMain')">
+                                                                                                            <img id="picExpandMain" width="19px" height="19px" src="/resources/images/img/accordeon_open.png" /><b> Main
+                                                                                                                Pictures:</b></a></div>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                              <tr height="23">
+                                                                                                <td>
+                                                                                                </td>
+                                                                                                <td id="ctl00_BodyHolder_picTableCell" colspan="4" class="tbltxt" valign="top">
+                                                                                                     <div id="picDivMain" style="display: inline; margin-left: 6px">
+                                                                                                     	
+                                                                                                     	 <h:panelGroup id="imagesPanelMain">
+																	                                 <p:fileUpload id="FileUploadedMain" fileUploadListener="#{carLandingBean.previewImageMain}" dragDropSupport="true" sizeLimit="99999999" fileLimit="20" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"></p:fileUpload>
+        
+																	                                    <label for="aspnetForm:FileUploadedMain_input">
+																	                                    <h:graphicImage value="/resources/images/public/img/membership-choice-step/addNew.png" rendered="#{carLandingBean.selectedFreight.mainImage!=null?'false':'true'}" alt="imageMain3" style="border-width:0px;width: auto;max-width: 61px;height: auto;max-height: 195px;" />
+																	                                    <h:graphicImage value="/images/?file=#{carLandingBean.selectedFreight.mainImage}" rendered="#{carLandingBean.selectedFreight.mainImage!=null?'true':'false'}" alt="imageMain" style="border-width:0px;width: auto;max-width: 195px;height: auto;max-height: 195px;" />
+																	                                    </label>
+																	                                     </h:panelGroup>   
+                                                                                                     	
+                                                                                                     	</div>
+                                                                                                </td>
+                                                                                              </tr>
+                                                                                                  
+                                                                                            
+                                                                                           
+                                                                                          
+                                                                                         
+                                                                                          
+
+  <!--
+  
+                                                                                            <tr height="23">
+                                                                                                <td colspan="6" class="tbltxt">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        <a onmouseover="this.style.cursor='hand'" onmouseout="this.style.cursor='default'"
+                                                                                                            onclick="ChangeVisibillity('docDiv','docExpand')">
+                                                                                                            <img id="docExpand" width="19px" height="19px" src="/resources/images/img/accordeon_open.png" />
+                                                                                                            <b>Enclosed Documents:</b></a></div>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr height="23">
+                                                                                                <td>
+                                                                                                </td>
+                                                                                                <td id="ctl00_BodyHolder_picTableCell" colspan="4" class="tbltxt" valign="top">
+                                                                                                    <div id="docDiv" style="display: inline; margin-left: 6px">
+                                                                                                     	<p:fileUpload id="docUploaded" fileUploadListener="#{carLandingBean.previewFile}"  dragDropSupport="true" sizeLimit="99999999" fileLimit="20" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"></p:fileUpload>
+        
+        
+        
+               <h:panelGroup id="docsPanel">
+                                     
+<table border="1" style="    border: unset;">
+   <tr>
+        <td colspan="2">
+            <table id="ctl00_BodyHolder_imageList_imageList" cellspacing="0" border="0" style="border-collapse:collapse;">
+	<tr>
+                
+                
+	
+		<ui:repeat var="var" value="#{carLandingBean.docs}">
+			<td style="border: black;padding: 14px;border-right-style: solid;border-width: 1px;">
+                    <table>
+                        <tr>
+                            <td align="center">
+                                <div>
+                                    <a href="#" onclick='ViewDocById("#{var}")'>
+                                        <h:graphicImage value="/images/?file=#{var}" alt="image#{var}" style="border-width:0px; width:50px;" /></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a style="color: Black;" href="#" onclick='ViewDocById("#{var}")'>
+                                    <span id="ctl00_BodyHolder_imageList_fileList_ctl00_docName">#{var}</span></a>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            
+                        </tr>
+                    </table>
+                </td>
+                
+                
+               
+		</ui:repeat>
+             
+             
+              <td style="border: black;padding: 14px;border-width: 1px;">
+                    <table>
+                        <tr>
+                            <td align="center">
+                                <div>
+                                    <label for="aspnetForm:docUploaded_input">
+                                    <h:graphicImage value="/resources/images/public/img/membership-choice-step/addNew.png" alt="image#{var}" style="border-width:0px;    width: 50px;" />
+                                    </label>
+                                        
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a style="color: Black;" href="#" onclick='ViewDocById(5955963)'>
+                                    <span id="ctl00_BodyHolder_imageList_picList_ctl00_docName">click to select File</span></a>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            
+                        </tr>
+                    </table>
+                </td>
+	   
+               
+	</tr>
+</table>
+
+</td>
+    </tr>
+    <tr>
+    </tr>
+        
+</table>
+
+</h:panelGroup>
+
+                                                                                                    </div>
+                                                                                                </td>
+
+                                                                                                <td>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                             -->
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                            <tr height="23">
+                                                                                                <td class="tbltxt">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                                <td class="tbltxt">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                  
+                                                                        
+                                                                                            <tr height="13">
+                                                                                                <td align="center">
+																									<p:commandButton class="btn btn-default" action="#{carLandingBean.updateCarDataMain()}" name="ctl00$BodyHolder$cmdSave2" value="Save" id="ctl00_BodyHolder_cmdSave2" style=" font-family:Verdana;font-size:10px;font-weight:bold;width:120px;" />
+                                                                                    
+                                                                                                </td>
+                                                                                                <td align="center">
+                                                                                                    <p:commandButton class="btn btn-default" action="#{carLandingBean.cancel}" name="ctl00$BodyHolder$cmdBackToList" value="Back" id="ctl00_BodyHolder_cmdBackToList" style=" font-family:Verdana;font-size:10px;font-weight:bold;width:120px;" />
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <p:commandButton class="btn btn-default" action="#{carLandingBean.cancel}" name="ctl00$BodyHolder$cmdCancel" value="Cancel" id="ctl00_BodyHolder_cmdCancel" style=" font-family:Verdana;font-size:10px;font-weight:bold;width:120px;" />
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr height="2">
+                                                                                                <td colspan="6">
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                       
+                                                                                       
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </h:panelGroup>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- End of Table 1 -->
+                    <img height="3" src="/resources/images/dumb.gif" width="1"/><br></br>
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="white" colspan="2">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+            </div> 
+           
+        
+					
+	                                	<p:remoteCommand name="deleteFile" action="#{carLandingBean.deleteFile()}"> 
+	                                	</p:remoteCommand>
+				
+        </h:form>
+        
+      
+	</ui:define>
+	
+		
+	
+</ui:composition>
+</html>

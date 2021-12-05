@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/dashboard2.xhtml">
+
+
+	<ui:define name="title"> Aeneas Exporting LLC</ui:define>
+ <ui:define name="mainHead"> 
+			       <ul class="mn-sub"><li class="mn-sub-item mn-item-vendors"><a href="invoiceAdd.jsf" class="mn-sub-item-current"><b>Invoice</b></a></li></ul>
+           
+			</ui:define>
+
+	<ui:define name="content">
+        <style>
+        
+/* Invoice */
+.invoice {
+	padding: 0 15px 15px;
+}
+
+/* Invoice Address Tag */
+.invoice address {
+	color: #7F8597;
+	line-height: 1.5em;
+}
+
+/* Invoice header */
+.invoice header {
+	border-bottom: 1px solid #DADADA;
+	margin-bottom: 15px;
+}
+.invoice header .h2,
+.invoice header .h4 {
+	letter-spacing: 0;
+}
+
+/* Invoice Billing Information */
+.invoice .bill-to,
+.invoice .bill-data {
+	padding: 15px 0;
+}
+.invoice .bill-data .value {
+	display: inline-block;
+	margin-left: 10px;
+	width: 90px;
+}
+
+/* Invoice table */
+.invoice table.table {
+	table-layout: fixed;
+}
+.invoice table.table > thead:first-child > tr > th {
+	background-color: #F8F8F8;
+	border-bottom: 1px solid #DADADA;
+	border-top: 1px solid #DADADA;
+}
+.invoice table.table > tbody tr > td {
+	border-color: #DADADA;
+}
+
+/* Invoice table items */
+.invoice .invoice-items > tbody tr:last-child > td {
+	border-bottom: 1px solid #DADADA;
+}
+.invoice .invoice-items #cell-id {
+	width: 10%;
+}
+.invoice .invoice-items #cell-item {
+	width: 20%;
+}
+.invoice .invoice-items #cell-desc {
+	width: 20%;
+}
+.invoice .invoice-items #cell-price {
+	width: 10%;
+}
+.invoice .invoice-items #cell-qty {
+	width: 10%;
+}
+.invoice .invoice-items #cell-total {
+	width: 10%;
+}
+
+/* Invoice summary */
+.invoice-summary .col-sm-4 {
+	padding-left: 0;
+}
+
+/* Invoice Responsiveness */
+@media only screen and (max-width: 991px) {
+	.invoice .table-responsive > table.table {
+		table-layout: auto;
+	}
+
+	.invoice-summary .col-sm-4 {
+		padding-left: 15px;
+	}
+}
+/* Invoice Print */
+@media print {
+	.invoice .table-responsive {
+		border: none !important;
+		overflow: visible !important;
+		width: auto !important;
+	}
+	.invoice table.table.invoice-items {
+		table-layout: auto;
+	}
+	.invoice header .col-sm-6:first-child,
+	.invoice header .col-sm-6:last-child,
+	.invoice .bill-info .col-md-6 {
+		float: left !important;
+	}
+	.invoice header .col-sm-6:first-child {
+		width: 25% !important;
+	}
+	.invoice header .col-sm-6:last-child {
+		width: 75% !important;
+	}
+	.invoice .bill-info .col-md-6 {
+		width: 50% !important;
+	}
+	.invoice .invoice-summary .col-sm-4 {
+		float: right;
+		padding: 0;
+		width: 40%;
+	}
+}
+        </style>
+        <h:form name="aspnetForm"  id="aspnetForm">  
+
+			<section class="panel">
+						<div class="panel-body">
+							<div class="invoice">
+								<header class="clearfix">
+								<div class="row">
+<div class="col-md-9" >
+												<img style="width: auto;height: auto;max-width: 435px;max-height: 81px;" src="/resources/images/logoBill.png" alt="icone" />
+											</div>
+											<div class="col-md-3" >
+										<p style="   font-size: 35px;font-family: sans-serif;font-weight: 700;text-align: center;margin-top: 8px;">
+											#{vendorBean.invoiceData.payedOrNot?"Paid":"Not PAID"}
+											</p>
+										</div>
+																					
+</div>
+									<div class="row">
+									
+										<div class="col-sm-6 mt-md">
+											<h2 class="h2 mt-none mb-sm text-dark text-bold">INVOICE</h2>
+											<h4 class="h4 m-none text-dark text-bold"># #{vendorBean.invoiceData.id}</h4>
+										</div>
+										<div class="col-sm-6 text-right mt-md mb-md">
+										
+											<address class="ib mr-xlg">
+												#{vendorBean.invoiceData.userIdIssuer.company}
+												<br/>
+												#{vendorBean.invoiceData.userIdIssuer.address1}
+												<br/>
+												Phone: #{vendorBean.invoiceData.userIdIssuer.phone}
+												<br/>
+												#{vendorBean.invoiceData.userIdIssuer.email}
+											</address>
+											
+										</div>
+									</div>
+								</header>
+								<div class="bill-info">
+									<div class="row">
+										<div class="col-md-10">
+											<div class="bill-to">
+												<p class="h5 mb-xs text-dark text-semibold">To:</p>
+												<address>
+													#{vendorBean.invoiceData.userIdCustomer.company}
+												<br/>
+												#{vendorBean.invoiceData.userIdCustomer.address1}
+												<br/>
+												Phone: #{vendorBean.invoiceData.userIdCustomer.phone}
+												<br/>
+												#{vendorBean.invoiceData.userIdCustomer.email}
+												</address>
+											</div>
+										</div>
+										<div class="col-md-2">
+											<div class="bill-data text-right" style="    text-align: -webkit-auto;">
+												<p class="mb-none">
+													<span class="text-dark">Bank Details:</span>
+													<address>
+													Bank Name: #{vendorBean.invoiceData.bankName}
+												<br/>
+												Bank Address: #{vendorBean.invoiceData.bankAddress}
+												<br/>
+												Bank Telephone: #{vendorBean.invoiceData.bankTelephone}
+												<br/>
+												Bank Account Number: #{vendorBean.invoiceData.bankAccountNumber}
+												</address>
+												</p>
+												<p class="mb-none">
+													<span class="text-dark">Invoice Date:</span>
+													<span class="value">#{vendorBean.getFormatedDate(vendorBean.invoiceData.date)}</span>
+												</p>
+											</div>
+										</div>
+									</div>
+										<div class="row" style="margin-right: 1px;margin-left: 1px;">
+									
+									
+												<p style="color: #7f85a4;font-size: larger;">Description of Charges</p>
+												<div style="    width: 90%; color: #5a5e71;">
+												#{vendorBean.invoiceData.description_of_charges}
+												</div>
+												<br/>
+												<br/>
+									</div>
+								</div>
+							
+								<div class="table-responsive">
+									<table class="table invoice-items">
+										<thead>
+											<tr class="h4 text-dark">
+												<th id="cell-id"     class="text-semibold">#</th>
+												<th id="cell-item"   class="text-semibold">Vin</th>
+												<th id="cell-desc"   class="text-semibold">Description</th>
+												<th id="cell-price"  class="text-center text-semibold">Land Cost</th>
+												<th id="cell-qty"    class="text-center text-semibold">Sea Cost</th>
+												<th id="cell-qty"    class="text-center text-semibold">Fees Cost</th>
+												<th id="cell-qty"    class="text-center text-semibold">Commision Cost</th>
+												<th id="cell-total"  class="text-center text-semibold">Total Cost</th>
+											</tr>
+										</thead>
+										<tbody>
+											<ui:repeat var="var" value="#{vendorBean.carsForInvoice}">
+											
+											<tr>
+												<td>#{var.id}</td>
+												<td class="text-semibold text-dark">#{var.uuid}</td>
+												<td>#{var.description}</td>
+												<td class="text-center">$#{var.landcost}</td>
+												<td class="text-center">$#{var.seacost}</td>
+												<td class="text-center">$#{var.fees}</td>
+												<td class="text-center">$#{var.commision}</td>
+												<td class="text-center">$#{var.landcost+var.seacost+var.fees+var.commision}</td>
+											</tr>
+											
+											</ui:repeat>
+											
+										</tbody>
+									</table>
+								</div>
+							
+								<div class="invoice-summary">
+									<div class="row">
+										<div class="col-sm-4 col-sm-offset-8">
+											<table class="table h5 text-dark">
+												<tbody>
+													<tr class="b-top-none">
+														<td colspan="2">Total Car Shipping Cost Fees</td>
+														<td class="text-left">$#{vendorBean.carFeesInvoice}</td>
+													</tr>
+													<tr>
+														<td colspan="2">Transfer Fees</td>
+														<td class="text-left">$#{vendorBean.invoiceData.transferFees/100*vendorBean.carFeesInvoice}</td>
+													</tr> 
+													<tr>
+														<td colspan="2">Wire Fees</td>
+														<td class="text-left">$#{vendorBean.invoiceData.wireFees}</td>
+													</tr> 
+													<tr class="h4">
+														<td colspan="2">Grand Total</td>
+														<td class="text-left">$#{vendorBean.invoiceData.wireFees+vendorBean.carFeesInvoice+(vendorBean.invoiceData.transferFees/100*vendorBean.carFeesInvoice)}</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="text-right mr-lg">
+								<a href="pages-invoice-print.jsf" target="_blank" class="btn btn-primary ml-sm"><i class="fa fa-print"></i> Print</a>
+							</div>
+						</div>
+					</section>
+			
+		</h:form>
+     
+	</ui:define>
+	
+		
+	
+</ui:composition>
+</html>

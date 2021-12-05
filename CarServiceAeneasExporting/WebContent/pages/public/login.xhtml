@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/publicTemplatePrime.xhtml">
+
+	<ui:define name="title">Aeneas Exporting LLC</ui:define>
+
+	<ui:define name="Banner-Part">
+	
+	<div class="img-item">
+		<section id="contact">
+			
+		</section>
+
+
+		<section id="features" class="pb-5">
+		<div class="container">
+			
+		</div>
+		</section>
+
+
+
+		</div>
+		
+            <div class="container pb-5" >
+                    <div class="text-sign" >
+                        <h3>Customer Sign In</h3>
+            <p>If You Have Account Already Please Login</p>
+                </div>
+				<div class="row">
+				
+				<div class="col-md-3"></div>
+                <div id="signIn" class="col-md-6 mr-2 ml-2">
+                    <div class="row">
+
+                        <div class="signIn-form w-100">
+                            <h:form class="m-3" prependId="false" id="login-form" action="https://phpoll.com/login/process" method="post" role="form" >
+                                <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label signInLabelForm">Username</label>
+                                  <div class="input-group ">
+									<p:inputText type="text" id="Mail" class="form-control " value="#{loginBean.userNameOfUserLoggedIn}"/>
+									<span class="input-group-addon">
+										<span class="icon icon-lg">
+											<i class="fa fa-user"></i>
+										</span>
+									</span>
+								</div>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleInputPassword1" class="form-label signInLabelForm">Password</label>
+                                  <div class="input-group ">
+									<p:inputText type="password" id="Password" required="true" class="form-control " value="#{loginBean.passwordOfUserLoggedIn}"/>
+									<span class="input-group-addon">
+										<span class="icon icon-lg">
+											<i class="fa fa-lock"></i>
+										</span>
+									</span>
+								</div>
+                                </div>
+                                <div class="row">
+	                                <div class="col-md-6">
+	                                	<h:commandButton action="#{loginBean.login}" value="Sign In" type="submit" id="signInButton" class="btn btn-primary signInLabelForm">
+											<f:ajax execute="@form" render="login-form" />
+										</h:commandButton>
+									</div>
+									
+									<div class="col-md-6 mt-2">
+	                                	<a href="/pages/public/forgetPassword.jsf"  >Forget Password</a>
+									</div>
+								</div>
+                               </h:form>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="col-md-2"></div>
+				</div>
+            </div>
+            
+            
+		<script>
+		
+		document.getElementById('mainHeadChange').id = 'head-sign';
+		</script>
+	</ui:define>
+	
+		
+	
+</ui:composition>
+</html>

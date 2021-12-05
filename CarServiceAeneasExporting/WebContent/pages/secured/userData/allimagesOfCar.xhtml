@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/dashboard2.xhtml">
+
+
+	<ui:define name="title"> Aeneas Exporting LLC</ui:define>
+
+
+<ui:define name="mainHead"> 
+			       <ul class="mn-sub"><li class="mn-sub-item mn-item-vendors"><a href="vitView.jsf" class="mn-sub-item-current"><b>Vehicle List</b></a></li></ul>
+           <link rel="stylesheet" href="#{resource['css:dashboardPrime/all.min.css']}" />
+		<link rel="stylesheet" href="#{resource['css:dashboardPrime/bootstrap.min.css']}" />
+		
+			</ui:define>
+			
+			
+	<ui:define name="content">
+	<style>
+	table {
+    border-collapse: inherit;
+    /* border-spacing: 0; */
+    /* border-radius: 11px; */
+}
+
+.aForHead{
+color:white;
+}
+
+
+.aForHead:hover{
+color:#ffec08;
+}
+	</style>
+	
+	 <p:panel id="mainPanel" class="container">
+	#{carBean.openImageLink()} 	
+	 
+	 <div class="row">
+	 	<div class="col-md-12">
+	 	<h1>All Images for the freight: #{carBean.selectedCar.uuid}</h1>
+	 	</div>
+	 	
+ 	</div>
+	 <div class="row mt-3">
+	 	<div class="col-md-2 ml-5">
+		 	<a href="/pages/secured/userData/vehicleList.jsf?faces-redirect=true" class="w-100 ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default">Back</a>
+		 </div>
+		 
+		 
+		 
+		 <div class="col-md-2 ml-5">
+		 	<a onclick="downloadAllFiles()" href="javascript:void(0)" class="w-100 ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default">Download All</a>
+		 </div>
+	 	
+	 
+	 </div>
+	 
+	 
+	 <div class="accordion container" id="accordionExample">
+	 
+	 
+	 
+	 
+	  <div class="card row">
+	    <div class="card-header w-100" id="headingOne">
+	       <h5 class="mb-0 bg-primary" style=" padding: 14px; border-bottom-style: double; ">
+	        <a  class="aForHead" href="javascript:void(0)" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+	         	All Images
+	        </a>
+	      </h5>
+	    </div>
+	
+	    <div id="collapseOne" class="collapse show in" aria-labelledby="headingOne" data-parent="#accordionExample">
+	      <div class="card-body">
+	      		<div class="row mt-1">
+				 	<div class="col-md-2">
+					 	<a onclick="downloadAllImages();" href="javascript:void(0)" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default">Download All Images</a>
+					 </div>
+				 </div>
+	 			<div class="row mt-1">
+	      	 		<!-- All images -->
+	 
+	 					<ui:repeat var="var" value="#{carBean.images}">
+    <div class="col-md-3" style="border: black;border-style: solid;border-width: 1px;margin: 7px;">			
+				
+                    <div class="row" style=" text-align: center; ">
+                        
+                             <div class="row">
+                                    <a href="#" onclick='ViewDocById("#{var}")'>
+                                        <h:graphicImage value="/images/?file=#{var}" alt="image#{var}" style="border-width:0px;width: 151px;height: 109px;"/></a>
+                                </div>
+                        
+                        <div class="row">
+                                <a style="color: Black;" href="#" onclick='ViewDocById("#{var}")'>
+                                    <span id="ctl00_BodyHolder_imageList_imageList_ctl00_docName">#{var}</span></a>
+                                
+                           </div>
+                   </div>
+               </div>
+                
+                
+               
+		</ui:repeat>
+					 <!-- All images -->
+					</div>
+		
+		 
+	      </div>
+	    </div>
+	  </div>
+	  <div class="card row">
+	     <div class="card-header w-100" id="headingOne">
+	      <h5 class="mb-0 bg-primary" style=" padding: 14px; border-bottom-style: double; ">
+	        <a  class="aForHead" href="javascript:void(0)" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+	          All Images Loading
+	        </a>
+	      </h5>
+	    </div>
+	    <div id="collapseTwo" class="collapse show in" aria-labelledby="headingTwo" data-parent="#accordionExample">
+	      <div class="card-body">
+	      		<div class="row mt-1">
+				 	<div class="col-md-2">
+					 	<a onclick="downloadAllLoading();" href="javascript:void(0)" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default">Download All Loading Images</a>
+					 </div>
+				 </div>
+	 			<div class="row mt-1">
+	      	 		<!-- All images -->
+	 
+	 					<ui:repeat var="var" value="#{carBean.loadingImages}">
+    <div class="col-md-3" style="border: black;border-style: solid;border-width: 1px;margin: 7px;">			
+				
+                    <div class="row" style=" text-align: center; ">
+                        
+                             <div class="row">
+                                    <a href="#" onclick='ViewDocById("#{var}")'>
+                                        <h:graphicImage value="/images/?file=#{var}" alt="image#{var}" style="border-width:0px;width: 151px;height: 109px;"/></a>
+                                </div>
+                        
+                        <div class="row">
+                                <a style="color: Black;" href="#" onclick='ViewDocById("#{var}")'>
+                                    <span id="ctl00_BodyHolder_imageList_imageList_ctl00_docName">#{var}</span></a>
+                                
+                           </div>
+                   </div>
+               </div>
+                
+                
+               
+		</ui:repeat>
+					 <!-- All images -->
+					</div>
+		
+		 
+	      </div>
+	    </div>
+	  </div>
+	
+	
+	  <div class="card row">
+	     <div class="card-header w-100" >
+	      <h5 class="mb-0 bg-primary" style=" padding: 14px; border-bottom-style: double; ">
+	        <a  class="aForHead" href="javascript:void(0)" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+	          All Images 360
+	        </a>
+	      </h5>
+	    </div>
+	    <div id="collapseThree" class="collapse show in" aria-labelledby="headingThree" data-parent="#accordionExample">
+	      <div class="card-body">
+	      		<div class="row mt-1">
+				 	<div class="col-md-2">
+					 	<a onclick="downloadAll360();" href="javascript:void(0)" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default">Download All 360D Images</a>
+					 </div>
+				 </div>
+	 			<div class="row mt-1">
+	      	 		<!-- All images -->
+	 
+		
+		<div id="spinCarContainer" class="row mt-2">
+
+			  	 <br></br>
+			  	 
+			  	 <div id="container"> <!-- Use this container to position, size or style the widget. -->
+			<div class="sts-spin"> <!-- This container allows the widget's "full screen" button to work. -->
+			<iframe id="spinCar" style="width: 100%;height: 751px; " />
+			</div>
+			</div>
+		</div>
+		
+		<div id="spinCarContainerFalse" style="display:none;">
+		 <h1 class="w-100 text-center"> No 360 View Available for this car </h1>
+		</div>
+		
+	 				 <!-- All images -->
+					</div>
+		
+		 
+	      </div>
+	    </div>
+	  </div>
+	
+	
+	
+	 </div>
+	
+		
+		
+		<h:outputScript name="js/dashboardPrime/popper.min.js"/>
+		<h:outputScript name="js/dashboardPrime/bootstrap.min.js"/>
+		<h:outputScript name="js/dashboardPrime/FileSaver.js"/>
+		<h:outputScript name="js/dashboardPrime/jszip.js"/>
+		
+		
+		<script>
+		
+		
+function downloadEachImage(urlFileName){
+			
+			const imageUrl = '/images/?file='+urlFileName;
+
+			// Fetch the image and parse the response stream as a blob
+			const imageBlob = fetch(imageUrl).then(response => Promise.resolve(response.blob()));
+
+			return imageBlob;
+			
+		}
+		
+		
+		
+function downloadEachImageOutSide(urlFileName){
+			
+			const imageUrl = urlFileName;
+
+			// Fetch the image and parse the response stream as a blob
+			const imageBlob = fetch(imageUrl).then(response => Promise.resolve(response.blob()));
+
+			return imageBlob;
+			
+		}
+		
+
+
+
+function downloadAllImages(){
+			
+			var zip = new JSZip();
+			var img = zip.folder("Images");
+			<ui:repeat var="variable" value="#{carBean.images}">
+			filename="#{variable}";
+			imgData = downloadEachImage(filename);
+			img.file(filename, imgData);
+			</ui:repeat>
+			zip.generateAsync({type:"blob"})
+			.then(function(content) {
+			    // see FileSaver.js
+			    saveAs(content, "All ImagesOf freight with Vin #{carBean.selectedCar.uuid}.zip");
+			});
+
+		}
+		
+		
+function downloadAll360(){
+	
+	
+	var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://find-spin-api.spincar.com/image-syndication/v2/customer/6628",
+  "method": "POST",
+  "headers": {
+    "content-type": "application/json",
+    "client-id": "AeneasExportingimages",
+    "auth": "a3648405a4447e6ef7f2cf9ef9af4f6e6ba8402d0d8e0470490a5faefebbfe4de86a2714e97d90dfed8869b24b90612454fceb266c42f8b37d6fe77aada04287",
+    "cache-control": "no-cache",
+    "postman-token": "03908bd6-6ebd-97ba-fdc1-b7fea156f87f"
+  },
+  "processData": false,
+  "data": "\n{\n\"ids\" : \n[\"1Z87482434326\",\"#{carBean.selectedCar.uuid}\"]\n,\n\"allow_no_exterior\": true,\n\"include_third_party_closeups\": false,\n\"include_image_type\": false,\n\"include_raw_images\": false\n}"
+}
+
+$.ajax(settings).done(function (response) {
+var zip = new JSZip();
+	var img = zip.folder("Images3D");
+	
+images3D = response['vehicles'][0]['images'];
+  
+  $.each(images3D, function (key, val) {
+		filename=val['url'];
+	imgData = downloadEachImageOutSide(filename);
+	img.file(val['label']+".jpg", imgData);
+	
+    });
+	
+	
+	zip.generateAsync({type:"blob"})
+	.then(function(content) {
+	    // see FileSaver.js
+	    saveAs(content, "All Images3D Of freight with Vin #{carBean.selectedCar.uuid}.zip");
+	});
+	
+});
+
+	
+	
+	
+	
+
+}
+		
+		
+		
+		
+function downloadAllLoading(){
+	
+	var zip = new JSZip();
+	var img = zip.folder("Loading Images");
+	<ui:repeat var="variable" value="#{carBean.loadingImages}">
+	filename="#{variable}";
+	imgData = downloadEachImage(filename);
+	img.file(filename, imgData);
+	</ui:repeat>
+	zip.generateAsync({type:"blob"})
+	.then(function(content) {
+	    // see FileSaver.js
+	    saveAs(content, "All Loading Images Of freight with Vin #{carBean.selectedCar.uuid}.zip");
+	});
+
+}
+	
+		
+		function downloadAllFiles(){
+		
+		
+		
+		
+	var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://find-spin-api.spincar.com/image-syndication/v2/customer/6628",
+  "method": "POST",
+  "headers": {
+    "content-type": "application/json",
+    "client-id": "AeneasExportingimages",
+    "auth": "a3648405a4447e6ef7f2cf9ef9af4f6e6ba8402d0d8e0470490a5faefebbfe4de86a2714e97d90dfed8869b24b90612454fceb266c42f8b37d6fe77aada04287",
+    "cache-control": "no-cache",
+    "postman-token": "03908bd6-6ebd-97ba-fdc1-b7fea156f87f"
+  },
+  "processData": false,
+  "data": "\n{\n\"ids\" : \n[\"1Z87482434326\",\"#{carBean.selectedCar.uuid}\"]\n,\n\"allow_no_exterior\": true,\n\"include_third_party_closeups\": false,\n\"include_image_type\": false,\n\"include_raw_images\": false\n}"
+}
+
+$.ajax(settings).done(function (response) {
+var zip = new JSZip();
+	var img = zip.folder("Images3D");
+	
+images3D = response['vehicles'][0]['images'];
+  
+  $.each(images3D, function (key, val) {
+		filename=val['url'];
+	imgData = downloadEachImageOutSide(filename);
+	img.file(val['label']+".jpg", imgData);
+	
+    });
+	
+	
+	
+var img = zip.folder("Images");
+			<ui:repeat var="variable" value="#{carBean.images}">
+			filename="#{variable}";
+			imgData = downloadEachImage(filename);
+			img.file(filename, imgData);
+			</ui:repeat>
+			
+			
+			var img = zip.folder("Loading Images");
+			<ui:repeat var="variable" value="#{carBean.loadingImages}">
+			filename="#{variable}";
+			imgData = downloadEachImage(filename);
+			img.file(filename, imgData);
+			</ui:repeat>
+			
+			
+			
+			
+			zip.generateAsync({type:"blob"})
+			.then(function(content) {
+			    // see FileSaver.js
+			    saveAs(content, "#{carBean.selectedCar.uuid}.zip");
+			});
+			
+	
+	
+});
+
+	
+	
+	
+	
+
+	
+	
+			
+		}
+		</script>
+		
+		
+		
+		
+		 <script>
+     $.ajax({
+         url: "https://find-spin-api.spincar.com/provider-api/smartopal/AeneasExportingllc.com/#{carBean.selectedCar.uuid}?auth=524491e15e7340e6f3963a14988a846d0b2e99f4ef024386d77590f389b4403ab424b06d317a29f4b8bc7e92f78897244faa0120d3e8d1d0bbc4ba17fede1da2",
+         type: "GET",
+         datatype: 'json',
+         success: function( data, status, xhttp) {
+              // data will be true or false if you returned a json bool
+              if(data.status=="ok"){
+            	  console.log(data.vehicle.url);
+            	  
+            	  var $iframe = $('#spinCar');
+            	    if ($iframe.length) {
+            	        $iframe.attr('src',data.vehicle.url);
+            	    }
+            	    
+              }else{
+            	  $('#spinCarContainer').hide();
+            	  $('#spinCarContainerFalse').show();
+              }
+              
+         },
+         async: false // this is generally bad, it will lock up your browser while it returns, but the only way to fit it into your pattern.
+     });
+     </script>
+		
+		
+		<!-- End of All Images -->
+	 </p:panel>
+     
+     
+     
+     
+     
+		
+	</ui:define>
+	
+		
+	
+</ui:composition>
+</html>

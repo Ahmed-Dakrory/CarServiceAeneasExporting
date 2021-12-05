@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/dashboard2.xhtml">
+
+
+	<ui:define name="title"> Aeneas Exporting LLC</ui:define>
+	
+	 <ui:define name="mainHead"> 
+			       <ul class="mn-sub"><li class="mn-sub-item mn-item-freight"><a href="vehicleList.jsf" class="mn-sub-item-current"><b>Freight List</b></a></li></ul>
+           
+			</ui:define>
+
+	<ui:define name="content">
+	<style>
+	
+	.table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+	vertical-align: middle;
+    border: 1px solid #dddddd;
+    font-size: 11px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+
+
+	</style>
+	
+	
+	<style>
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+    margin: 5px;
+    float: left;
+    width: 23.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+        <form name="aspnetForm" method="post" action="./vehicleList.jsf" id="aspnetForm">
+
+
+#{carLandingBean.refresh()}
+            <div id="content">
+                
+    <input name="ctl00$BodyHolder$hdClient_ID" type="hidden" id="ctl00_BodyHolder_hdClient_ID" value="47089" />
+    <!-- page src -->
+    <table border="0" class="content-table" cellspacing="0" cellpadding="5" >
+        <tbody>
+            <tr valign="top">
+                <td width="100%">
+                    <!-- Table 1 -->
+                    <table width="100%" cellspacing="0" cellpadding="1" border="0" bgcolor="#003399">
+                        <tr>
+                            <td>
+                                <table width="100%" cellspacing="0" cellpadding="8" border="0" bgcolor="#ffffff">
+                                    <tr>
+                                        <td>
+                                            <!-- Table name block -->
+                                            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                <tr>
+                                                    <td class="blkname" style="width: 20%; height: 22px;">
+                                                        <nobr>&nbsp;Gallery List<span id="ctl00_BodyHolder_lblCount">: #{carLandingBean.listOfAddedCars.size()}</span></nobr>
+                                                    </td>
+                                                    <td style="height: 22px">
+                                                        
+                                                    </td>
+                                                    <td style="height: 22px">
+                                                        &nbsp;
+                                                    </td>
+                                                   
+                                                </tr>
+                                            </table>
+                                         
+                                            <img src="#{resource['images:dumb.gif']}" width="1" height="3"/><br></br>
+                                            <table cellspacing="4" cellpadding="0" border="0" width="100%">
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%" cellspacing="0" cellpadding="1" border="0" bgcolor="#cccccc">
+                                                            <tr>
+                                                                <td>
+                                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#f7f7f7">
+                                                                        <tr height="25" bgcolor="#dcdcdc" >
+                                                                            <td>
+                                                                                &nbsp; <font class="tblhdr">Filter</font><a href="editlist?group=-1" class="navlink">
+                                                                                </a>
+                                                                            </td>
+                                                                            <td colspan="4">
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr height="2">
+                                                                            <td colspan="5" bgcolor="#ffffff">
+                                                                            </td>
+                                                                        </tr>
+                                                                       
+                                                                        
+                                                                        
+                                                                        <tr height="2">
+                                                                            <td colspan="4">
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <img src="#{resource['images:dumb.gif']}" width="1" height="3"/><br></br>
+                                            <!-- Client DataGrid-->
+                                            <section class="panel">
+                                            		
+						   <h:form>
+									<h:commandButton value="Add New Image to Gallery" action="#{carLandingBean.addCarForMain()}" class="btn btn-default" ></h:commandButton>
+								</h:form>
+								
+							<div class="panel-body">
+							
+							
+					
+								
+								
+								
+								
+															<!-- Photo Grid -->
+
+	<ui:repeat var="data" value="#{carLandingBean.listOfAddedCars}">
+	
+	
+	<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="/images/?file=#{data.mainImage}">
+      <img src="/images/?file=#{data.mainImage}" alt="image#{data.mainImage}" style="width:100%;height:200px;"/>
+    </a>
+   
+    <div class="desc">
+		 <h:form>
+			<p:commandLink rendered="#{loginBean.theUserOfThisAccount.role==0?'true':'false'}" value="#{data.uuid}" action="#{carLandingBean.selectCarForMain(data.id)}" style="font-size:15px;"/>
+		</h:form>
+	</div>
+  </div>
+</div>
+
+											
+											
+									</ui:repeat>
+  
+  
+							
+	
+	
+								
+							</div>
+						</section>
+                                       
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- End of Table 1 -->
+                    <img src="#{resource['images:dumb.gif']}" width="1" height="3"/><br></br>
+                    <p>
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+            </div>  
+        </form>
+        
+     
+	</ui:define>
+	
+		
+	
+</ui:composition>
+</html>

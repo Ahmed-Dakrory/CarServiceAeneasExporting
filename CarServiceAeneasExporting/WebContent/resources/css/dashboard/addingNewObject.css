@@ -1,0 +1,259 @@
+#formImage{
+			
+		}
+		
+		
+		.squareImage2 {
+    width: 162px;
+    height: 162px;
+    border-width: 2px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #fcfcfc;
+    box-shadow: 0px 1px 7px rgba(0,0,0,0.5), inset 0px 0px 11px rgba(0,0,0,0.5);
+}
+
+.squareImage3 {
+    width: 262px;
+    height: 262px;
+    border-style: solid;
+    border-color: #fcfcfc;
+    box-shadow: 0px 1px 7px rgba(0,0,0,0.5), inset 0px 0px 11px rgba(0,0,0,0.5);
+}
+
+		.PlusButton2 {
+    vertical-align: middle;
+    height: 31px;
+    width: 31px;
+    background: #fafafa;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.5), inset 0px 1px 2px rgba(0,0,0,0.5);
+    font-size: x-large;
+    padding-top: 6px;
+    border-radius: 5px;
+    padding-left: 8px;
+}
+
+.PlusButton2:hover {
+   vertical-align: middle;
+    height: 31px;
+    width: 31px;
+    background: #fafafa;
+    box-shadow: 0px 0px 0px rgba(0,0,0,0.5), inset 0px 1px 2px rgba(0,0,0,0.5);
+    font-size: x-large;
+    padding-top: 6px;
+    border-radius: 5px;
+    padding-left: 8px;
+}
+		.inactive{
+		background: beige;
+		}
+	.imageItem{
+		height: 87px;
+	    width: 87px;
+	    border-radius: 11px;
+	    margin-right: 14px;
+	}
+	.itemDiv{
+		 margin-left: 7%;
+   		 width: fit-content;
+	}
+		.classColumn3 {
+    text-align: -webkit-center;
+    padding: 0;
+    margin: 0;
+}
+
+	.classColumn4 {
+    text-align: -webkit-center;
+    padding: 0;
+    margin-left: 3%;
+}
+
+
+		.rowObjectAlone{
+		width: 58%;
+    height: 36px!important;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 4%;
+    margin-top: 1%;
+    text-align: -webkit-center;
+		}
+		.squareImage{
+			width: 100%;
+		    height: 100%;
+		    border-radius: 4%;
+		    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+		}
+		.labelH4Column{
+		   margin-top: initial;
+		    font-family: sans-serif;
+		    font-weight: 600;
+		    font-size: small;
+		    color: #8f9090;
+		    width: max-content;
+		    float: left;
+		    text-align-last: start;
+		    padding-right: 5%;
+				   
+		   }
+		.selectorColumn{
+			    width: 100%;
+			    border-radius: 3px;
+			    text-align: start;
+			    padding-left: 3%;
+			    height: 36px!important;
+			    padding: 0;
+			    border: solid;
+			    border-width: 1px;
+			    margin-bottom: 10%;
+			    color: #777777;
+			    border-color: #a8a8a8;
+			    box-shadow: 0px 0px 0px rgba(0,0,0,0.5), inset 0px 2px 2px rgba(0,0,0,0.5);
+    
+    }
+    
+    .ui-button-text-only .ui-button-text {
+    	padding: 0;
+    	padding-top: 7px;
+    	padding-bottom: 7px;
+	}
+		.inputColumn{
+			width: 100%;
+		    border-radius: 3px;
+		    text-align: start;
+		    padding-left: 3%;
+		    max-height: 36px;
+		    margin-bottom: 10%;
+		    color: #777777;
+		}
+		
+		.inputColumn2{
+			width: 100%;
+		    border-radius: 3px;
+		    text-align: start;
+		    padding-left: 3%;
+		    max-height: 36px;
+		    margin-bottom: 2%;
+		    color: #777777;
+		}
+		
+		.selectorColumn2 {
+    width: 100%;
+    border-radius: 3px;
+    text-align: start;
+    padding-left: 3%;
+    height: 31px!important;
+    padding: 0;
+    border: solid;
+    border-width: 1px;
+    margin-bottom: 3%;
+    color: #777777;
+    border-color: #a8a8a8;
+    box-shadow: 0px 0px 0px rgba(0,0,0,0.5), inset 0px 2px 2px rgba(0,0,0,0.5);
+}
+
+.PlusButton {
+   vertical-align: middle;
+    height: 31px;
+    width: 31px;
+    background: #fafafa;
+    box-shadow: 0px 0px 0px rgba(0,0,0,0.5), inset 0px 2px 2px rgba(0,0,0,0.5);
+}
+
+		.inputColumnSelectOneButton{
+			width: 100%;
+		    text-align: start;
+		    padding-left: 3%;
+		    height: 36px!important;
+		    padding: 0;
+		    margin-bottom: 10%;
+		}
+		
+		.ui-buttonset .ui-button {
+		   width: 50%;
+		    font-size: smaller;
+		    height: auto;
+		    text-align: -webkit-center;
+		}
+		.DescriptionColumn{
+			width: 100%;
+		    border-radius: 3px;
+		    text-align: start;
+		    padding-left: 3%;
+		    max-height: 116px;
+		    color: #777777;
+		}
+		
+		.labelH4ColumnTr{
+		 vertical-align: top;
+		}
+		
+		.inputColumnTr{
+		 vertical-align: top;
+		}
+		
+		.firstColMain{
+			padding-right: 193px;
+		}
+		.panel-body2{
+			    background: white;
+			    width: 100%;
+			    border-radius: 11px;
+			 
+		}
+		.classColumn{
+			text-align: -webkit-left;
+			padding: 0;
+   			margin: 0;
+		}
+		
+		.classColumn2{
+			text-align: -webkit-left;
+		}
+		.tableItSelfDiv{
+			width: -webkit-fill-available;
+		    margin-right: 5%;
+		    margin-left: 5%;
+		}
+			.buttonAttachIvoice {
+				-moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+			    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+			    box-shadow: inset 0px 1px 0px 0px #ffffff;
+			    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+			    background: -moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+			    background: -webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+			    background: -o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+			    background: -ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+			    background: linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+			    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
+			    background-color: #f9f9f9;
+			    -moz-border-radius: 6px;
+			    -webkit-border-radius: 6px;
+			    border-radius: 6px;
+			    border: 1px solid #dcdcdc;
+			    display: inline-block;
+			    cursor: pointer;
+			    color: #666666;
+			    font-family: Arial;
+			    font-size: unset;
+			    font-weight: bold;
+			    padding: 0px 13px;
+			    text-decoration: none;
+			    text-shadow: 0px 1px 0px #ffffff;
+			}
+			.buttonAttachIvoice:hover {
+				background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+				background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+				background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+				background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+				background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+				background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
+				background-color:#e9e9e9;
+			}
+			.buttonAttachIvoice:active {
+				position:relative;
+				top:1px;
+			}
+		

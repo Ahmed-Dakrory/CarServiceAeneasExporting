@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/dashboard2.xhtml">
+
+	<ui:define name="title"> Aeneas Exporting LLC</ui:define>
+
+ <ui:define name="mainHead"> 
+			       <ul class="mn-sub"><li class="mn-sub-item mn-item-quotelist"><a href="QuoteList.jsf" class="mn-sub-item-current"><b>Quote List</b></a></li></ul>
+           
+			</ui:define>
+
+	<ui:define name="content">
+     #{quoteBean.refresh()}
+      <h:form name="aspnetForm" id="aspnetForm">
+
+
+
+
+
+            <div id="content">
+                
+    <!-- page src -->
+    <table border="0" class="content-table" cellspacing="0" cellpadding="5" >
+        <tbody>
+            <tr valign="top">
+                <td width="100%">
+                    <!-- Table 1 -->
+                    <table width="100%" cellspacing="0" cellpadding="1" border="0" bgcolor="#003399">
+                        <tr>
+                            <td>
+                                <table width="100%" cellspacing="0" cellpadding="8" border="0" bgcolor="#ffffff">
+                                    <tr>
+                                        <td>
+                                            <!-- Table name block -->
+                                            <!-- Client DataGrid-->
+                                            <table cellspacing="4" cellpadding="0" border="0" width="100%">
+                                                <tr>
+                                                    <td>
+                                               
+                                               <section class="panel">
+							
+							<div class="panel-body">
+								<table class="table table-bordered table-striped mb-none" id="datatable-tabletools" data-swf-path="assets/vendor/jquery-datatables/extras/TableTools/swf/copy_csv_xls_pdf.swf">
+									<thead>
+										<tr>
+											<th>Quote</th>
+											<th>Shipping Date</th>
+											<th class="hidden-phone">Origin</th>
+											<th class="hidden-phone">Destination</th>
+											<th class="hidden-phone">Mode</th>
+											<th class="hidden-phone">Load Type</th>
+											<th class="hidden-phone">Commodity</th>
+											<th class="hidden-phone">Pieces</th>
+											<th class="hidden-phone">Declared Value</th>
+											<th class="hidden-phone">Note</th>
+										</tr>
+									</thead>
+									<tbody>
+										
+											<ui:repeat var="var" value="#{quoteBean.allQuotes}">
+											<tr align="left" class="gradeX">
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+												#{var.id}
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													#{carBean.getFormatedDate(var.dateOfShipment)}
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													#{carBean.getTheDestination(var.fromPort)}
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													#{carBean.getTheDestination(var.toPort)}
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													#{var.mode==1?'Container':''}
+													#{var.mode==2?'RO-RO':''}
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													#{var.loadtype==1?'LCL':''}
+													#{var.loadtype==2?'FCL':''}
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													#{var.commodity==0?'Vehicle':''}
+													#{var.commodity==1?'General Cargo':''}
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													#{var.pieces}
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													#{var.declaredvalue}
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													#{var.note}
+												</td>
+											</tr>
+											
+											</ui:repeat>
+											
+											
+											
+										
+									</tbody>
+								</table>
+							
+							
+							</div>
+						</section>
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <img src="#{resource['images:dumb.gif']}" width="1" height="3"/><br></br>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- End of Table 1 -->
+                    <img src="#{resource['images:dumb.gif']}" width="1" height="3"/><br></br>
+                   
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" bgcolor="white">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+            </div>  
+        </h:form>
+     
+	</ui:define>
+	
+		
+	
+</ui:composition>
+</html>

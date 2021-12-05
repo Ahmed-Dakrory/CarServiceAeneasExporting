@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/dashboard2.xhtml">
+
+
+	<ui:define name="title"> Aeneas Exporting LLC</ui:define>
+ <ui:define name="mainHead"> 
+			       <ul class="mn-sub"><li class="mn-sub-item mn-item-vendors"><a href="shipperList.jsf" class="mn-sub-item-current"><b>shipper List</b></a></li></ul>
+           
+			</ui:define>
+
+	<ui:define name="content">
+     #{shipperBean.refresh()}
+             <h:form name="aspnetForm" method="post" action="./shipperList.jsf" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTMyOTAxODcyNQ8WAh4LT3JpZ2luYWxVcmwFN2h0dHBzOi8vd3d3LnVzYXRydC5jb20vYXBwL1VzZXJQYWdlcy9jb25zaWduZWVMaXN0LmFzcHgWAmYPZBYEAgIPDxYCHgRUZXh0BSdVc2VyOiBUYXJlayBTYWxsYWJpICg8c3Bhbj5Vc2VyPC9zcGFuPilkZAIED2QWAgIBD2QWCAIBDw8WAh8BBQM6IDhkZAIDDw9kFgQeC29ubW91c2VvdmVyBRh0aGlzLnN0eWxlLmN1cnNvcj0naGFuZCceCm9ubW91c2VvdXQFG3RoaXMuc3R5bGUuY3Vyc29yPSdkZWZhdWx0J2QCBQ8PZBYEHwIFGHRoaXMuc3R5bGUuY3Vyc29yPSdoYW5kJx8DBRt0aGlzLnN0eWxlLmN1cnNvcj0nZGVmYXVsdCdkAhEPPCsACwEADxYIHghEYXRhS2V5cxYAHgtfIUl0ZW1Db3VudAIIHglQYWdlQ291bnQCAR4VXyFEYXRhU291cmNlSXRlbUNvdW50AghkFgJmD2QWEAIBD2QWDmYPDxYCHwEFBTQ3MDkwZGQCAQ9kFgJmDw8WBB8BBQowMTA4MzQwNjE5HgtOYXZpZ2F0ZVVybAUkdmVuZG9yRWRpdC5hc3B4P2lkPTQ3MDkwJm1vZGU9c2VsZWN0ZGQCAg8PFgIfAQULRGFyIEFsbWF6YWRkZAIDDw8WAh8BBQlUYXJlayBBbGlkZAIEDw8WAh8BBQ4wMDIxODkxNTUyOTgxNWRkAgUPDxYCHwEFBiZuYnNwO2RkAgYPZBYCZg8PFgQfAQUUbS5hYnVzaG9mYUBnbWFpbC5jb20fCAUbbWFpbHRvOm0uYWJ1c2hvZmFAZ21haWwuY29tZGQCAg9kFg5mDw8WAh8BBQU0NzA5MmRkAgEPZBYCZg8PFgQfAQUKMDEwODM0MDYyMR8IBSR2ZW5kb3JFZGl0LmFzcHg/aWQ9NDcwOTImbW9kZT1zZWxlY3RkZAICDw8WAh8BBQhBZGF3bGlhYWRkAgMPDxYCHwEFDVRhcmVrIFNhbGxhYmlkZAIEDw8WAh8BBQYmbmJzcDtkZAIFDw8WAh8BBQYmbmJzcDtkZAIGD2QWAmYPDxYEHwEFFHRzYWxsYWJpNTVAZ21haWwuY29tHwgFG21haWx0bzp0c2FsbGFiaTU1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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="88B4B752" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAA1RCkE6u/6uOCyRBkoMrskGLx7fKNzlj0fP4iFkt5vkDKjVnI1aHqd3BKqvyfJlrR7ghBaTGSi+Vh3xUddSqGXa64jz+FgITGdTAl6Nl+NXSFJWcFFlihPc2E0B9EaIo/gbeywvB+Rf8WQyQ5FiZAHWMfcE8LRAM2mxsvStdpwc9XeDOOE2Th+/qvFAwWWIIzbaj94pJhNSRjJV2BNb3Z2QRKHzuxZ1fRu7Nu4yE+K7Q5/9qh2QKtJ8QTG1Llto9+zDLUfDgCDFmHcVSoW7tHEaV0FZipjjXm5qNkYNFtb6Z+mc/Zw=" />
+</div>
+            <div id="content">
+                
+    <!-- page src -->
+    <table border="0" class="content-table" cellspacing="0" cellpadding="5">
+        <tbody>
+            <tr valign="top">
+                <td width="100%">
+                
+                
+                
+						
+                    <!-- Table 1 -->
+                    <table width="100%" cellspacing="0" cellpadding="1" border="0" bgcolor="#003399">
+                        <tr>
+                            <td>
+                                <table width="100%" cellspacing="0" cellpadding="8" border="0" bgcolor="#ffffff">
+                                    <tr>
+                                        <td>
+                                            <!-- Table name block -->
+                                            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                <tr>
+                                                    <td class="blkname" width="100%">
+                                                        &nbsp;shipper List
+                                                    </td>
+                                                    
+                                                </tr>
+                                            </table>
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-top: 4px">
+                                                <tr>
+                                                    <td style="height: 22px">
+                                                        &nbsp;
+                                  						 <h:commandButton name="ctl00$BodyHolder$cmdAddshipper" value="Add New shipper" id="ctl00_BodyHolder_cmdAddshipper" action="#{shipperBean.goToAddNewshipper()}" class="btn btn-default" style="#{(loginBean.theUserOfThisAccount.role==1)?'display:none;':''} font-family:Verdana;font-size:10px;font-weight:bold;width:120px;"></h:commandButton>
+								                    </td>
+                                                    
+                                                </tr>
+                                            </table>
+                                            <!-- End of Table name block -->
+                                           <img src="#{resource['images:dumb.gif']}" width="1" height="3"/><br></br>
+                                            <!-- Client DataGrid-->
+                                            
+                                            <section class="panel">
+							
+							<div class="panel-body">
+								<table class="table table-bordered table-striped mb-none" id="datatable-tabletools" data-swf-path="assets/shipper/jquery-datatables/extras/TableTools/swf/copy_csv_xls_pdf.swf">
+									<thead>
+										<tr>
+											<th>Account#</th>
+											<th>Company</th>
+											<th class="hidden-phone">Name</th>
+											<th class="hidden-phone">Phone</th>
+											<th class="hidden-phone">Mobile</th>
+											<th class="hidden-phone">Email</th>
+											<th class="hidden-phone">Invoice</th>
+										</tr>
+									</thead>
+									<tbody>
+										
+											<ui:repeat var="var" value="#{shipperBean.allshippers}">
+											<tr align="left" class="gradeX">
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+												<h:commandLink value="#{var.userId.id}" action="#{shipperBean.selectshipper(var.id)}"/>
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													#{var.userId.company}
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													#{var.userId.firstName} #{var.userId.lastName}
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													#{var.userId.phone}
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													#{var.userId.mobilePhone}
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													<a href="mailto:#{var.userId.email}" target="_blank">#{var.userId.email}</a>
+												</td>
+												
+												<td class="center hidden-phone" style="background-color:#FAFAFA;">
+													<p:commandButton class="fa fa-money" action="#{shipperBean.invoiceDetails(var.id)}" style="padding: 5%;background: white; width: 25px;height: 25px;" value=""/>
+												</td>
+											</tr>
+											
+											</ui:repeat>
+											
+											
+											
+										
+									</tbody>
+								</table>
+							
+							
+							</div>
+						</section>
+                                            
+                                            
+                                            <img src="#{resource['images:dumb.gif']}" width="1" height="3"/><br></br>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- End of Table 1 -->
+                    <img src="#{resource['images:dumb.gif']}" width="1" height="3"/><br></br>
+                    <!-- Buttons block -->
+                    <!--
+			<table width="100%" cellspacing="0" cellpadding="1" border="0" bgcolor="#CCCCCC">
+				<tr>
+					<td>
+						<table width="100%" cellspacing="0" cellpadding="5" border="0" bgcolor="#F7F7F7">
+							<tr>
+								<td>
+									<table cellspacing="0" cellpadding="0" border="0">
+										<tr>
+		 									<TD width="100%"><IMG src="#{resource['images:dumb.gif']}" width="10" height="1"/></TD>
+											<TD class="blkhdr" height="23"></TD>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			-->
+                    <!-- End of Buttons block -->
+                </td>
+            </tr>
+            <p>
+                <tr>
+                    <td colspan="2" bgcolor="white">
+                    </td>
+                </tr>
+            </p>
+        </tbody>
+    </table>
+
+            </div>  
+        </h:form>
+        
+     
+     
+	</ui:define>
+	
+		
+	
+</ui:composition>
+</html>

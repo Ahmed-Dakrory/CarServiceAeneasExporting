@@ -1,0 +1,658 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" 
+	lang="en">
+
+<h:head>
+
+<!-- Basic -->
+		<meta charset="UTF-8"/>
+
+		<meta name="keywords" content="Dakrory" />
+		<meta name="description" content="Dakrory"/>
+		<meta name="author" content="Dakrory"/>
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css"/>
+
+		<!-- Vendor CSS -->
+   		<link rel="stylesheet" href="#{resource['css:dashboard2/assets/vendor/bootstrap/css/bootstrap1.css']}" />
+   		<link rel="stylesheet" href="#{resource['css:dashboard2/assets/vendor/font-awesome/css/font-awesome.css']}" />
+
+		<!-- Specific Page Vendor CSS -->
+
+		<!-- Theme CSS -->
+   		<link rel="stylesheet" href="#{resource['css:dashboard2/assets/stylesheets/theme.css']}" />
+
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		<!-- Css Main -->
+ 		
+    <link rel="stylesheet" href="#{resource['css:dashboard2/assets/vendor/bootstrap/css/bootstrap.css']}" />
+    
+    
+     
+	<link rel="stylesheet" href="#{resource['css:style.css']}" />
+    <link rel="stylesheet" href="#{resource['css:styleCalendar.css']}" />
+   
+		<!-- Vendor CSS -->
+		
+    <link rel="stylesheet" href="#{resource['css:dashboard/assets/vendor/font-awesome/css/font-awesome.css']}" />
+    	
+    
+	
+	<!-- Theme CSS -->
+	<link rel="stylesheet" href="#{resource['css:dashboard/assets/stylesheets/theme.css']}" />
+    
+    <!-- Specific Page Vendor CSS -->
+	<link rel="stylesheet" href="#{resource['css:dashboard/assets/vendor/pnotify/pnotify.custom.css']}" />
+		<!--End Css Main -->
+	
+	
+	
+    	<!-- Head Libs -->
+    	
+		<h:outputScript name="css/dashboard2/assets/vendor/modernizr/modernizr3.js"/>
+		
+	
+	
+	
+		<title>
+			<ui:insert name="title"> 
+					   
+		   		ADAWLIAA
+			</ui:insert>
+		</title>
+	
+		<link rel="icon" type="image/png" href="#{resource['images:logo.png']}"/>
+	
+		 
+
+    
+		</h:head>
+
+   		<h:body> 
+<style>
+
+.nano-content{
+margin-right: 0!important;
+}
+
+a:hover{
+cursor: pointer;
+}
+</style>
+		
+		
+		<section class="body">
+
+			<!-- start: header -->
+			<header class="header">
+				<div class="logo-container">
+					<a href="/" class="logo">
+					
+						<img style="position: absolute;top: -3px;height: 57px;" src="/resources/images/logoBill.png"/>
+					</a>
+					<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+						<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+					</div>
+				</div>
+			
+				<!-- start: search & user box -->
+				<div class="header-right">
+			<!--
+					<form action="pages-search-results.html" class="search nav-form">
+						<div class="input-group input-search">
+							<input type="text" class="form-control" name="q" id="q" placeholder="Search..."/>
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+							</span>
+						</div>
+					</form>
+			
+					<span class="separator"></span>
+			  
+					<ul class="notifications">
+						<li>
+							<a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+								<i class="fa fa-tasks"></i>
+								<span class="badge" style="display:none;">0</span>
+							</a>
+			
+							<div class="dropdown-menu notification-menu large">
+								<div class="notification-title">
+									<span class="pull-right label label-default" >0</span>
+									Tasks
+								</div>
+			
+								<div class="content">
+									<ul>
+									
+										<li>
+											<p class="clearfix mb-xs">
+												<span class="message pull-left">Generating Sales Report</span>
+												<span class="message pull-right text-dark">60%</span>
+											</p>
+											<div class="progress progress-xs light">
+												<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+											</div>
+										</li>
+			 
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+								<i class="fa fa-envelope"></i>
+								<span class="badge" style="display:none;">0</span>
+							</a>
+			
+							<div class="dropdown-menu notification-menu">
+								<div class="notification-title">
+									<span class="pull-right label label-default">0</span>
+									Messages
+								</div>
+			
+								<div class="content">
+									<ul>
+									
+									
+										<li>
+											<a href="#" class="clearfix">
+												<figure class="image">
+													<img src="/resources/images/!happy-face.png" alt="Joseph Doe Junior" class="img-circle" />
+												</figure>
+												<span class="title">Joseph Doe</span>
+												<span class="message">Lorem ipsum dolor sit.</span>
+											</a>
+										</li>
+										
+									</ul>
+			
+									<hr />
+			
+									<div class="text-right">
+										<a href="#" class="view-more">View All</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+								<i class="fa fa-bell"></i>
+								<span class="badge" style="display:none;">3</span>
+							</a>
+			
+							<div class="dropdown-menu notification-menu">
+								<div class="notification-title">
+									<span class="pull-right label label-default">0</span>
+									Alerts
+								</div>
+			
+								<div class="content">
+									<ul>
+									
+										<li>
+											<a href="#" class="clearfix">
+												<div class="image">
+													<i class="fa fa-thumbs-down bg-danger"></i>
+												</div>
+												<span class="title">Server is Down!</span>
+												<span class="message">Just now</span>
+											</a>
+										</li>
+										 
+									</ul>
+			
+									<hr />
+			
+									<div class="text-right">
+										<a href="#" class="view-more">View All</a>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+			-->
+					<span class="separator"></span>
+			
+					<div id="userbox" class="userbox">
+						<a href="#" data-toggle="dropdown">
+							<figure class="profile-picture">
+								<h:graphicImage value="#{loginBean.theUserOfThisAccount.getphoto()}"  class="img-circle" alt=""/>
+							
+							</figure>
+							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@JSOFT.com">
+								<span class="name">#{loginBean.theUserOfThisAccount.firstName} #{loginBean.theUserOfThisAccount.lastName}</span>
+								<span class="role">#{loginBean.theUserOfThisAccount.getRoleString()} </span>
+							</div>
+			
+							<i class="fa custom-caret"></i>
+						</a>
+			
+						<div class="dropdown-menu">
+							<ul class="list-unstyled">
+								<li class="divider"></li>
+								<li>
+									<a role="menuitem" tabindex="-1" href="/pages/secured/userData/userProfile.jsf?faces-redirect=true	"><i class="fa fa-user"></i> My Profile</a>
+								</li>
+								<li>
+									<a role="menuitem" tabindex="-1" onclick="logoutJS()"><i class="fa fa-power-off"></i> Logout</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+					<h:form>
+					<p:remoteCommand name="logoutJS" action="#{loginBean.logOut}"></p:remoteCommand>
+				</h:form>
+				<!-- end: search & user box -->
+			</header>
+			<!-- end: header -->
+
+					<div class="inner-wrapper">
+				<!-- start: sidebar -->
+					<aside id="sidebar-left" class="sidebar-left">
+					
+						<div class="sidebar-header">
+							<div class="sidebar-title">
+								Navigation
+							</div>
+							<div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
+								<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+							</div>
+						</div>
+					
+						<div class="nano">
+							<div class="nano-content">
+								<nav id="menu" class="nav-main" role="navigation">
+									<ul class="nav nav-main">
+										<li class="nav-active">
+											<a href="/">
+												<i class="fa fa-home" aria-hidden="true"></i>
+												<span>Main Page</span>
+											</a>
+										</li>
+										<li>
+											<a href="/pages/secured/userData/vehicleList.jsf?faces-redirect=true">
+												<span class="pull-right label label-primary"></span>
+												<i class="fa  fa-car" aria-hidden="true"></i>
+												<span>Inventory List</span>
+											</a>
+										</li>
+										<li class="nav-parent">
+											<a>
+												<i class="fa fa-user" aria-hidden="true"></i>
+												<span>My Profile</span>
+											</a>
+											<ul class="nav nav-children">
+												<li>
+													<a href="/pages/secured/userData/userProfile.jsf?faces-redirect=true">
+														 User Profile
+													</a>
+												</li>
+												<li>
+													<a href="/pages/secured/userData/contactInfo.jsf?faces-redirect=true">
+														 Contact Info
+													</a>
+												</li>
+												
+												
+											</ul>
+										</li>
+										<li class="nav-parent">
+											<a >
+												<i class="fa fa-child" aria-hidden="true"></i>
+												<span>Manage Accounts</span>
+											</a>
+											
+											<ul class="nav nav-children">
+												<li style="display:#{(loginBean.theUserOfThisAccount.role==0)?'block':'none'};">
+													<a href="/pages/secured/shipper/shipperList.jsf?faces-redirect=true">
+														 Shipper List
+													</a>
+												</li>
+												<li style="display:#{(loginBean.theUserOfThisAccount.role==0)?'block':'none'};">
+													<a href="/pages/secured/mainTwo/mainTwoList.jsf?faces-redirect=true">
+														 Followers List
+													</a>
+												</li>
+												
+												<li style="display:#{(loginBean.theUserOfThisAccount.role==0||loginBean.theUserOfThisAccount.role==1)?'block':'none'};">
+													<a href="/pages/secured/vendor/vendorList.jsf?faces-redirect=true">
+														 Vendor List
+													</a>
+												</li>
+												
+												<li style="display:#{(loginBean.theUserOfThisAccount.role==0||loginBean.theUserOfThisAccount.role==1||loginBean.theUserOfThisAccount.role==2)?'block':'none'};">
+													<a href="/pages/secured/customer/customerList.jsf?faces-redirect=true">
+														 Customer List
+													</a>
+												</li>
+												
+												<li style="display:#{(loginBean.theUserOfThisAccount.role==0||loginBean.theUserOfThisAccount.role==1)?'block':'none'};">
+													<a href="/pages/secured/consignee/consigneeList.jsf?faces-redirect=true">
+														 Agencies List
+													</a>
+												</li>
+												
+												
+												
+												
+												
+												
+											</ul>
+											
+										</li>
+										<!-- <li style="display:#{(loginBean.theUserOfThisAccount.role==1)?'block':'none'};">
+											<a href="/pages/secured/vendor/QuoteList.jsf?faces-redirect=true">
+												<i class="fa fa-list-alt" aria-hidden="true"></i>
+												<span>Quote List</span>
+											</a>
+											
+										</li>
+										
+										<li  style="display:#{(loginBean.theUserOfThisAccount.role==2)?'block':'none'};">
+											<a href="/pages/secured/customer/QuoteList.jsf?faces-redirect=true">
+												<i class="fa fa-list-alt" aria-hidden="true"></i>
+												<span>Quote List</span>
+											</a>
+											
+										</li>
+										
+										<li  style="display:#{(loginBean.theUserOfThisAccount.role==1)?'block':'none'};">
+											<a href="/pages/secured/vendor/RequestAQuote.jsf?faces-redirect=true">
+												<i class="fa fa-plus-square" aria-hidden="true"></i>
+												<span>Add Quote </span>
+											</a>
+											
+										</li>
+										
+										<li  style="display:#{(loginBean.theUserOfThisAccount.role==1)?'block':'none'};">
+											<a href="/pages/secured/admin/car/AddNewInventory.jsf?faces-redirect=true">
+												<i class="fa fa-plus-square" aria-hidden="true"></i>
+												<span>Add Vehicle</span>
+											</a>
+											
+										</li> -->
+										
+										<li  style="display:#{(loginBean.theUserOfThisAccount.role==0)?'block':'none'};">
+											<a href="/pages/secured/shipper/car/vitView.jsf?faces-redirect=true">
+												<i class="fa fa-plus-square" aria-hidden="true"></i>
+												<span>Add Vehicle</span>
+											</a>
+											
+										</li>
+										
+										<li style="display:#{(loginBean.theUserOfThisAccount.role==5)?'block':'none'};">
+											<a href="/pages/secured/mainTwo/car/vitView.jsf?faces-redirect=true">
+												<i class="fa fa-plus-square" aria-hidden="true"></i>
+												<span>Add Vehicle</span>
+											</a>
+											
+										</li>
+										
+										<li  style="display:#{(loginBean.theUserOfThisAccount.role==0)?'block':'none'};">
+											<a href="/pages/secured/shipper/CarLandingPage/vehicleList.jsf?faces-redirect=true">
+												<i class="fa fa-external-link" aria-hidden="true"></i>
+												<span>Gallery</span>
+											</a>
+											
+										</li>
+										
+										<li class="nav-parent" style="display:#{(loginBean.theUserOfThisAccount.role==0)?'block':'none'};">
+											<a>
+												<i class="fa fa-calendar-o" aria-hidden="true"></i>
+												<span>Accounting</span>
+											</a>
+											<ul class="nav nav-children">
+												<li>
+													<a href="/pages/secured/shipper/invoice/invoiceList.jsf?faces-redirect=true">
+														 Invoices
+													</a>
+												</li>
+												<li>
+													<a href="/pages/secured/shipper/moneyBox/userOfBiding.jsf?faces-redirect=true">
+														MoneyBoxs
+													</a>
+												</li>
+												
+												
+											</ul>
+										</li>
+										
+										<li class="nav-parent" style="display:#{(loginBean.theUserOfThisAccount.role==1)?'block':'none'};">
+											<a>
+												<i class="fa fa-calendar-o" aria-hidden="true"></i>
+												<span>Invoices</span>
+											</a>
+											<ul class="nav nav-children">
+												<li>
+													<a href="/pages/secured/vendor/invoice/invoiceList.jsf?faces-redirect=true">
+														 Invoices
+													</a>
+												</li>
+												
+												
+												
+											</ul>
+										</li>
+										
+										
+										
+										<li class="nav-parent" style="display:#{(loginBean.theUserOfThisAccount.role==0)?'block':'none'};">
+											<a >
+												<i class="fa fa-child" aria-hidden="true"></i>
+												<span>Customs</span>
+											</a>
+										
+											
+											<ul class="nav nav-children">
+												<li style="display:#{(loginBean.theUserOfThisAccount.role==0)?'block':'none'};">
+													<a href="/pages/secured/admin/customs/customRequest/customList.jsf?faces-redirect=true">
+														 Customs List
+													</a>
+												</li>
+												
+												
+											</ul>
+											
+										</li>
+										<li class="nav-active" style="display:#{(loginBean.theUserOfThisAccount.role==0||loginBean.theUserOfThisAccount.role==1)?'block':'none'};">
+											<a href="/pages/secured/admin/shipmentList/docReceiptList.jsf?faces-redirect=true">
+												<i class="fa fa-external-link" aria-hidden="true"></i>
+												<span>Shipment List</span>
+											</a>
+										</li>
+										
+									</ul>
+								</nav>
+					<!--
+								<hr class="separator" />
+					
+								<div class="sidebar-widget widget-tasks">
+									<div class="widget-header">
+										<h6>Projects</h6>
+										<div class="widget-toggle">+</div>
+									</div>
+									<div class="widget-content">
+										<ul class="list-unstyled m-none">
+											<li><a href="#">JSOFT HTML5 Template</a></li>
+											<li><a href="#">Tucson Template</a></li>
+											<li><a href="#">JSOFT Admin</a></li>
+										</ul>
+									</div>
+								</div>
+					 
+								<hr class="separator" />
+					
+								<div class="sidebar-widget widget-stats">
+									<div class="widget-header">
+										<h6>Company Stats</h6>
+										<div class="widget-toggle">+</div>
+									</div>
+									<div class="widget-content">
+										<ul>
+											<li>
+												<span class="stats-title">Stat 1</span>
+												<span class="stats-complete">85%</span>
+												<div class="progress">
+													<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
+														<span class="sr-only">85% Complete</span>
+													</div>
+												</div>
+											</li>
+											<li>
+												<span class="stats-title">Stat 2</span>
+												<span class="stats-complete">70%</span>
+												<div class="progress">
+													<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+														<span class="sr-only">70% Complete</span>
+													</div>
+												</div>
+											</li>
+											<li>
+												<span class="stats-title">Stat 3</span>
+												<span class="stats-complete">2%</span>
+												<div class="progress">
+													<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
+														<span class="sr-only">2% Complete</span>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							 -->
+							
+							</div>
+					
+						</div>
+					
+					</aside>
+					<!-- end: sidebar -->
+
+					<section role="main" class="content-body">
+						<header class="page-header">
+							<h2>Dashboard</h2>
+						
+							
+						</header>
+
+						
+
+					<!-- start: page -->
+					
+					
+  <ui:insert name="content"> 
+    	 <ui:include src="content.xhtml"/> 
+  </ui:insert>
+					
+					<!-- end: page -->
+					
+				</section>
+			</div>
+
+			
+		</section>
+		
+		
+    <script src="/javax.faces.resource/Scripts/jquery-1.7.1.min.js.xhtml"></script>
+	<script src="/javax.faces.resource/Scripts/scm_main.js.xhtml"></script>
+		<script>
+
+	   jQuery.noConflict();
+	   
+	   </script>
+		<!-- Vendor -->
+		<h:outputScript name="js/dashboard2/assets/vendor/jquery/jquery.js"/>
+		<h:outputScript name="js/dashboard2/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"/>
+		<h:outputScript name="js/dashboard2/assets/vendor/bootstrap/js/bootstrap.js"/>
+		<h:outputScript name="js/dashboard2/assets/vendor/nanoscroller/nanoscroller.js"/>
+		
+		
+		<!-- Theme Base, Components and Settings -->
+		<h:outputScript name="js/dashboard2/assets/javascripts/theme.js"/>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+    <!-- Specific Page Vendor -->		
+		<h:outputScript name="js/dashboard/assets/vendor/select2/select2.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jquery-datatables/media/js/jquery.dataTables.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jquery-datatables-bs3/assets/js/datatables.js"/>
+		
+		
+		<!-- Examples -->
+		<h:outputScript name="js/dashboard/assets/javascripts/tables/examples.datatables.default.js"/>
+		<h:outputScript name="js/dashboard/assets/javascripts/tables/examples.datatables.row.with.details.js"/>
+		<h:outputScript name="js/dashboard/assets/javascripts/tables/examples.datatables.tabletools.js"/>
+	
+ 
+    
+    
+    
+    
+		
+		
+		   
+		 
+		<!-- Specific Page Vendor -->
+		<h:outputScript name="js/dashboard/assets/vendor/pnotify/pnotify.custom.js"/>
+		
+		<script>
+
+	   jQuery.noConflict();
+	   
+	   </script>
+	   
+		
+		<!-- Theme Base, Components and Settings -->
+		<h:outputScript name="js/dashboard/assets/javascripts/theme.js"/>
+		
+		<!-- Theme Custom -->
+		<h:outputScript name="js/dashboard/assets/javascripts/theme.custom.js"/>
+		
+		<!-- Theme Initialization Files -->
+		<h:outputScript name="js/dashboard/assets/javascripts/theme.init.js"/>
+		
+		
+
+
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		
+		
+		<h:outputScript name="js/dashboard2/assets/deleteCheckScripts.js"/>
+		
+		
+		  <ui:insert name="endOfContent"> 
+		    	
+		    	
+		  </ui:insert>
+		</h:body>
+
+</html>

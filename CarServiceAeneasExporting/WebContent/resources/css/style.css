@@ -1,0 +1,259 @@
+/*div.header{height:130px}*/
+div.header div.company{/* background:url('/resources/imgs/sprites.png'); */background-position:20px -396px;padding-left:20px;text-indent:-9999px;}
+div.header div.login{position:absolute;right: 31px;top: 12px;color: #887e7e;font-size:10pt;font-family:Arial;}
+div.header div.login a{color: #7b7171;text-decoration: none;}
+div.header div.login a.a1{margin-left:10px}
+div.header div.login span span{font-style:italic}
+div.header ul li{list-style-type:none;float:left}
+
+div.header ul.mn-main li a{text-align: -webkit-center;/* text-indent:-9999px; */text-decoration: none;-webkit-text-fill-color: #dedede;/* background:url('/resources/imgs/sprites.png'); */text-align: -webkit-center;padding-block-start: 13px;}
+div.header ul.mn-sub li a{/* text-indent:-9999px; *//* background:url('/resources/imgs/sprites.png'); */background: white;padding-top: 11px;text-align: -webkit-center;border-radius: 17px;}
+
+div.header-main{height: 137px;background: #606567 url(/resources/imgs/background6.jpg);background-repeat: no-repeat;background-size: cover;}
+div.logo {/* position:absolute; *//* right:20px; *//* top:10px; *//* color:#fff; *//* font-size:12pt; *//* background:#fff; *//* width: 10px; *//* height:60px; *//* background:url('/resources/images/logo.png'); *//* background-position:00px -340px; *//* text-indent:-9999px; */}
+table.content-table {width:100%}
+table.content-table div.trdatesrow { width: 770px; display: inline-block; }
+table.content-table input[type="text"].invalid { border:solid 1px red; }
+table.content-table span.errtext { color: red; }
+table.content-table td.notes-container { vertical-align: top; }
+
+div.header div.help{position:absolute;right:400px;top:10px;color:#fff;font-size:10pt;font-family:Arial}
+
+div.header div.header-main ul{padding-top: 91px;margin-left: 9%;}
+div.header div.header-main ul li{height:40px}
+div.header div.header-main ul li a{float:left;height:40px;background-position:0 -100px;border-left: solid 1px #3a3c44;border-right: solid 1px #3a3c44;}
+div.header div.header-main ul li a:hover{background-color: #024565;}
+div.header div.header-main ul li.mn-item-contacts a{width:130px;background-position:0 -100px}
+div.header div.header-main ul li.mn-item-contacts a:hover{background-position:0 -140px}
+div.header div.header-main ul li.mn-item-inventory a{width:130px;background-position:-120px -100px;text-align: center;}
+div.header div.header-main ul li.mn-item-inventory a:hover{background-position:-120px -140px}
+div.header div.header-main ul li.mn-item-transactions a{width:125px;background-position:-250px -100px}
+div.header div.header-main ul li.mn-item-transactions a:hover{background-position:-250px -140px}
+div.header div.header-main ul li.mn-item-reports a{width:130px;background-position:-380px -100px}
+div.header div.header-main ul li.mn-item-reports a:hover{background-position:-380px -140px}
+div.header div.header-main ul li.mn-item-accounting a{width:130px;background-position:-510px -100px}
+div.header div.header-main ul li.mn-item-accounting a:hover{background-position:-510px -140px}
+div.header div.header-main ul li.mn-item-settings a{width:130px;background-position:-640px -100px}
+div.header div.header-main ul li.mn-item-settings a:hover{background-position:-640px -140px}
+div.header div.header-main ul li.mn-item-freight a{width:130px;background-position:-740px -100px;text-align: center;}
+div.header div.header-main ul li.mn-item-freight a:hover{background-position:-740px -140px}
+div.header div.header-main ul li.mn-item-userprofile a{width:130px;background-position:-840px -100px;text-align: center;}
+div.header div.header-main ul li.mn-item-userprofile a:hover{background-position:-840px -140px}
+div.header div.header-main ul li.mn-item-contactinfo a{width:130px;background-position:-960px -100px;text-align: center;}
+div.header div.header-main ul li.mn-item-contactinfo a:hover{background-position:-960px -140px}
+div.header div.header-main ul li.mn-item-vendors a{width:130px;text-align: center;background-position:-1090px -100px;}
+div.header div.header-main ul li.mn-item-vendors a:hover{background-position:-1090px -140px}
+div.header div.header-main ul li.mn-item-consignees a{width:130px;background-position:-1220px -100px;text-align: center;}
+div.header div.header-main ul li.mn-item-consignees a:hover{background-position:-1220px -140px}
+div.header div.header-main ul li.mn-item-assgnagents a{width:140px;background-position:-1350px -100px}
+div.header div.header-main ul li.mn-item-assgnagents a:hover{background-position:-1350px -140px}
+div.header div.header-main ul li.mn-item-payload a{width:100px;background-position:-1500px -100px}
+div.header div.header-main ul li.mn-item-payload a:hover{background-position:-1500px -140px}
+
+div.header div.header-navigation ul{padding-left:20px;height:34px;background:#272a2b url('/resources/imgs/sprites.png');background-position:0 -251px;}
+div.header div.header-navigation ul li a{float:left;height: 47px;background-position:0 -180px;border:solid 0 #000;width: 192px;}
+div.header div.header-navigation ul li.mn-item-contacts a{background-position:-25px -180px;width:100px}
+div.header div.header-navigation ul li.mn-item-clients a{background-position:-128px -180px;width:90px}
+div.header div.header-navigation ul li.mn-item-consignee a{background-position:-218px -180px;width:110px}
+div.header div.header-navigation ul li.mn-item-agents a{background-position:-326px -180px;width:92px}
+div.header div.header-navigation ul li.mn-item-trucking a{background-position:-426px -180px;width:90px}
+div.header div.header-navigation ul li.mn-item-vendors a{background-position:-524px -180px;width: 170px;}
+div.header div.header-navigation ul li.mn-item-assgnagents a{background-position:-614px -180px;width:110px}
+div.header div.header-navigation ul li.mn-item-carriers a{background-position:-722px -180px;width:90px}
+div.header div.header-navigation ul li.mn-item-freight a{background-position:-821px -180px;width:90px}
+div.header div.header-navigation ul li.mn-item-booking a{background-position:-911px -180px;width:110px}
+div.header div.header-navigation ul li.mn-item-ocean a{background-position:-1018px -180px;width:121px}
+div.header div.header-navigation ul li.mn-item-enhanced a{background-position:-1232px -180px;width:97px}
+div.header div.header-navigation ul li.mn-item-notification a{background-position:-1332px -180px;width:110px}
+div.header div.header-navigation ul li.mn-item-periodic a{background-position:-1434px -180px;width:90px}
+div.header div.header-navigation ul li.mn-item-transaction a{background-position:-1521px -180px;width:110px}
+div.header div.header-navigation ul li.mn-item-ar a{background-position:-1628px -180px;width:72px}
+div.header div.header-navigation ul li.mn-item-ap a{background-position:-1698px -180px;width:72px}
+div.header div.header-navigation ul li.mn-item-quotelist a{background-position:-1769px -180px;width:99px}
+div.header div.header-navigation ul li.mn-item-tariff a{background-position:-1865px -180px;width:98px}
+div.header div.header-navigation ul li.mn-item-quoterequest a{background-position:-1960px -180px;width:135px}
+div.header div.header-navigation ul li.mn-item-userlist a{background-position:-2093px -180px;width:95px}
+div.header div.header-navigation ul li.mn-item-home a{background-position:-2187px -180px;width:107px}
+div.header div.header-navigation ul li.mn-item-mailedit a{background-position:-2292px -180px;width:94px}
+div.header div.header-navigation ul li.mn-item-currency a{background-position:-2385px -180px;width:120px}
+div.header div.header-navigation ul li.mn-item-sendemail a{background-position:-2505px -180px;width:110px}
+div.header div.header-navigation ul li.mn-item-reports a{background-position:-2620px -180px;width:85px}
+div.header div.header-navigation ul li.mn-item-useredit a{background-position:-2708px -180px;width:90px}
+div.header div.header-navigation ul li.mn-item-transactions a{background-position:-2795px -180px;width:110px}
+div.header div.header-navigation ul li.mn-item-userprofile a{background-position:-2906px -180px;width:115px}
+div.header div.header-navigation ul li.mn-item-contactinfo a{background-position:-3020px -180px;width:115px}
+div.header div.header-navigation ul li.mn-item-addinventory a{background-position:-3135px -180px;width:140px}
+div.header div.header-navigation ul li.mn-item-assigned a{background-position:-3405px -180px;width:90px}
+div.header div.header-navigation ul li.mn-item-intransit a{background-position:-3495px -180px;width:85px}
+div.header div.header-navigation ul li.mn-item-complete a{background-position:-3580px -180px;width:85px}
+div.header div.header-navigation ul li.mn-item-archive a{background-position:-3665px -180px;width:95px}
+div.header div.header-navigation ul li.mn-item-ratemanagement a{background-position:-3760px -180px;width:95px}
+div.header div.header-navigation ul li.mn-item-power-of-attorney a{background-position:-3855px -180px;width:95px}
+div.header div.header-navigation ul li.mn-item-ratedestination a{background-position:-5px -475px;width:105px}
+div.header div.header-navigation ul li.mn-item-rateorigin a{background-position:-110px -475px;width:95px}
+
+form{margin:0;padding:0}
+button,input[type="submit"]{color:#333 !important}
+h1{color:#000;font-size:22px;font-weight:400;margin:10px 0}
+h2{color:#000;/* font-size:18px; *//* font-weight:400; *//* margin:10px 0; */}
+h3{color:#000;font-size:14px;font-weight:700;margin:15px 0 10px}
+
+.c{clear:both;height:0;font-size:0}
+
+#header{padding-bottom:0}
+#logo{width:311px;border-left:0 solid #d9d9d9}
+#logo img{margin-left:20px}
+#flash{padding-top:1px}
+#terms{float:right}
+#copy{font-size:9px;color:Gray;padding-left:25em;padding-top:3px}
+.track input{margin:0 10px}
+.hwdclass{float:left;padding:0 3px 0 6px}
+.notes{width:355px}
+.login .sep{height:18px}
+#content h1{padding-left:223px;margin-bottom:20px}
+.info{font:11px 'Tahoma' , 'Verdana' , sans-serif;color:#000}
+.navlink{font:bold 10px 'Verdana' , 'Tahoma' , sans-serif;color:#4C4C4C;text-decoration:none}
+.navlink:hover{font:bold 10px 'Verdana' , 'Tahoma' , sans-serif;color:#4C4C4C;text-decoration:underline}
+.nav{font:bold 10px 'Verdana' , 'Tahoma' , sans-serif;color:#4C4C4C}
+.tblhdr{font:bold 11px 'Verdana' , 'Tahoma' , sans-serif;color:#000}
+.tbltxt{font:11px 'Verdana' , 'Tahoma' , sans-serif;color:#000}
+.ctrl{font:10px 'Verdana' , 'Tahoma' , sans-serif;color:#000;letter-spacing:-2px;text-decoration:none}
+.ctrl:hover{color:#FFB030}
+.blkname{font:bold 17px 'Verdana' , 'Tahoma' , sans-serif;color:#000}
+a:hover{color:#F26D00;text-decoration:none;}
+.a1{color:#FFF;font-family:Arial;font-size:12px;font-weight:700}
+.a1:hover{color:#F26D00;text-decoration:underline}
+img{border:0}
+h3.fold{color:#003073;font-size:125%;font-family:arial;margin:0}
+h3.name{color:#013572;font-size:135%;margin:0}
+input,select{font-family:arial}
+
+table.shapka{margin:0 0 7px}
+table.shapka td{background-color:#69c;color:#FFF;font-size:70%;font-family:tahoma}
+table.shapka td table td.first{background-color:#FFF;color:#013572;font-size:85%;padding-right:7px;padding-left:12px;font-family:arial}
+table.shapka td table td.first a{color:#013572;text-decoration:none}
+table.shapka td table td.first a:hover{color:#013572;text-decoration:underline}
+table.shapka td table td.mid{background-color:#039;font-size:85%;padding-right:7px;padding-left:6px;font-family:arial}
+table.shapka td table td.mid a{color:#FFF;text-decoration:none}
+table.shapka td.bel{background-color:#69c}
+table.shapka td.hello{padding-top:0;color:#F2F8FF;font-size:85%;font-family:arial}
+table.shapka td.hello b{color:#FFF}
+
+table.edittable{background-color:#fff;width:100%}
+table.edittable tr{height:23px;background-color:#f7f7f7}
+table.edittable tr .tbltxt{height:23px;padding-left:6px}
+table.edittable input[type="text"]{width:149px;font-size:8pt}
+table.edittable select{width:155px;font-size:8pt}
+table.edittable label{font-size:10pt}
+
+table.lasttab td{background-color:#69c;font-size:70%;color:#fff;padding:5px 0 6px}
+table.lasttab a{color:#FFF;text-decoration:underline}
+table.lasttab a:hover{color:#CCE8FF;text-decoration:none}
+
+table.sort td.first{padding-left:7px}
+table.sort td{font-size:70%;font-family:tahoma}
+table.sort select{width:101px;font-size:100%;font-family:tahoma}
+table.sort td.sort_txt{padding-bottom:3px}
+
+.asptextboxstyle{font-family:Tahoma, Arial;font-size:11px;width:200px;height:19px;border:1px #7f9db9 solid}
+
+.RichGreenRow{background-color:#6c6}
+.RichPinkRow{background-color:#f99}
+.RichYellowRow{background-color:#ff3}
+.GreenRow{background-color:#90ee90}
+.WhiteRow{background-color:#fff}
+.PinkRow{background-color:#fad4d4}
+.YellowRow{background-color:#ffc}
+.OrangeRow{background-color:#ffc300}
+.BlueRow{background-color:#a9d2fc}
+.SilverRow{background-color:#d3b4fd}
+.GrayRow{background-color:#ccc}
+.LightGrayRow{background-color:#FAFAFA}
+
+.pad{padding:10px}
+.panel{border:solid 1px #a0a0a0;/* background-color:#f0f0f0; */}
+.details{font-size:10px;font-family:Verdana;font-weight:700}
+div.float{height:400px;width:174px;background-color:#fff2d4;position:fixed;left:5px;border:solid 1px green;z-index:10}
+
+.documentview input[type=button]{width:50px;height:21px;font-size:10px;font-family:Verdana, Arial;font-weight:700}
+
+.blockpage,.blockpagehide{position:absolute;left:0;top:0;width:100%;height:100%;z-index:900;background-image:url(/resources/imgs/BgPopup.png);display:block}
+.blockpagehide{display:none !important}
+.infobutton{font-family:Verdana;font-size:xx-small}
+body,div.header ul{margin:0;padding:0}
+
+div.header div.header-navigation ul li.mn-item-contacts a:hover,div.header div.header-navigation ul li.mn-item-contacts a.mn-sub-item-current{background-position:-25px -215px}
+div.header div.header-navigation ul li.mn-item-clients a:hover,div.header div.header-navigation ul li.mn-item-clients a.mn-sub-item-current{background-position:-128px -215px}
+div.header div.header-navigation ul li.mn-item-consignee a:hover,div.header div.header-navigation ul li.mn-item-consignee a.mn-sub-item-current{background-position:-218px -215px}
+div.header div.header-navigation ul li.mn-item-agents a:hover,div.header div.header-navigation ul li.mn-item-agents a.mn-sub-item-current{background-position:-326px -215px}
+div.header div.header-navigation ul li.mn-item-trucking a:hover,div.header div.header-navigation ul li.mn-item-trucking a.mn-sub-item-current{background-position:-426px -215px}
+div.header div.header-navigation ul li.mn-item-vendors a:hover,div.header div.header-navigation ul li.mn-item-vendors a.mn-sub-item-current{background-position: -551px -186px;}
+div.header div.header-navigation ul li.mn-item-assgnagents a:hover,div.header div.header-navigation ul li.mn-item-assgnagents a.mn-sub-item-current{background-position:-614px -215px}
+div.header div.header-navigation ul li.mn-item-carriers a:hover,div.header div.header-navigation ul li.mn-item-carriers a.mn-sub-item-current{background-position:-722px -215px}
+div.header div.header-navigation ul li.mn-item-freight a:hover,div.header div.header-navigation ul li.mn-item-freight a.mn-sub-item-current{background-position:-821px -215px}
+div.header div.header-navigation ul li.mn-item-booking a:hover,div.header div.header-navigation ul li.mn-item-booking a.mn-sub-item-current{background-position:-911px -215px}
+div.header div.header-navigation ul li.mn-item-ocean a:hover,div.header div.header-navigation ul li.mn-item-ocean a.mn-sub-item-current{background-position:-1018px -215px}
+div.header div.header-navigation ul li.mn-item-enhanced a:hover,div.header div.header-navigation ul li.mn-item-enhanced a.mn-sub-item-current{background-position:-1232px -215px}
+div.header div.header-navigation ul li.mn-item-notification a:hover,div.header div.header-navigation ul li.mn-item-notification a.mn-sub-item-current{background-position:-1325px -215px}
+div.header div.header-navigation ul li.mn-item-periodic a:hover,div.header div.header-navigation ul li.mn-item-periodic a.mn-sub-item-current{background-position:-1434px -215px}
+div.header div.header-navigation ul li.mn-item-transaction a:hover,div.header div.header-navigation ul li.mn-item-transaction a.mn-sub-item-current{background-position:-1521px -215px}
+div.header div.header-navigation ul li.mn-item-ar a:hover,div.header div.header-navigation ul li.mn-item-ar a.mn-sub-item-current{background-position:-1628px -215px}
+div.header div.header-navigation ul li.mn-item-ap a:hover,div.header div.header-navigation ul li.mn-item-ap a.mn-sub-item-current{background-position:-1698px -215px}
+div.header div.header-navigation ul li.mn-item-quotelist a:hover,div.header div.header-navigation ul li.mn-item-quotelist a.mn-sub-item-current{background-position:-1769px -215px}
+div.header div.header-navigation ul li.mn-item-tariff a:hover,div.header div.header-navigation ul li.mn-item-tariff a.mn-sub-item-current{background-position:-1865px -215px}
+div.header div.header-navigation ul li.mn-item-quoterequest a:hover,div.header div.header-navigation ul li.mn-item-quoterequest a.mn-sub-item-current{background-position:-1960px -215px}
+div.header div.header-navigation ul li.mn-item-userlist a:hover,div.header div.header-navigation ul li.mn-item-userlist a.mn-sub-item-current{background-position:-2093px -215px}
+div.header div.header-navigation ul li.mn-item-home a:hover,div.header div.header-navigation ul li.mn-item-home a.mn-sub-item-current{background-position:-2187px -215px}
+div.header div.header-navigation ul li.mn-item-mailedit a:hover,div.header div.header-navigation ul li.mn-item-mailedit a.mn-sub-item-current{background-position:-2292px -215px}
+div.header div.header-navigation ul li.mn-item-currency a:hover,div.header div.header-navigation ul li.mn-item-currency a.mn-sub-item-current{background-position:-2385px -215px}
+div.header div.header-navigation ul li.mn-item-sendemail a:hover,div.header div.header-navigation ul li.mn-item-sendemail a.mn-sub-item-current{background-position:-2505px -215px}
+div.header div.header-navigation ul li.mn-item-reports a:hover,div.header div.header-navigation ul li.mn-item-reports a.mn-sub-item-current{background-position:-2620px -215px}
+div.header div.header-navigation ul li.mn-item-useredit a:hover,div.header div.header-navigation ul li.mn-item-useredit a.mn-sub-item-current{background-position:-2708px -215px}
+div.header div.header-navigation ul li.mn-item-transactions a:hover,div.header div.header-navigation ul li.mn-item-transactions a.mn-sub-item-current{background-position:-2795px -215px}
+div.header div.header-navigation ul li.mn-item-userprofile a:hover,div.header div.header-navigation ul li.mn-item-userprofile a.mn-sub-item-current{background-position:-2906px -215px}
+div.header div.header-navigation ul li.mn-item-contactinfo a:hover,div.header div.header-navigation ul li.mn-item-contactinfo a.mn-sub-item-current{background-position:-3020px -215px}
+div.header div.header-navigation ul li.mn-item-addinventory a:hover,div.header div.header-navigation ul li.mn-item-addinventory a.mn-sub-item-current{background-position:-3135px -215px}
+div.header div.header-navigation ul li.mn-item-assigned a:hover,div.header div.header-navigation ul li.mn-item-assigned a.mn-sub-item-current{background-position:-3405px -215px}
+div.header div.header-navigation ul li.mn-item-intransit a:hover,div.header div.header-navigation ul li.mn-item-intransit a.mn-sub-item-current{background-position:-3495px -215px}
+div.header div.header-navigation ul li.mn-item-complete a:hover,div.header div.header-navigation ul li.mn-item-complete a.mn-sub-item-current{background-position:-3580px -215px}
+div.header div.header-navigation ul li.mn-item-archive a:hover,div.header div.header-navigation ul li.mn-item-archive a.mn-sub-item-current{background-position:-3665px -215px}
+div.header div.header-navigation ul li.mn-item-ratemanagement a:hover,div.header div.header-navigation ul li.mn-item-ratemanagement a.mn-sub-item-current{background-position:-3760px -215px}
+div.header div.header-navigation ul li.mn-item-power-of-attorney a:hover,div.header div.header-navigation ul li.mn-item-power-of-attorney a.mn-sub-item-current{background-position:-3855px -215px}
+div.header div.header-navigation ul li.mn-item-ratedestination a:hover,div.header div.header-navigation ul li.mn-item-ratedestination a.mn-sub-item-current{background-position:-5px -510px}
+div.header div.header-navigation ul li.mn-item-rateorigin a:hover,div.header div.header-navigation ul li.mn-item-rateorigin a.mn-sub-item-current{background-position:-110px -510px}
+
+#header div{float:left}
+#topmenu,#flash,#content{clear:both}
+.track,#lcol *{color:#fff}
+#lcol h1,#rcol h1{padding-left:0}
+.navtxt,.tblctrl{font:bold 10px 'Verdana' , 'Tahoma' , sans-serif;color:#000}
+a,table.shapka td table td.mid a:hover{/* text-decoration:underline */}
+table.mydatagrid_vit td,table.mydatagrid td{text-align:center;background-color:#FAFAFA}
+
+fieldset .txtField { width : 220px; }
+
+.ui-button-text-only .ui-button-text { padding:0.1em 0.2em !important; }
+
+#sendRequestPopupModal{ height: 110px !important;}
+
+/* FIX: jquery ui-tabs */
+.ui-tabs .ui-tabs-panel { padding: 0px; }
+.ui-widget {/* font-size: 9pt; */}
+
+/* date picker styles */
+.date { width: 60px; font-size: 11px; }
+.ui-datepicker-trigger { vertical-align: middle; margin-top: -2px; }
+
+td{/* font-weight:400; */font-size: 95%;font-family:arial;}
+.legend-row {width: 18%; border: solid 1px #333333;}
+
+.text-right {/* text-align: right; */}
+
+.modalBackground { background-color: #808080; opacity: 0.7; }
+
+.text-box { font-size: 11px; }
+
+
+.settings-table { width: 100%; background-color: #cccccc; border: 0; vertical-align: top; border-spacing: 0px; }
+.settings-table td { padding: 1px; }
+.settings-inner-table { width: 100%; background-color: #f7f7f7; border: 0; vertical-align: top; border-spacing: 0px; }

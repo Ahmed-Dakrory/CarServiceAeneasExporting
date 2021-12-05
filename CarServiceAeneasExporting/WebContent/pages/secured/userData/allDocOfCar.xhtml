@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/dashboard2.xhtml">
+
+
+	<ui:define name="title"> Aeneas Exporting LLC</ui:define>
+
+
+<ui:define name="mainHead"> 
+			       <ul class="mn-sub"><li class="mn-sub-item mn-item-vendors"><a href="vitView.jsf" class="mn-sub-item-current"><b>Vehicle List</b></a></li></ul>
+           <link rel="stylesheet" href="#{resource['css:dashboardPrime/all.min.css']}" />
+		<link rel="stylesheet" href="#{resource['css:dashboardPrime/bootstrap.min.css']}" />
+		
+			</ui:define>
+			
+			
+	<ui:define name="content">
+	<style>
+	table {
+    border-collapse: inherit;
+    /* border-spacing: 0; */
+    /* border-radius: 11px; */
+}
+
+.aForHead{
+color:white;
+}
+
+
+.aForHead:hover{
+color:#ffec08;
+}
+	</style>
+	
+	 <p:panel id="mainPanel" class="container">
+	#{carBean.openImageLink()} 	
+	 
+	 <div class="row">
+	 	<div class="col-md-12">
+	 	<h1>All Docs for the freight: #{carBean.selectedCar.uuid}</h1>
+	 	</div>
+	 	
+ 	</div>
+	 <div class="row mt-3">
+	 	<div class="col-md-2 ml-5">
+		 	<a href="/pages/secured/userData/vehicleList.jsf?faces-redirect=true" class="w-100 ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default">Back</a>
+		 </div>
+		 
+		 
+		 
+		 <div class="col-md-2 ml-5">
+		 	<a onclick="downloadAllFiles()" href="javascript:void(0)" class="w-100 ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default">Download All</a>
+		 </div>
+	 	
+	 
+	 </div>
+	 
+	 
+	 <div class="accordion container" id="accordionExample">
+	 
+	 
+	 
+	 
+	  <div class="card row">
+	     <div class="card-header w-100" id="headingOne">
+	      <h5 class="mb-0 bg-primary" style=" padding: 14px; border-bottom-style: double; ">
+	        <a  class="aForHead" href="javascript:void(0)" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+	          All Images Document
+	        </a>
+	      </h5>
+	    </div>
+	    <div id="collapseTwo" class="collapse show in" aria-labelledby="headingTwo" data-parent="#accordionExample">
+	      <div class="card-body">
+	      		<div class="row mt-1">
+				 	<div class="col-md-2">
+					 	<a onclick="downloadAllDocs();" href="javascript:void(0)" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default">Download All Documents</a>
+					 </div>
+				 </div>
+	 			<div class="row mt-1">
+	      	 		<!-- All images -->
+	 
+	 					<ui:repeat var="var" value="#{carBean.docs}">
+    <div class="col-md-3" style="border: black;border-style: solid;border-width: 1px;margin: 7px;">			
+				
+                    <div class="row" style=" text-align: center; ">
+                        
+                             <div class="row">
+                                    <a href="#" onclick='ViewDocById("#{var}")'>
+                                        <h:graphicImage value="/images/?file=#{var}" alt="image#{var}" style="border-width:0px;width: 151px;height: 109px;"/></a>
+                                </div>
+                        
+                        <div class="row">
+                                <a style="color: Black;" href="#" onclick='ViewDocById("#{var}")'>
+                                    <span id="ctl00_BodyHolder_imageList_imageList_ctl00_docName">#{var}</span></a>
+                                
+                           </div>
+                   </div>
+               </div>
+                
+                
+               
+		</ui:repeat>
+					 <!-- All images -->
+					</div>
+		
+		 
+	      </div>
+	    </div>
+	  </div>
+	
+		
+	  <div class="card row">
+	     <div class="card-header w-100" id="headingOne">
+	      <h5 class="mb-0 bg-primary" style=" padding: 14px; border-bottom-style: double; ">
+	        <a  class="aForHead" href="javascript:void(0)" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+	          All PDF Documents
+	        </a>
+	      </h5>
+	    </div>
+	    <div id="collapse3" class="collapse show in" aria-labelledby="heading3" data-parent="#accordionExample">
+	      <div class="card-body">
+	      		<div class="row mt-1">
+				 	<div class="col-md-2">
+					 	<a onclick="downloadAllPDFDocs();" href="javascript:void(0)" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only btn btn-default">Download All PDFs</a>
+					 </div>
+				 </div>
+	 			<div class="row mt-1">
+	      	 		<!-- All images -->
+	 
+	 					<ui:repeat var="var" value="#{carBean.pdfs}">
+    <div class="col-md-3" style="border: black;border-style: solid;border-width: 1px;margin: 7px;">			
+				
+                    <div class="row" style=" text-align: center; ">
+                        
+                             <div class="row">
+                                    <a href="#" onclick='ViewPDFById("#{var}")'>
+                                        <h:graphicImage value="/resources/images/pdf.png" alt="image#{var}" style="border-width:0px; width:113px;"/></a>
+                                </div>
+                        
+                        <div class="row">
+                                <a style="color: Black;" href="#" onclick='ViewPDFById("#{var}")'>
+                                    <span id="ctl00_BodyHolder_imageList_imageList_ctl00_docName">#{status.index+1}</span></a>
+                                
+                           </div>
+                   </div>
+               </div>
+                
+                
+               
+		</ui:repeat>
+					 <!-- All images -->
+					</div>
+		
+		 
+	      </div>
+	    </div>
+	  </div>
+	 
+	
+	 </div>
+	
+		
+		
+		<h:outputScript name="js/dashboardPrime/popper.min.js"/>
+		<h:outputScript name="js/dashboardPrime/bootstrap.min.js"/>
+		<h:outputScript name="js/dashboardPrime/FileSaver.js"/>
+		<h:outputScript name="js/dashboardPrime/jszip.js"/>
+		
+		
+		<script>
+		
+		
+function downloadEachImage(urlFileName){
+			
+			const imageUrl = '/images/?file='+urlFileName;
+
+			// Fetch the image and parse the response stream as a blob
+			const imageBlob = fetch(imageUrl).then(response => Promise.resolve(response.blob()));
+
+			return imageBlob;
+			
+		}
+		
+
+function downloadEachPDF(urlFileName){
+	
+	const imageUrl = '/images/?file='+urlFileName+"&amp;Pdf=1";
+
+	// Fetch the image and parse the response stream as a blob
+	const imageBlob = fetch(imageUrl).then(response => Promise.resolve(response.blob()));
+
+	return imageBlob;
+	
+}
+
+function downloadAllImages(){
+			
+			var zip = new JSZip();
+			var img = zip.folder("Images");
+			<ui:repeat var="variable" value="#{carBean.images}">
+			filename="#{variable}";
+			imgData = downloadEachImage(filename);
+			img.file(filename, imgData);
+			</ui:repeat>
+			zip.generateAsync({type:"blob"})
+			.then(function(content) {
+			    // see FileSaver.js
+			    saveAs(content, "All ImagesOf freight with Vin #{carBean.selectedCar.uuid}.zip");
+			});
+
+		}
+		
+		
+		
+		
+function downloadAllDocs(){
+	
+	var zip = new JSZip();
+	var img = zip.folder("Docs");
+	<ui:repeat var="variable" value="#{carBean.docs}">
+	filename="#{variable}";
+	imgData = downloadEachImage(filename);
+	img.file(filename, imgData);
+	</ui:repeat>
+	zip.generateAsync({type:"blob"})
+	.then(function(content) {
+	    // see FileSaver.js
+	    saveAs(content, "All Documents Of freight with Vin #{carBean.selectedCar.uuid}.zip");
+	});
+
+}
+	
+
+function downloadAllPDFDocs(){
+	
+	var zip = new JSZip();
+	var img = zip.folder("PDFs");
+	<ui:repeat var="variable" value="#{carBean.pdfs}">
+	filename="#{variable}";
+	imgData = downloadEachPDF(filename);
+	img.file(filename, imgData);
+	</ui:repeat>
+	zip.generateAsync({type:"blob"})
+	.then(function(content) {
+	    // see FileSaver.js
+	    saveAs(content, "All PDF Of freight with Vin #{carBean.selectedCar.uuid}.zip");
+	});
+
+}
+		
+		function downloadAllFiles(){
+			var zip = new JSZip();
+			
+			
+			
+			
+			var img = zip.folder("Docs");
+			<ui:repeat var="variable" value="#{carBean.docs}">
+			filename="#{variable}";
+			imgData = downloadEachImage(filename);
+			img.file(filename, imgData);
+			</ui:repeat>
+			
+			
+			var img = zip.folder("PDFs");
+			<ui:repeat var="variable" value="#{carBean.pdfs}">
+			filename="#{variable}";
+			imgData = downloadEachPDF(filename);
+			img.file(filename, imgData);
+			</ui:repeat>
+			
+			
+			zip.generateAsync({type:"blob"})
+			.then(function(content) {
+			    // see FileSaver.js
+			    saveAs(content, "#{carBean.selectedCar.uuid}.zip");
+			});
+			
+		}
+		</script>
+		
+		
+		
+		
+		<!-- End of All Images -->
+	 </p:panel>
+     
+     
+     
+     
+     
+		
+	</ui:define>
+	
+		
+	
+</ui:composition>
+</html>

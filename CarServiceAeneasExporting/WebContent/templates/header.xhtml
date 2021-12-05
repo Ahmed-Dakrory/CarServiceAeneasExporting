@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html	xmlns="http://www.w3.org/1999/jsf"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:p="http://primefaces.org/ui">
+  
+  <!-- the login handle box -->
+    <link rel="stylesheet" href="#{resource['css:header/style.bundle.css']}" />
+    
+    
+    
+    
+    
+    
+    
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="/">International Group</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="/pages/public/about.jsf?faces-redirect=true" class="nav-link">About</a></li>
+            
+            <li class="nav-item"><a href="/pages/public/contactUs.jsf?faces-redirect=true" class="nav-link">Contact</a></li>
+            <li class="nav-item" style="#{(loginBean.theUserOfThisAccount.role==0||loginBean.theUserOfThisAccount.role==1)?'':'display:none;'}"><a href="/pages/secured/admin/home.jsf?faces-redirect=true" class="nav-link">Dashboard</a></li>
+            
+            
+          <li class="d-none d-lg-block d-xl-block m-nav__item m-topbar__user-profile m-dropdown m-dropdown--medium m-dropdown--arrow m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" m-dropdown-toggle="click" aria-expanded="true" >
+					        <h:form style="margin-left: 100px;">   
+						<a href="#" class="m-nav__link m-dropdown__toggle">
+							<span class="m-topbar__userpic">
+								<h:graphicImage value="#{loginBean.theUserOfThisAccount.getphoto()}" style="border-style: solid;border-color: #a5a1a1;border-width: 1px;border-radius: 50%;border-width: 1px;width:60px;height:60px;border-color: #c3abab;" class="m--img-rounded m--marginless m--img-centered" alt=""/>
+							</span>
+											
+						</a>
+						
+						
+						
+						<div class="m-dropdown__wrapper" style="z-index: 101;">
+							<span class="m-dropdown__arrow m-dropdown__arrow--right " style="left: auto; right: 27%;"></span>
+							<div style="background: #f3f3f3f7; display: #{loginBean.getTheStatueOfLoginMenu()};    " class="m-dropdown__inner">
+								<div class="m-dropdown__header m--align-center">
+									<div class="m-card-user m-card-user--skin-light">
+										
+										<div class="m-card-user__details">
+											<span class="m-card-user__name m--font-weight-500">#{loginBean.theUserOfThisAccount.firstName}</span>
+											<br></br>
+											<br></br>
+											<a href="" class="m-card-user__email m--font-weight-300 m-link">#{loginBean.theUserOfThisAccount.email}</a>
+										</div>
+									</div>
+								</div>
+								<div class="m-dropdown__body">
+									<div class="m-dropdown__content">
+										<ul class="m-nav m-nav--skin-light">
+										<!--  	
+											<li class="m-nav__item">
+												<a href="?page=profile&amp;demo=demo11" class="m-nav__link">
+													<i class="m-nav__link-icon flaticon-profile-1"></i>
+													<span class="m-nav__link-title">  
+														<span class="m-nav__link-wrap">      
+															<span class="m-nav__link-text">My Profile</span>       
+														</span>
+													</span>
+												</a>
+											</li>
+											
+											-->
+											
+											<li class="m-nav__item">
+												<h:commandLink action="#{loginBean.logOut}" style="width:91%" class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">Logout</h:commandLink>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+							
+							
+							
+							
+							
+							<div style="background: #f3f3f3f7;display: #{loginBean.getTheStatueMenuMain()};" class="m-dropdown__inner">
+								
+								<div class="m-dropdown__body">
+									<div class="m-dropdown__content">
+										<ul class="m-nav m-nav--skin-light">
+											
+											
+				
+											<li class="m-nav__item">
+													<p:commandLink style="width:200px" class="m-nav__link">    
+													<i class="m-nav__link-icon flaticon-lifebuoy"></i>
+													</p:commandLink>
+											</li>
+											<li class="m-nav__item">
+													<a href="/pages/public/login.jsf?faces-redirect=true" style="width:91%" class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">Login</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+							
+							
+							
+							
+						</div>
+						</h:form>
+				</li>
+	       		
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END nav -->
+    
+
+
+ <!--begin::login form shown-->
+<h:outputScript name="Scripts/header/scripts.bundle.js"/>
+ 
+
+ 
+</html>

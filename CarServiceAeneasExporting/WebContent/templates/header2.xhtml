@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:p="http://primefaces.org/ui">
+
+   
+    
+    
+  <!-- the login handle box -->
+    <link rel="stylesheet" href="#{resource['css:header/style.bundle.css']}" />
+    
+	
+	   <div class="header">
+            <div class="header-main">
+              <div class="login">
+               <div class="d-none d-lg-block d-xl-block m-nav__item m-topbar__user-profile m-dropdown m-dropdown--medium m-dropdown--arrow m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" m-dropdown-toggle="click" aria-expanded="true" >
+					<h:form style="margin-left: 100px;">   
+						<a href="#" class="m-nav__link m-dropdown__toggle">
+							<span class="m-topbar__userpic">
+								<h:graphicImage value="#{loginBean.theUserOfThisAccount.getphoto()}" style="border-style: solid;border-color: #a5a1a1;border-width: 1px;border-radius: 50%;border-width: 1px;width: 72px;height: 66px;border-color: #c3abab;" class="m--img-rounded m--marginless m--img-centered" alt=""/>
+							</span>
+											
+						</a>
+						
+						
+						
+						<div class="m-dropdown__wrapper" style="z-index: 101;">
+							<span class="m-dropdown__arrow m-dropdown__arrow--right " style="left: auto; right: 27%;"></span>
+							
+							<div style="background: #f3f3f3f7; display: #{loginBean.getTheStatueOfLoginMenu()};    " class="m-dropdown__inner">
+								<div class="m-dropdown__header m--align-center">
+									<div class="m-card-user m-card-user--skin-light">
+										
+										<div class="m-card-user__details">
+											<span class="m-card-user__name m--font-weight-500">#{loginBean.theUserOfThisAccount.firstName} #{loginBean.theUserOfThisAccount.lastName}</span>
+											<br></br>
+											<br></br>
+											<a href="" class="m-card-user__email m--font-weight-300 m-link">#{loginBean.theUserOfThisAccount.email}</a>
+										</div>
+									</div>
+								</div>
+								
+								<h:commandLink action="#{loginBean.logOut}" style="width:91%" class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">Logout</h:commandLink>
+								<br></br>
+								<br></br>	
+							</div>
+							
+							<div style="background: #f3f3f3f7;display: #{loginBean.getTheStatueMenuMain()};" class="m-dropdown__inner">
+								<div class="m-dropdown__body">
+									<div class="m-dropdown__content">
+									<div class="m-nav m-nav--skin-light">
+									<p:commandLink style="width:200px" class="m-nav__link">    
+													<i class="m-nav__link-icon flaticon-lifebuoy"></i>
+													</p:commandLink>
+										<h:commandButton value="Login" action="/pages/public/login.xhtml" style="width:91%" class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder"/>
+									</div>
+											
+										
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</h:form>
+				</div>
+              </div>
+              
+              
+              
+              
+              <div class="logo">
+              <img style="position: absolute;top: 13px;color: #fff;font-size: 12pt;width: 405px;height: 59px;border-radius: 8px;" src="/resources/images/logo2.png"/> <!-- 
+              <a href="http://www.adainter.com" target="_blank">Aeneas Exporting LLC</a>
+               -->
+              </div>
+              <div style="box-shadow: 1px 1px 1px #b9b9b9, 0 0 3px #ffffff, 0 0 7px #b5b5b5;background: url(/resources/imgs/background6.jpg);background-repeat: no-repeat;background-size: cover;height: 87px;">
+             
+			         <ul class="mn-main">
+			         <li class="mn-item-userprofile"><a href="/">Main Page</a></li>
+			         <li class="mn-item-userprofile"><a href="/pages/secured/userData/userProfile.jsf?faces-redirect=true">User Profile</a></li>
+			         <li class="mn-item-contactinfo"><a href="/pages/secured/userData/contactInfo.jsf?faces-redirect=true">Contact Info</a></li>
+			         <li class="mn-item-freight"><a href="/pages/secured/userData/vehicleList.jsf?faces-redirect=true">Freight List</a></li>
+			         <li class="mn-item-vendors" style="display:#{(loginBean.theUserOfThisAccount.role==0)?'block':'none'};"><a href="/pages/secured/shipper/shipperList.jsf?faces-redirect=true">Shipper List</a></li>
+			         <li class="mn-item-vendors" style="display:#{(loginBean.theUserOfThisAccount.role==0)?'block':'none'};"><a href="/pages/secured/mainTwo/mainTwoList.jsf?faces-redirect=true">Followers List</a></li>
+			         <li class="mn-item-vendors" style="display:#{(loginBean.theUserOfThisAccount.role==0||loginBean.theUserOfThisAccount.role==1)?'block':'none'};"><a href="/pages/secured/vendor/vendorList.jsf?faces-redirect=true">Vendor List</a></li>
+			         <li class="mn-item-vendors" style="display:#{(loginBean.theUserOfThisAccount.role==0||loginBean.theUserOfThisAccount.role==1||loginBean.theUserOfThisAccount.role==2)?'block':'none'};"><a href="/pages/secured/customer/customerList.jsf?faces-redirect=true">Customer List</a></li>
+			         <li class="mn-item-consignees" style="display:#{(loginBean.theUserOfThisAccount.role==0||loginBean.theUserOfThisAccount.role==1)?'block':'none'};"><a href="/pages/secured/consignee/consigneeList.jsf?faces-redirect=true" >Consignee List</a></li>
+			         <li class="mn-item-accounting" style="display:#{(loginBean.theUserOfThisAccount.role==1)?'block':'none'};"><a href="/pages/secured/vendor/QuoteList.jsf?faces-redirect=true">Quote List</a></li>
+			         <li class="mn-item-accounting" style="display:#{(loginBean.theUserOfThisAccount.role==2)?'block':'none'};"><a href="/pages/secured/customer/QuoteList.jsf?faces-redirect=true">Quote List</a></li>
+			         <li class="mn-item-inventory" style="display:#{(loginBean.theUserOfThisAccount.role==1)?'block':'none'};"><a href="/pages/secured/admin/car/AddNewInventory.jsf?faces-redirect=true">Add Inventory</a></li>
+			         <li class="mn-item-inventory" style="display:#{(loginBean.theUserOfThisAccount.role==0)?'block':'none'};"><a href="/pages/secured/shipper/car/vitView.jsf?faces-redirect=true">Add Inventory</a></li>
+			         <li class="mn-item-inventory" style="display:#{(loginBean.theUserOfThisAccount.role==5)?'block':'none'};"><a href="/pages/secured/mainTwo/car/vitView.jsf?faces-redirect=true">Add Inventory</a></li>
+			         <li class="mn-item-inventory" style="display:#{(loginBean.theUserOfThisAccount.role==0)?'block':'none'};"><a href="/pages/secured/shipper/CarLandingPage/vehicleList.jsf?faces-redirect=true">Freight Landing</a></li>
+			         <li class="mn-item-inventory" style="display:#{(loginBean.theUserOfThisAccount.role==0)?'block':'none'};"><a href="/pages/secured/shipper/invoice/invoiceList.jsf?faces-redirect=true">Accounting</a></li>
+			         <li class="mn-item-inventory" style="display:#{(loginBean.theUserOfThisAccount.role==1)?'block':'none'};"><a href="/pages/secured/vendor/invoice/invoiceList.jsf?faces-redirect=true">Accounting</a></li>
+			         </ul>
+           
+           </div>
+            </div>
+            <div class="header-navigation">
+            <ui:insert name="mainHead"> 
+                <ul class="mn-sub"><li class="mn-sub-item mn-item-userprofile"><a href="userProfile.jsf?faces-redirect=true" class="mn-sub-item-current"><b>User Profile</b></a></li></ul>
+            </ui:insert>
+            </div>
+        </div>
+        
+     
+    
+		
+		
+    
+ 
+
+ 
+</html>

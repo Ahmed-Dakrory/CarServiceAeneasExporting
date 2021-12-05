@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:sec="http://www.springframework.org/schema/security"
+	xmlns:int-security="http://www.springframework.org/schema/integration/security"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/security 
+		http://www.springframework.org/schema/security/spring-security-3.0.xsd
+		http://www.springframework.org/schema/integration 
+		http://www.springframework.org/schema/integration/spring-integration.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd 
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+
+
+
+
+
+
+	<tx:annotation-driven transaction-manager="hibernateTransactionManager" />
+	<context:property-placeholder location="classpath:resources/jdbc.properties"/>
+
+
+	<!-- For Spring auto wiring -->
+	<context:component-scan base-package="main" />
+
+
+	
+	
+	
+  <!-- Spring security configurations -->
+
+
+	<sec:http auto-config="true" access-denied-page="/pages/errors/403.html" >
+		<sec:form-login login-page="/" authentication-failure-url="/pages/errors/403.html"
+			default-target-url="/pages/public/index.xhtml" />
+		<sec:intercept-url pattern="/pages/secured/userData/**"
+			access="ROLE_MAIN,ROLE_SHIPPER,ROLE_VENDOR,ROLE_CUSTOMER,ROLE_MAINTWO" />
+			<sec:intercept-url pattern="/pages/secured/vendor/**"
+			access="ROLE_MAIN,ROLE_SHIPPER" />
+			<sec:intercept-url pattern="/pages/secured/customer/**"
+			access="ROLE_MAIN,ROLE_SHIPPER,ROLE_VENDOR" />
+			<sec:intercept-url pattern="/pages/secured/consignee/**"
+			access="ROLE_MAIN,ROLE_SHIPPER" />
+			<sec:intercept-url pattern="/pages/secured/admin/**"
+			access="ROLE_MAIN,ROLE_SHIPPER" />
+			<sec:intercept-url pattern="/pages/secured/shipper/**"
+			access="ROLE_MAIN" />
+			<sec:intercept-url pattern="/pages/secured/mainTwo/**"
+			access="ROLE_MAIN,ROLE_MAINTWO" />
+			
+	<sec:custom-filter ref="profileCustomFilter" after="LAST"  />
+	
+	</sec:http>
+    
+    
+	<sec:global-method-security
+		secured-annotations="enabled" jsr250-annotations="enabled">
+	</sec:global-method-security>
+
+
+	
+	<!-- manager responsible for loading user account with assigned roles -->
+	<sec:authentication-manager alias="authenticationManager">
+		<sec:authentication-provider 
+			user-service-ref="userDetailsService" >
+			<sec:password-encoder  hash="md5">
+			    <sec:salt-source user-property="username"/>
+			</sec:password-encoder>
+		</sec:authentication-provider>
+		
+		
+	</sec:authentication-manager>
+
+
+
+
+	<beans:bean id="profileCustomFilter" class="main.com.carService.security.impl.ProfileCustomFilter">
+ </beans:bean>
+	
+
+
+
+	
+	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+
+		<beans:property name="driverClassName" value="${database.driverClassName}" />
+		<beans:property name="url" value="${database.url}" />
+		<beans:property name="username" value="${database.username}" />
+		<beans:property name="password" value="${database.password}" />
+		<beans:property name="initialSize" value="5" />
+		<beans:property name="maxActive" value="100" />
+		<beans:property name="maxIdle" value="30" />
+		<beans:property name="maxWait" value="10000" />
+		<beans:property name="validationQuery" value="Select 1" />
+	</beans:bean>
+
+
+
+
+
+
+
+	<beans:bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource" />
+		<beans:property name="packagesToScan">
+			<beans:list>
+				<beans:value>main</beans:value>
+
+
+			</beans:list>
+		</beans:property>
+
+
+
+		<beans:property name="hibernateProperties">
+			<beans:props>
+				<beans:prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext
+				</beans:prop>
+				<beans:prop key="cache.provider_class">org.hibernate.cache.NoCacheProvider</beans:prop>
+
+				<!--<beans:prop key="hibernate.dialect"> org.hibernate.dialect.MySQL5InnoDBDialect</beans:prop> -->
+				<beans:prop key="hibernate.dialect">${hibernate.dialect}</beans:prop>
+				<beans:prop key="hibernate.show_sql">${hibernate.show_sql}</beans:prop>
+				<beans:prop key="hibernate.jdbc.use_streams_for_binary">true</beans:prop>
+				<beans:prop key="hibernate.jdbc.batch_size">0</beans:prop>
+			</beans:props>
+		</beans:property>
+	</beans:bean>
+	<beans:bean id="hibernateTransactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<beans:property name="sessionFactory" ref="sessionFactory" />
+	</beans:bean>
+	
+	
+	
+	<beans:bean id="quartzJob" class="main.com.carService.tools.SampleJob"/>
+<beans:bean id="jobFactoryBean" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+       p:targetObject-ref="quartzJob" p:targetMethod="run"/>
+       
+<beans:bean id="triggerFactoryBean" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean"
+       p:jobDetail-ref="jobFactoryBean"  p:cronExpression="40 52 12 ? * 4"/>
+       
+<beans:bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean"
+       p:triggers-ref="triggerFactoryBean"/>
+
+<!-- 
+	<beans:bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+    <beans:property name="autoStartup">
+        <beans:value>true</beans:value>
+    </beans:property>
+    <beans:property name="configLocation" value="classpath:resources/quartz.properties" />
+      <beans:property name="applicationContextSchedulerContextKey">
+      	<beans:value>applicationContext</beans:value>
+      </beans:property>
+      
+      
+      
+</beans:bean>
+	 -->
+ <context:component-scan base-package="com.springapp.mvc"/>
+    <context:annotation-config />
+    <mvc:annotation-driven/>
+    
+    <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <beans:property name="prefix" value="/WEB-INF/pages/"/>
+        <beans:property name="suffix" value=".jsp"/>
+    </beans:bean>
+
+</beans:beans>

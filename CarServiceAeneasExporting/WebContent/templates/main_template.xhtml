@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" 
+	lang="en">
+
+<h:head>
+    <!-- Basic -->
+		<meta charset="UTF-8"/>
+
+		<title>Aeneas Exporting LLC</title>
+		<meta name="keywords" content="HTML5 Admin Template" />
+		<meta name="description" content="JSOFT Admin - Responsive HTML5 Template"/>
+		<meta name="author" content="JSOFT.net"/>
+
+		<link rel="icon" type="image/png" href="#{resource['images:logo.png']}"/>
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css"/>
+
+		<!-- Vendor CSS -->
+		
+    <link rel="stylesheet" href="#{resource['css:dashboard/assets/vendor/bootstrap/css/bootstrap.css']}" />
+    <link rel="stylesheet" href="#{resource['css:dashboard/assets/vendor/font-awesome/css/font-awesome.css']}" />
+    <link rel="stylesheet" href="#{resource['css:dashboard/assets/vendor/magnific-popup/magnific-popup.css']}" />
+    <link rel="stylesheet" href="#{resource['css:dashboard/assets/vendor/bootstrap-datepicker/css/datepicker3.css']}" />
+    
+
+	<!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="#{resource['css:dashboard/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css']}" />
+    <link rel="stylesheet" href="#{resource['css:dashboard/assets/vendor/morris/morris.css']}" />
+    
+
+		
+    
+    <!-- Head Libs -->
+		<h:outputScript name="js/dashboard/assets/vendor/modernizr/modernizr.js"/>
+		
+		
+		
+		
+	
+    
+	
+	<!-- Theme CSS -->
+	<link rel="stylesheet" href="#{resource['css:dashboard/assets/stylesheets/theme2.css']}" />
+    
+    
+	<!-- Skin CSS -->
+    <link rel="stylesheet" href="#{resource['css:dashboard/assets/stylesheets/skins/default.css']}" />
+    
+    
+	<!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="#{resource['css:dashboard/assets/stylesheets/theme-custom.css']}" />
+	
+		
+		
+		
+		
+		
+		
+		
+		 <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,700,800" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="#{resource['css:racks/animate.css']}" />
+    <link rel="stylesheet" href="#{resource['css:racks/owl.carousel.min.css']}" />
+
+    <link rel="stylesheet" href="#{resource['css:dashboard/style.css']}" />
+    
+    <!-- Specific Page Vendor CSS -->
+	<link rel="stylesheet" href="#{resource['css:dashboard/assets/vendor/pnotify/pnotify.custom.css']}" />
+	
+    
+</h:head>
+
+
+<h:body class="materialdesign">
+   
+   
+   
+   
+   <div align="center" id="header">
+    <ui:insert name="header">
+    	<ui:include src="header.xhtml"/> 
+    </ui:insert>
+</div>
+   
+   
+      
+     <section class="home-slider owl-carousel ftco-degree-bg">
+      <div class="slider-item" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+       
+      </div>
+    </section>
+    <!-- END slider -->
+    
+    
+   <!-- Start of the code -->
+   <div class="" style="    position: absolute;    top: 21%;    left: 35%;">
+		
+    <ui:insert name="content"> 
+    	 <ui:include src="content.xhtml"/> 
+  </ui:insert>
+   </div>
+   <!-- End of the code -->
+   
+   
+   
+   
+   
+   
+   
+   
+   	<!-- Vendor -->
+   	
+		<h:outputScript name="js/dashboard/assets/vendor/jquery/jquery.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/bootstrap/js/bootstrap.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/nanoscroller/nanoscroller.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/magnific-popup/magnific-popup.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jquery-placeholder/jquery.placeholder.js"/>
+		<script>
+		   jQuery.noConflict();
+		 </script>
+		 
+		 
+		<!-- Specific Page Vendor -->
+		<h:outputScript name="js/dashboard/assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jquery-appear/jquery.appear.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jquery-easypiechart/jquery.easypiechart.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/flot/jquery.flot.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/flot-tooltip/jquery.flot.tooltip.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/flot/jquery.flot.pie.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/flot/jquery.flot.categories.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/flot/jquery.flot.resize.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jquery-sparkline/jquery.sparkline.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/raphael/raphael.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/morris/morris.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/gauge/gauge.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/snap-svg/snap.svg.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/liquid-meter/liquid.meter.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jqvmap/jquery.vmap.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jqvmap/data/jquery.vmap.sampledata.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jqvmap/maps/jquery.vmap.world.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jqvmap/maps/continents/jquery.vmap.africa.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jqvmap/maps/continents/jquery.vmap.asia.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jqvmap/maps/continents/jquery.vmap.australia.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jqvmap/maps/continents/jquery.vmap.europe.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js"/>
+		<h:outputScript name="js/dashboard/assets/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"/>
+		
+		
+		<!-- Specific Page Vendor -->
+		<h:outputScript name="js/dashboard/assets/vendor/pnotify/pnotify.custom.js"/>
+		
+		
+		<!-- Theme Base, Components and Settings -->
+		<h:outputScript name="js/dashboard/assets/javascripts/theme.js"/>
+		
+		<!-- Theme Custom -->
+		<h:outputScript name="js/dashboard/assets/javascripts/theme.custom.js"/>
+		
+		<!-- Theme Initialization Files -->
+		<h:outputScript name="js/dashboard/assets/javascripts/theme.init.js"/>
+
+
+		<!-- Examples -->
+		<h:outputScript name="js/dashboard/assets/javascripts/dashboard/examples.dashboard.js"/>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	<!-- Rack Design scripts -->	
+  <h:outputScript name="js/racks/jquery.waypoints.min.js"/>
+  <h:outputScript name="js/racks/jquery.stellar.min.js"/>
+  <h:outputScript name="js/racks/owl.carousel.min.js"/>
+  <h:outputScript name="js/racks/aos.js"/>
+  <h:outputScript name="js/racks/jquery.animateNumber.min.js"/>
+  <h:outputScript name="js/racks/bootstrap-datepicker.js"/>
+  <h:outputScript name="js/racks/jquery.timepicker.min.js"/>
+  <h:outputScript name="js/racks/jquery.timepicker.min.js"/>
+  <h:outputScript name="js/racks/maps.js"/>
+  <h:outputScript name="js/racks/google-map.js"/>
+  <h:outputScript name="js/racks/main.js"/>
+</h:body>
+
+</html>

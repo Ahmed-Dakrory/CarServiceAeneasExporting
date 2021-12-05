@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/dashboard2.xhtml">
+
+	
+	<ui:define name="title"> Aeneas Exporting LLC</ui:define>
+
+ <ui:define name="mainHead"> 
+			   <ul class="mn-sub"><li class="mn-sub-item mn-item-contactinfo"><a href="contactInfo.jsf" class="mn-sub-item-current"><b>Contact Info</b></a></li></ul>
+            
+			</ui:define>
+
+	<ui:define name="content">
+     <style>
+					.ui-fileupload-choose {
+						    position: relative;
+						    overflow: hidden;
+						    outline: 0;
+						    display: none;
+						}
+						.ui-fileupload-buttonbar {
+    padding: 1.2em 10.4em;
+}
+						.ui-button-icon-only {
+    width: 19px;
+    background: url(/resources/images/public/img/gr-error.png) no-repeat;
+    height: 19px;
+}
+
+.ui-datepicker {
+   border: black;
+    background: white;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8%;
+    }
+    .ui-datepicker .ui-icon {
+    display: block;
+    text-indent: 1px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    left: .5em;
+    top: .3em;
+}
+
+.ui-datepicker .ui-datepicker-next {
+    right: 17px;
+}
+					</style>
+	
+       <h:form name="aspnetForm" method="post" action="./contactInfo.jsf" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTYxNDg5MTMyNg8WAh4LT3JpZ2luYWxVcmwFN2h0dHBzOi8vd3d3LnVzYXRydC5jb20vYXBwL1VzZXJQYWdlcy9SZXF1ZXN0QVF1b3RlLmFzcHgWAmYPZBYEAgIPDxYCHgRUZXh0BSdVc2VyOiBUYXJlayBTYWxsYWJpICg8c3Bhbj5Vc2VyPC9zcGFuPilkZAIED2QWAgIBD2QWIAIDDw8WAh8BBRVBY2NvdW50ICM6IDAxMDgzNDA2MThkZAIFDw8WAh8BBQowMTA4MzQwNjE4ZGQCBw8PFgIfAQUTU2FsbGFiaSBDYXIgRGVhbGVyc2RkAg0PDxYCHwEFBVRhcmVrZGQCDw8PFgIfAWVkZAIRDw8WAh8BBQdTYWxsYWJpZGQCEw8PFgIfAQUOMDAzNTM4OTQ0MzUzNjhkZAIVDw8WAh8BBRF0c2FsbGFiaUB5YWhvby5jYWRkAhcPDxYCHwFlZGQCGQ8PFgIfAQUWTElCWUFOIEFSQUIgSkFNQUhJUklZQWRkAhsPDxYCHwEFHTcgTGVib25hbiBzdHIgU2FsbGFtIERpc3RyaWN0ZGQCHQ8PFgIfAWVkZAIfDw8WAh8BBQlCZW5naGF6aSBkZAIlDw8WAh8BZWRkAisPD2QWBB4Lb25tb3VzZW92ZXIFGHRoaXMuc3R5bGUuY3Vyc29yPSdoYW5kJx4Kb25tb3VzZW91dAUbdGhpcy5zdHlsZS5jdXJzb3I9J2RlZmF1bHQnZAIsDw9kFgQfAgUYdGhpcy5zdHlsZS5jdXJzb3I9J2hhbmQnHwMFG3RoaXMuc3R5bGUuY3Vyc29yPSdkZWZhdWx0J2QYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFIGN0bDAwJEJvZHlIb2xkZXIkY2JJbWFnZVJlcXVpcmVkGthUW+JwIVO5cuyK6cqIQn0iucw=" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0755A3F6" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdABY8x1DJnEdIOCkEsRqg2HQrE0AxsE/LjKI906xI0ezhX+CEFpMZKL5WHfFR11KoZdrxIJWzul9jY3qz4Hgow6SmUqfDFyBRhlmTk5W/yl5hbwR1QvXX80dessYj0WnjbrfSxac8lkC2bINdc6dQnXcmWFKe15BG1880h80KQWklm96FxeWuI6bI3pJicNaJri6QLTwYsazc9vmreo3zEFgFEyLtk/g0fFnNCuuBYeyIuKtW0TCqgDfeXEVo0VS4iM/UUaKSZwwAnWVwcyoBvft6xfhaN0b5G8auLFb8phACK7Gu2bfIGVbTA+e6vAbqYs3SYDMTDkR/UGJxggaIeOPZzIZkx66ClWNnKVz4cwgL3xCkfJaa1xtGAwAdRWmFOZMu7VbWr4UVqNmzS+fO3MMAE3mkuysg4EHJ7wwpm+5ExD1Evc4FTiV5brOIVEhZ6tdXLKaUOdR20xeyOF4NgM6Cl6k0OtL3SFk5E1xqEemFLP9h5TQ=" />
+</div>
+            <div id="content">
+                
+    <input name="ctl00$BodyHolder$hdClient_ID" type="hidden" id="ctl00_BodyHolder_hdClient_ID" value="47089" />
+    <!-- page src -->
+    <table cellspacing="0" cellpadding="5" class="content-table" border="0">
+        <tbody>
+            <tr valign="top">
+                <td width="100%">
+                    <!-- Table 1 -->
+                    <table cellspacing="0" cellpadding="1" width="100%" bgcolor="#003399" border="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table cellspacing="0" cellpadding="8" width="100%" bgcolor="#ffffff" border="0">
+                                        <tbody>
+                                            <tr>
+                                                <td >
+                                                    <!-- Table name block -->
+                                                    <table cellspacing="0" cellpadding="0" width="100%" border="0">
+                                                        <tr>
+                                                            <td class="blkname" width="100%">
+                                                                <nobr>&nbsp;<span id="ctl00_BodyHolder_lblAccount">Account #: 0108340618</span></nobr>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <!-- End of Table name block -->
+                                                    <img height="3" src="#{resource['images:dumb.gif']}" width="1"/>
+                                                    <table cellspacing="4" cellpadding="0" width="100%" border="0" style="margin-top: 3px;border-style: solid;border-width: 1px;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td >
+                                                                    <table cellspacing="0" cellpadding="1" width="100%" bgcolor="#cccccc" border="0">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                
+                                                                               <p:fileUpload id="FileUploaded" fileUploadListener="#{contactInfo.previewImage}"  dragDropSupport="true" sizeLimit="99999999" fileLimit="20" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"></p:fileUpload>
+                                                                                    <h:panelGroup id="imagesPanel">
+                                                                                    <label for="aspnetForm:FileUploaded_input">
+													                                    <h:graphicImage value="#{loginBean.theUserOfThisAccount.getphoto()}" alt="image#{var}" style="max-width: 272px;margin-left: 93px;border: black;border-style: solid;border-radius: 3%;border-width: 1px;box-shadow: 1px 1px 7px #c5a5a5, 0 0 3px #ffffff, 0 0 3px #131313;max-height: 273px;height: auto;width: auto;" />
+													                                   </label>
+													                                   </h:panelGroup>
+                                                                                    <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#f7f7f7" border="0">
+                                                                                        <tbody>
+                                                                                        <tr height="35">
+                                                                                                <td  colspan="5">
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr height="23">
+                                                                                                <td class="tbltxt" width="130">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        Account #:</div>
+                                                                                                </td>
+                                                                                                <td width="200">
+                                                                                                    <h:inputText value="#{loginBean.theUserOfThisAccount.id}" name="ctl00$BodyHolder$txtAccount" readonly="true" type="text"  id="ctl00_BodyHolder_txtAccount" style="font-size:11px;height:19px;width:200px;" />
+                                                                                                </td>
+                                                                                                
+                                                                                            </tr>
+                                                                                           
+                                                                                            <tr height="23">
+                                                                                                <td class="tbltxt" width="130">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        Company:</div>
+                                                                                                </td>
+                                                                                                <td width="200">
+                                                                                                    <h:inputText name="ctl00$BodyHolder$txtCompany" type="text" value="#{loginBean.theUserOfThisAccount.company}" id="ctl00_BodyHolder_txtCompany" style="font-size:11px;height:19px;width:200px;" />
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                                <td class="tbltxt" width="130">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        Phone:</div>
+                                                                                                </td>
+                                                                                                <td width="200">
+                                                                                                <h:inputText name="ctl00$BodyHolder$txtPhone" type="text" maxlength="7" value="#{loginBean.theUserOfThisAccount.phone}" id="ctl00_BodyHolder_txtPhone" style="font-size:11px;height:19px;width:145px;" />
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            
+																							<tr height="33">
+                                                                                                <td class="tbltxt" style="height: 23px">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        Contact First Name:</div>
+                                                                                                </td>
+                                                                                                <td style="height: 23px">
+                                                                                                    <h:inputText name="ctl00$BodyHolder$txtContactFirstName" type="text" value="#{loginBean.theUserOfThisAccount.firstName}"  id="ctl00_BodyHolder_txtContactFirstName" style="font-size:11px;height:19px;width:200px;" />
+                                                                                                </td>
+                                                                                                <td style="height: 23px">
+                                                                                                </td>
+                                                                                                <td class="tbltxt" width="130" style="height: 23px">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        Mobile Phone:</div>
+                                                                                                </td>
+                                                                                                <td width="200" style="height: 23px">
+                                                                                                    <h:inputText name="ctl00$BodyHolder$txtMobilePhone" type="text" value="#{loginBean.theUserOfThisAccount.mobilePhone}" id="ctl00_BodyHolder_txtMobilePhone" style="font-size:11px;height:19px;width:200px;" />
+                                                                                                </td>
+                                                                                                <td style="height: 23px">
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            
+                                                                                            <tr height="33">
+                                                                                                <td class="tbltxt" style="height: 23px">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        Contact Last Name:</div>
+                                                                                                </td>
+                                                                                                <td style="height: 23px">
+                                                                                                    <h:inputText  name="ctl00$BodyHolder$txtContactLastName" type="text" value="#{loginBean.theUserOfThisAccount.lastName}" readonly="readonly" id="ctl00_BodyHolder_txtContactLastName" style="font-size:11px;height:19px;width:200px;" />
+                                                                                                </td>
+                                                                                                <td style="height: 23px">
+                                                                                                </td>
+                                                                                                <td class="tbltxt" width="130" style="height: 23px">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        Phone 2:</div>
+                                                                                                </td>
+                                                                                                <td width="200" style="height: 23px">
+                                                                                                    <h:inputText name="ctl00$BodyHolder$txtPhone2" type="text" value="#{loginBean.theUserOfThisAccount.phone2}" id="ctl00_BodyHolder_txtPhone2" style="font-size:11px;height:19px;width:200px;" />
+                                                                                                </td>
+                                                                                                <td style="height: 23px">
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                           
+                                                                                            <tr height="33">
+                                                                                                <td class="tbltxt" width="130">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        E-mail:</div>
+                                                                                                </td>
+                                                                                                <td width="200">
+                                                                                                    <h:inputText name="ctl00$BodyHolder$txtEmail" type="text" value="#{loginBean.theUserOfThisAccount.email}" id="ctl00_BodyHolder_txtEmail" style="font-size:11px;height:19px;width:200px;" />
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                                <td class="tbltxt" width="130">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        Fax:</div>
+                                                                                                </td>
+                                                                                                <td width="200">
+                                                                                                    <h:inputText name="ctl00$BodyHolder$txtFax" type="text" value="#{loginBean.theUserOfThisAccount.fax}" id="ctl00_BodyHolder_txtFax" style="font-size:11px;height:19px;width:200px;" />
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            
+                                                                                            <tr height="33">
+                                                                                                <td class="tbltxt">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        Country:</div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                               <h:selectOneMenu name="ctl00$BodyHolder$ddlCountry" value="#{loginBean.theUserOfThisAccount.country}" id="ctl00_BodyHolder_ddlCountry" style="font-size:11px;height:20px;width:200px;">
+																							 <f:selectItem itemValue="0"  itemLabel="- UNKNOWN -"></f:selectItem>
+																							<f:selectItems value="#{loginBean.countrys.entrySet().toArray()}" var="var" itemLabel="#{var.value}" itemValue="#{var.key}"/>
+																	
+
+																					</h:selectOneMenu>
+															 </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                                <td class="tbltxt" width="130">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        &nbsp;</div>
+                                                                                                </td>
+                                                                                                <td width="200">
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            
+                                                                                            <tr height="33">
+                                                                                                <td class="tbltxt" valign="top">
+                                                                                                    <div style="margin-top: 3px; margin-left: 6px">
+                                                                                                        Address 1:</div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <h:inputText name="ctl00$BodyHolder$txtAddress1" type="text" value="#{loginBean.theUserOfThisAccount.address1}" maxlength="32" id="ctl00_BodyHolder_txtAddress1" style="font-size:11px;height:19px;width:200px;" />
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                                <td class="tbltxt" width="130">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td width="200">
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            
+                                                                                            <tr height="33">
+                                                                                                <td class="tbltxt" valign="top">
+                                                                                                    <div style="margin-top: 3px; margin-left: 6px">
+                                                                                                        Address 2:</div>
+                                                                                                </td>
+                                                                                                <td colspan="4">
+                                                                                                    <h:inputText name="ctl00$BodyHolder$txtAddress2" type="text" maxlength="32" value="#{loginBean.theUserOfThisAccount.address2}" id="ctl00_BodyHolder_txtAddress2" style="font-size:11px;height:19px;width:200px;" />
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            
+                                                                                            <tr height="33">
+                                                                                                <td class="tbltxt">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        City:</div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <h:inputText name="ctl00$BodyHolder$txtCity" type="text" value="#{loginBean.theUserOfThisAccount.city}" id="ctl00_BodyHolder_txtCity" style="font-size:11px;height:19px;width:200px;" />
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                                <td class="tbltxt" width="130">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td width="200">
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            
+                                                                                            <tr height="33">
+                                                                                                <td class="tbltxt">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        <span id="ctl00_BodyHolder_lblState">State:</span></div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <h:inputText name="ctl00$BodyHolder$txtState" type="text" value="#{loginBean.theUserOfThisAccount.state}" id="ctl00_BodyHolder_txtState" style="font-size:11px;height:19px;width:200px;" />
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                                <td class="tbltxt" width="130">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td width="200">
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                           
+                                                                                            <tr height="33">
+                                                                                                <td class="tbltxt">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        ZIP:</div>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <h:inputText name="ctl00$BodyHolder$txtZIP" type="text" maxlength="10" value="#{loginBean.theUserOfThisAccount.zip}" id="ctl00_BodyHolder_txtZIP" style="font-size:11px;height:19px;width:100px;" />
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                                <td class="tbltxt" width="130">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                  
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td width="200">
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            
+                                                                                            <!-- 
+                                                                                            <tr height="33">
+                                                                                                <td colspan="3" class="tbltxt" style="height: 23px">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        <input id="ctl00_BodyHolder_cbImageRequired" type="checkbox" name="ctl00$BodyHolder$cbImageRequired" /><label for="ctl00_BodyHolder_cbImageRequired">Required Image</label></div>
+                                                                                                </td>
+                                                                                                <td style="height: 23px">
+                                                                                                </td>
+                                                                                                <td style="height: 23px">
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            
+                                                                                             -->
+                                                                                            
+                                                                                           
+                                                                                            <tr height="33">
+                                                                                                <td align="right" colspan="5">
+                                                                                                    &nbsp;<p:commandButton action="#{contactInfo.updateData()}" name="ctl00$BodyHolder$cmdSave" value="Save" id="ctl00_BodyHolder_cmdSave" style="font-family:Verdana;font-size:10px;font-weight:bold;height:22px;width:100px;" />
+                                                                                                    &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr height="2">
+                                                                                                <td colspan="5">
+                                                                                                    <table cellspacing="0" width="100%" bgcolor="#f7f7f7" border="0">
+                                                                                                        <tr>
+                                                                                                            <td>
+                                                                                                                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                                                                                    <tr>
+                                                                                                                        <td width="100%" align="left" style="height: 30px">
+                                                                                                                            <div style="margin-left: 10px">
+                                                                                                                                <br />
+                                                                                                                                &nbsp;
+                                                                                                                            </div>
+                                                                                                                        </td>
+                                                                                                                    </tr>
+                                                                                                                </table>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <img height="3" src="#{resource['images:dumb.gif']}" width="1"/>
+                                                    
+                                                    <img height="3" src="#{resource['images:dumb.gif']}" width="1"/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- End of Table 1 -->
+                   
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+            </div>  
+        </h:form>
+     
+	</ui:define>
+	
+		
+	
+</ui:composition>
+</html>

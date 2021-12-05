@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/templates/publicTemplatePrime.xhtml">
+
+
+<ui:define name="Banner-Part">
+<style>
+.img-fluid {
+    max-width: 100%;
+    height: 234px!important;
+}
+
+</style>
+
+ <div class="container ">
+                    <div class="text-contact">
+                        <h3 style="margin-top: 171px;">Gallery</h3>
+            <p>By working with a Prime that offers the above qualities
+            <br></br> you will have a much smoother and less
+stressful shipping experience, regardless of your shipment’s size.
+     
+         
+            </p>
+                </div>
+            </div>
+				
+</ui:define>
+
+
+
+<ui:define name="Slicer">
+	 <svg  viewBox="0 0 1440 320">
+                    <path fill="#202020" fill-opacity="1" d="M0,224L1440,0L1440,0L0,0Z"></path></svg>
+</ui:define>
+
+
+
+<ui:define name="content">
+		
+        <link rel="stylesheet" href="#{resource['css:dashboardPrime/gallery.css']}" />
+        
+		<div class="img-item">
+		<section id="contact">
+			
+		</section>
+
+
+		<section id="features" class="pb-5">
+		<div class="container">
+             
+		</div>
+		</section>
+
+
+
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section id="body-contact">
+    
+<div class="container">
+<div class="body-text">
+      <p>If you are interested in shipping services,
+       contact Aeneas Exporting LLC.
+      
+       This company provides all the
+above qualities plus many more to ensure that your entire shipping needs are met.
+</p>
+</div>
+
+
+
+
+	<div class="row swiper-container two">
+  <div class="swiper-wrapper">
+    
+        <ui:repeat var="data" value="#{carLandingBean.listOfCarsLandingScroller}">
+	    <div class="swiper-slide preview-photo" >
+	    <a class="thumbnail see_photos" href="#" data-image-id="" data-toggle="modal" data-title=""
+                   data-image="/images/?file=#{data.mainImage}"
+                   data-target="#image-gallery">
+           
+	      <img src="/images/?file=#{data.mainImage}" class="entity-img" />
+	      <img src="/resources/images/public/img/zoom-magnifier.png" class="hoverImage"/>
+	      </a>
+	    </div>
+		</ui:repeat>
+  
+  
+  
+  		
+  </div>
+  
+  
+  
+  <!-- If we need pagination -->
+		<div class="swiper-pagination"></div>
+		
+		
+		
+		
+		
+		
+		
+</div>
+	
+	<div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="image-gallery-title"></h4>
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img id="image-gallery-image" class="img-responsive col-md-12" src=""/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary float-left" id="show-previous-image"><i class="fa fa-arrow-left"></i>
+                        </button>
+
+                        <button type="button" id="show-next-image" class="btn btn-secondary float-right"><i class="fa fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+	        
+			
+  
+ </div>
+</section>
+
+
+
+	
+		<script>
+		
+		document.getElementById('mainHeadChange').id = 'head-gallery';
+		</script>	
+		
+</ui:define>
+
+<ui:define name="scriptsImport">
+
+		<h:outputScript name="js/dashboardPrime/gallery.js"/>
+			
+	
+	
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+	<script>
+	// Params
+	
+	
+	
+	
+	
+	
+
+	
+
+var swiper = new Swiper( '.swiper-container.two', {
+		pagination: '.swiper-pagination',
+		paginationClickable: true,
+		effect: 'coverflow',
+		loop: true,
+		centeredSlides: true,
+		slidesPerView: 'auto',
+		coverflow: {
+			rotate: 50, // Slide rotate in degrees
+	        stretch: 0, // Stretch space between slides (in px)
+	        depth: 100, // Depth offset in px (slides translate in Z axis)
+	        modifier: 1, // Effect multipler
+	        slideShadows : true, // Enables slides shadows
+		}
+} );
+</script>
+
+
+</ui:define>
+
+<!--  
+	<ui:define name="bodyBlock">
+		
+	#{carLandingBean.refresh()}
+	
+	
+	</ui:define>
+
+	<ui:define name="content">
+			
+			
+			
+			       <ui:repeat var="data" value="#{carLandingBean.listOfCarsLandingScroller}">
+        
+          
+			            <div>
+			                <div class="single-service">
+			                  <h:graphicImage value="#{data.mainImage}" alt="image#{var}" class="img-fluid" />
+							<div class="overlay">
+			             
+			              <h4> #{data.year} #{data.make}  #{data.model} <span>($#{data.currentBid})</span></h4>
+			              
+			              <p> #{data.year} #{data.make}</p>
+			              <a href="/pages/public/carsForDetails.jsf?id=#{data.id}"><button class="btn">المزيد</button></a>
+			              </div>
+			            </div>
+			          </div>
+			          
+			          
+			            
+        	
+        </ui:repeat>
+        	    
+			    
+			
+			
+			
+					
+			
+			
+	</ui:define>
+	
+	
+	
+	<ui:define name="script">
+  	
+
+  	
+  	</ui:define>
+	-->
+	
+</ui:composition>
+</html>

@@ -1,0 +1,1062 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/dashboard2.xhtml">
+
+
+	<ui:define name="title"> Aeneas Exporting LLC</ui:define>
+ <ui:define name="mainHead"> 
+			      <ul class="mn-sub"><li class="mn-sub-item mn-item-addinventory"><a href="AddNewInventory.jsf" class="mn-sub-item-current"><b>Add Inventory</b></a></li></ul>
+           
+			</ui:define>
+
+	<ui:define name="content">
+	
+    <link rel="stylesheet" href="#{resource['css:dashboard/primifaces.css']}" />
+
+    <link rel="stylesheet" href="#{resource['css:dashboard/primeicons.css']}" />
+   	 <style>
+	.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: 1px solid #a8a8a8;
+    background: #c4c4c4 url(/javax.faces.resource/images/ui-bg_highlight-hard_80_c4c4c4_1x100.png.jsf?ln=primefaces-aristo) 50% 50% repeat-x;
+    background: #c4c4c4 linear-gradient(top,rgba(255,255,255,0.8),rgba(255,255,255,0));
+    background: #c4c4c4 -webkit-gradient(linear,left top,left bottom,from(rgba(255,255,255,0.8)),to(rgba(255,255,255,0)));
+    background: #c4c4c4 -moz-linear-gradient(top,rgba(255,255,255,0.8),rgba(255,255,255,0));
+    font-weight: bold;
+    color: #4f4f4f;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+    background: inherit;
+}
+
+.ui-selectonemenu label.ui-selectonemenu-label {
+    cursor: pointer;
+    width: 101%;
+    height: 100%;
+    display: contents;
+}
+
+body .ui-datatable .ui-datatable-data > tr .ui-row-editor .ui-icon {
+    color: #737373;
+    font-size: 1.7em!important;
+}
+
+    .ui-selectonemenu .ui-selectonemenu-trigger {
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
+    cursor: pointer;
+    width: 16px;
+    height: 100%;
+    background: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0px 11px;
+}
+.ui-selectonemenu input.ui-selectonemenu-label {
+    cursor: default;
+    width: inherit;
+    background: #476c8c00;
+    border: none;
+    height: inherit;
+}        
+
+body .ui-tabs.ui-tabs-top .ui-tabs-nav .ui-tabs-header {
+    border-bottom: 0 none;
+    font-size: 15px;
+}
+
+body .ui-datatable .ui-datatable-data > tr > td {
+    padding: 0.571em 0.857em;
+    border: inherit;
+    text-align: center;
+}
+
+.table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+	vertical-align: middle;
+    border: 1px solid #dddddd;
+    font-size: 11px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+
+                                            </style>
+
+
+
+
+    
+           <h:form name="aspnetForm" method="post" action="./AddNewInventory.jsf" id="aspnetForm">
+
+            <div id="content">
+                
+
+    <!-- page src -->
+    <table border="0" class="content-table" cellspacing="0" cellpadding="5" >
+        <tr valign="top">
+            <td width="100%" style="min-height: 500px;">
+                <table width="100%" cellspacing="0" cellpadding="1" border="0" bgcolor="#003399">
+                    <tr>
+                        <td>
+                        <h:panelGroup id="tableRendered">
+                            <table width="100%" cellspacing="0" cellpadding="8" border="0" bgcolor="#f7f7f7">
+                                <tr>
+                                    <td class="tbltxt" valign="top">
+                                        <span><b>Email Response Address:</b></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        
+                                        <h:outputText name="ctl00$BodyHolder$ddlType" value="#{customBean.selectedCustomData.userId.email}" id="ctl00_BodyHolder_ddlType" style="width:120px;">
+											</h:outputText>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">
+                                        &nbsp;
+                                                
+                                                <div id="ctl00_BodyHolder_pnlVehicle" style="height:100%;width:98%;">
+	
+                                                    <table id="VehicleTable" cellspacing="0" cellpadding="1" width="100%" bgcolor="#f7f7f7"
+                                                        border="0" style="float: left;">
+                                                        
+                                                        
+                                                        <tr height="40">
+                                                            <td class="tbltxt" >
+                                                                <div style="margin-left: 6px">
+                                                                <div id="shipmentInfo.shipmentReNum" class="form-group">
+																<span class="thick control-label key">* Shipment Reference Number 
+																</span>
+																
+															</div>    
+																</div>
+                                                            </td>
+                                                            
+                                                            
+                                                             <td class="tbltxt" >
+                                                             <h:inputText id="ShipmentReferenceNumber" value="#{customBean.selectedCustomData.srn}" class="tbltxt" style="font-size:14px;height:27px;width:309px;border-radius: 6px;padding-left: 1%;"/>
+																
+                                                             </td>
+                                                            
+                                                        </tr>
+                                                        
+                                                        
+                                                                      <tr height="40">
+                                                            <td class="tbltxt" >
+                                                                <div style="margin-left: 6px">
+                                                                <div id="shipmentInfo.routedExpTransactionInd.stringField-group" class="form-group">
+																<span class="thick control-label key">* Departure Date 
+																
+																</span>
+																
+															</div>    
+																</div>
+                                                            </td>
+                                                            
+                                                            
+                                                             <td class="tbltxt" >
+                                                             <h:inputText id="timeDateEda" value="#{customBean.edaString}" class="tbltxt" style="font-size:14px;height:27px;width:309px;border-radius: 6px;padding-left: 1%;"/>
+																
+                                                             </td>
+                                                            
+                                                        </tr>
+                                                      
+                                                      <script>
+                                                      
+                                                      $(function() {
+                                          				$('#aspnetForm\\:timeDateEda').datepicker({
+                                          				    dateFormat: 'yy-dd-mm',
+                                          				    onSelect: function(datetext){
+
+                                          				        var d = new Date(); // for now
+
+                                          				        var h = d.getHours();
+                                          				        h = (h &lt; 10) ? ("0" + h) : h ;
+
+                                          				        var m = d.getMinutes();
+                                          				        m = (m &lt; 10) ? ("0" + m) : m ;
+
+                                          				        var s = d.getSeconds();
+                                          				        s = (s &lt; 10) ? ("0" + s) : s ;
+
+                                          				        datetext = datetext + " " + h + ":" + m + ":" + s;
+
+                                          				        $('#aspnetForm\\:timeDateEda').val(datetext);
+                                          				    }
+                                          				});
+                                          				});
+                                                      </script>
+                                                      
+                                                       <tr height="20">
+                                                            <td class="tbltxt" colspan="2">
+                                                              
+                                                            </td>
+                                                            
+                                                        </tr>
+                                                        
+                                                        <tr>
+                                    <td valign="top">
+                                        &nbsp;
+                                                
+                                           
+                                                        <tr height="40">
+                                                            <td class="tbltxt" width="150">
+                                                                <div style="margin-left: 6px">
+                                                                   * Mode of Transport:</div>
+                                                            </td>
+                                                            <td class="tbltxt" style="height: 40px;">
+                                                                <p:selectOneMenu  effect="fade" filter="true" filterMatchMode="startsWith"  value="#{customBean.selectedCustomData.mot}"  class="tbltxt" style="font-size:11px;height:27px;width:309px;padding: 1%;">
+																	<f:selectItem itemValue="-1" itemLabel="-SELECT-"/>	
+																	
+																	<f:selectItems value="#{customBean.modeTrans.entrySet().toArray()}" var="var3" itemLabel="#{var3.value}" itemValue="#{var3.key}"/>
+																		
+																</p:selectOneMenu>
+                                                            </td>
+                                                        </tr>
+                                                        <tr height="40">
+                                                            <td class="tbltxt">
+                                                                <div style="margin-left: 6px">
+                                                                    Port of Export:</div>
+                                                            </td>
+                                                            <td>
+                                                            	  <p:selectOneMenu effect="fade" filter="true" filterMatchMode="startsWith" value="#{customBean.selectedCustomData.poe}"   class="tbltxt" style="font-size:11px;height:27px;width:309px;padding: 1%;" >
+																	<f:selectItem itemValue="-1" itemLabel="-SELECT-"/>	
+																	<f:selectItems value="#{customBean.ports.entrySet().toArray()}" var="port" itemLabel="#{port.value}" itemValue="#{port.key}"/>
+																	</p:selectOneMenu>
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                       
+                                                        <tr height="40">
+                                                            <td class="tbltxt" >
+                                                                <div style="margin-left: 6px">
+                                                                    Port of Unlading:</div>
+                                                            </td>
+                                                            <td>
+                                                              <p:selectOneMenu  effect="fade" filter="true" filterMatchMode="startsWith" value="#{customBean.selectedCustomData.pou}"  class="tbltxt" style="font-size:11px;height:27px;width:309px;padding: 1%;" >
+																	<f:selectItem itemValue="-1" itemLabel="-SELECT-"/>	
+																	<f:selectItems value="#{customBean.ports.entrySet().toArray()}" var="port1" itemLabel="#{port1.value}" itemValue="#{port1.key}"/>
+																	</p:selectOneMenu>
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                       
+                                                        <tr height="40">
+                                                            <td class="tbltxt">
+                                                                <div style="margin-left: 6px">
+                                                                    Origin State:</div>
+                                                            </td>
+                                                            <td>
+																<p:selectOneMenu  effect="fade" filter="true" filterMatchMode="startsWith"   value="#{customBean.selectedCustomData.st}" style="font-size:11px;height:27px;width:309px;padding: 1%;">
+																							 <f:selectItem itemValue="0"  itemLabel="- UNKNOWN -"></f:selectItem>
+																						<f:selectItems value="#{loginBean.states.entrySet().toArray()}" var="var5" itemLabel="#{var5.value}" itemValue="#{var5.key}"/>
+																	
+																						
+																					</p:selectOneMenu>                                                            
+															</td>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                        <tr height="40">
+                                                            <td class="tbltxt">
+                                                                <div style="margin-left: 6px">
+                                                                    Country of Destination:</div>
+                                                            </td>
+                                                            <td>
+                                                            <p:selectOneMenu  effect="fade" filter="true" filterMatchMode="startsWith" name="ctl00$BodyHolder$ddlCountry"  value="#{customBean.selectedCustomData.cod}" id="ctl00_BodyHolder_ddlCountry" style="font-size:11px;height:27px;width:309px;padding: 1%;">
+																							 <f:selectItem itemValue="0"  itemLabel="- UNKNOWN -"></f:selectItem>
+	 																						<f:selectItems value="#{loginBean.countrys.entrySet().toArray()}" var="var" itemLabel="#{var.value}" itemValue="#{var.key}"/>
+																	
+																	</p:selectOneMenu>
+																					
+																					</td>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                        <tr height="40">
+                                                            <td class="tbltxt">
+                                                                <div style="margin-left: 6px">
+                                                                    Inbond Type:</div>
+                                                            </td>
+                                                            <td>
+															<p:selectOneMenu  effect="fade" filter="true" filterMatchMode="startsWith"  value="#{customBean.selectedCustomData.ibt}" name="ctl00$BodyHolder$ddlInbontType" id="cBody" class="tbltxt" style="font-size:11px;height:27px;width:309px;padding: 1%;">
+																	<f:selectItem itemValue="-1" itemLabel="-SELECT-"/>	
+																	<f:selectItems value="#{customBean.inbondTypes.entrySet().toArray()}" var="var2" itemLabel="#{var2.value}" itemValue="#{var2.key}"/>
+																	
+																</p:selectOneMenu>                                                            
+</td>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                        <tr height="70">
+                                                            <td class="tbltxt" colspan="2">
+                                                                <div style="margin-left: 6px">
+                                                                <div id="shipmentInfo.routedExpTransactionInd.stringField-group" class="form-group">
+																<span class="thick control-label key">Is this a Routed Transaction? <span class="normalRequired">*
+																<p:selectOneRadio value="#{customBean.selectedCustomData.rt}">
+																	<f:selectItem itemValue="Y"  itemLabel="Yes"/>
+																	<f:selectItem itemValue="N"  itemLabel="No"/>
+																</p:selectOneRadio>
+																
+																</span>
+																
+																</span>
+																
+															</div>    
+																</div>
+                                                            </td>
+                                                            
+                                                        </tr>
+                                                        
+                                                         <tr height="70">
+                                                            <td class="tbltxt" colspan="2">
+                                                                <div style="margin-left: 6px">
+                                                                <div id="shipmentInforcc.stringField-group" class="form-group">
+																<span class="thick control-label key">Are USPPI and Ultimate Consignee companies related?  <span class="normalRequired">*
+																<p:selectOneRadio value="#{customBean.selectedCustomData.rcc}">
+																	<f:selectItem itemValue="Y"  itemLabel="Yes"/>
+																	<f:selectItem itemValue="N"  itemLabel="No"/>
+																</p:selectOneRadio>
+																
+																</span>
+																
+																</span>
+																
+															</div>    
+																</div>
+                                                            </td>
+                                                            
+                                                        </tr>
+                                                        
+                                                         <tr height="70">
+                                                            <td class="tbltxt" colspan="2">
+                                                                <div style="margin-left: 6px">
+                                                                <div id="shipmentInfo.routedExpTransactionInd.stringField-group" class="form-group">
+																<span class="thick control-label key">Does shipment contain hazardous material?  <span class="normalRequired">*
+																<p:selectOneRadio value="#{customBean.selectedCustomData.haz}">
+																	<f:selectItem itemValue="Y"  itemLabel="Yes"/>
+																	<f:selectItem itemValue="N"  itemLabel="No"/>
+																</p:selectOneRadio>
+																
+																</span>
+																
+																</span>
+																
+															</div>    
+																</div>
+                                                            </td>
+                                                            
+                                                        </tr>
+                                                      
+                                                        
+                                                  
+                                                <br />
+                                                
+                                                
+                                                <br />
+                                            
+                                        
+                                    </td>
+                                </tr>
+                                                       <tr height="20">
+                                                            <td class="tbltxt" colspan="2">
+                                                              
+                                                            </td>
+                                                            
+                                                        </tr>
+                                                        
+                                                        <tr height="40">
+                                                            <td class="tbltxt" width="150">
+                                                                <div style="margin-left: 6px">
+                                                                   * USPPI:</div>
+                                                            </td>
+                                                            <td class="tbltxt" style="height: 40px;">
+                                                                <p:selectOneMenu  effect="fade" filter="true" filterMatchMode="startsWith"  value="#{customBean.usppiIdUsedForSelector}" name="ctl00$BodyHolder$ddlVendorVehicle" id="ctl00_BodyHolder_ddlVendorVehicle" class="tbltxt" style="font-size:11px;height:27px;width:309px;padding: 1%;">
+																	<f:selectItem itemValue="-1" itemLabel="-SELECT-"/>	
+																	<f:selectItems value="#{customBean.listOfConsignees}" var="var3" itemLabel="#{var3.userId.company}" itemValue="#{var3.id}"/>
+																		
+																</p:selectOneMenu>
+                                                            </td>
+                                                        </tr>
+                                                        <tr height="40">
+                                                           
+                                                            <td class="tbltxt" style="width: 2%;">
+                                                                <div style="margin-left: 6px">
+                                                                     * Ultimate Consignee:</div>
+                                                            </td>
+                                                            
+                                                            
+                                                            <td style="width: 7%;">
+                                                            	  <p:selectOneMenu effect="fade" filter="true" filterMatchMode="startsWith" value="#{customBean.ulConsigneeIdUsedForSelector}"  class="tbltxt" style="font-size:11px;height:27px;width:309px;padding: 1%;" >
+																	<f:selectItem itemValue="-1" itemLabel="-SELECT-"/>	
+																	<f:selectItems value="#{customBean.listOfConsignees}" var="var3" itemLabel="#{var3.userId.company}" itemValue="#{var3.id}"/>
+																	</p:selectOneMenu>
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tbltxt" style="width: 5%;">
+                                                            
+                                                            <span class="thick control-label key">Sold En Route? * <span class="normalRequired">
+																<p:selectOneRadio value="#{customBean.selectedCustomData.soldEnRoute}">
+																	<f:selectItem itemValue="Y"  itemLabel="Yes"/>
+																	<f:selectItem itemValue="N"  itemLabel="No"/>
+																</p:selectOneRadio>
+																
+																</span>
+																
+																</span>
+                                                            </td>
+                                                            
+                                                            
+                                                            
+                                                            <td class="tbltxt" style="width: 12%;">
+                                                            <span class="thick control-label key">Consignee Type?  <span class="normalRequired">*
+																<p:selectOneRadio value="#{customBean.selectedCustomData.consigneeType}">
+																	<f:selectItem itemValue="D"  itemLabel="D - DIRECT CONSUMER"/>
+																	<f:selectItem itemValue="G"  itemLabel="G - GOVERNMENT ENTITY"/>
+																	<f:selectItem itemValue="R"  itemLabel="R - RESELLER"/>
+																	<f:selectItem itemValue="O"  itemLabel="O - OTHER/UNKNOWN"/>
+																</p:selectOneRadio>
+																
+																</span>
+																
+																</span>
+                                                            </td>
+                                                            
+                                                             
+                                                            
+                                                        </tr>
+                                                        
+                                                      
+                                                        <tr height="20">
+                                                            <td class="tbltxt" colspan="2">
+                                                              
+                                                            </td>
+                                                            
+                                                        </tr>
+                                                        
+                                                        
+                                                        <tr height="40">
+                                                            <td class="tbltxt" >
+                                                                <div style="margin-left: 6px">
+                                                                    * Fright Forwarded Consignee:</div>
+                                                            </td>
+                                                            <td>
+                                                              <p:selectOneMenu  effect="fade" filter="true" filterMatchMode="startsWith" value="#{customBean.frightForwardedIdUsedForSelector}" name="ctl00$BodyHolder$txtPortofUnlading" id="ctl00_BodyHolder_txtModel" class="tbltxt" style="font-size:11px;height:27px;width:309px;padding: 1%;" >
+																	<f:selectItem itemValue="-1" itemLabel="-SELECT-"/>	
+																	<f:selectItems value="#{customBean.listOfConsignees}" var="var3" itemLabel="#{var3.userId.company}" itemValue="#{var3.id}"/>
+																	</p:selectOneMenu>
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                       
+                                                        <tr height="40">
+                                                            <td class="tbltxt">
+                                                                <div style="margin-left: 6px">
+                                                                    * Inter Consignee:</div>
+                                                            </td>
+                                                            <td>
+																<p:selectOneMenu  effect="fade" filter="true" filterMatchMode="startsWith"  value="#{customBean.interConsigneeIdUsedForSelector}"  style="font-size:11px;height:27px;width:309px;padding: 1%;">
+																							 <f:selectItem itemValue="0"  itemLabel="- SELECT -"></f:selectItem>
+																						<f:selectItems value="#{customBean.listOfConsignees}" var="var3" itemLabel="#{var3.userId.company}" itemValue="#{var3.id}"/>
+																	
+																						
+																					</p:selectOneMenu>                                                            
+															</td>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                        
+                                                       
+                                                        <tr height="20">
+                                                            <td class="tbltxt" colspan="2">
+                                                              
+                                                            </td>
+                                                            
+                                                        </tr>
+                                                        
+                                                         
+                                                        
+                                           
+                                                        
+                                                         <tr height="40">
+                                                            <td class="tbltxt" >
+                                                                <div style="margin-left: 6px">
+                                                                <div id="shipmentInfo.SCAC" class="form-group">
+																<span class="thick control-label key">* Carrier SCAC/IATA 
+																</span>
+																
+															</div>    
+																</div>
+                                                            </td>
+                                                            
+                                                            
+                                                             <td class="tbltxt" >
+                                                             <h:inputText id="CarrierSCAC_IATA" value="#{customBean.selectedCustomData.scac}" class="tbltxt" style="font-size:14px;height:27px;width:309px;border-radius: 6px;padding-left: 1%;"/>
+																
+                                                             </td>
+                                                            
+                                                        </tr>
+                                                        
+                                                        
+                                                        <tr height="40">
+                                                            <td class="tbltxt" >
+                                                                <div style="margin-left: 6px">
+                                                                <div id="shipmentInfo.vn" class="form-group">
+																<span class="thick control-label key">* Conveyance Name/Carrier Name 
+																</span>
+																
+															</div>    
+																</div>
+                                                            </td>
+                                                            
+                                                            
+                                                             <td class="tbltxt" >
+                                                             <h:inputText id="ConveyanceName_Carrier_Name" value="#{customBean.selectedCustomData.vn}" class="tbltxt" style="font-size:14px;height:27px;width:309px;border-radius: 6px;padding-left: 1%;"/>
+																
+                                                             </td>
+                                                            
+                                                        </tr>
+                                                        
+                                                        <tr height="40">
+                                                            <td class="tbltxt" >
+                                                                <div style="margin-left: 6px">
+                                                                <div id="shipmentInfo.bn" class="form-group">
+																<span class="thick control-label key">* Transportation Reference Number 
+																</span>
+																
+															</div>    
+																</div>
+                                                            </td>
+                                                            
+                                                            
+                                                             <td class="tbltxt" >
+                                                             <h:inputText id="Transportation_Reference_Number" value="#{customBean.selectedCustomData.bn}" class="tbltxt" style="font-size:14px;height:27px;width:309px;border-radius: 6px;padding-left: 1%;"/>
+																
+                                                             </td>
+                                                            
+                                                        </tr>
+                                                        
+                                                        
+                                                          <tr height="20">
+                                                            <td class="tbltxt" colspan="2">
+                                                              
+                                                            </td>
+                                                            
+                                                        </tr>
+                                                        
+                                                        
+                                                        
+                                                        
+    
+                                                    </table>
+                                                    
+                                                     <p:tabView id="tabs">
+												        <p:tab title="All Commodities">
+												            <p:dataTable id="commodities" var="var" value="#{customBean.listOfCommodities}" editable="true" style="margin-bottom:20px">
+        <f:facet name="header">
+            Commodities
+        </f:facet>
+ 
+         <p:column headerText=" Line Number ">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{var.lineNum}" /></f:facet>
+                <f:facet name="input"><p:inputText id="lineNum" value="#{var.lineNum}" style="width:100%"/></f:facet>
+            </p:cellEditor>
+        </p:column>
+        
+        
+         <p:column headerText=" Export Information Code ">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{var.it_1}" /></f:facet>
+                <f:facet name="input"><p:inputText id="it_1" value="#{var.it_1}" style="width:100%"/></f:facet>
+            </p:cellEditor>
+        </p:column>
+ 
+        <p:column headerText="Value of Goods">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{var.it_2}" /></f:facet>
+                <f:facet name="input"><p:inputText value="#{var.it_2}" style="width:100%" label="it_2"/></f:facet>
+            </p:cellEditor>
+        </p:column>
+        
+        <p:column headerText="Unit of Measure (1)">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{var.it_3}" /></f:facet>
+                <f:facet name="input"><p:inputText value="#{var.it_3}" style="width:100%" label="it_3"/></f:facet>
+            </p:cellEditor>
+        </p:column>
+        
+        
+        <p:column headerText="Quantity (1)">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{var.it_4}" /></f:facet>
+                <f:facet name="input"><p:inputText value="#{var.it_4}" style="width:100%" label="it_4"/></f:facet>
+            </p:cellEditor>
+        </p:column>
+        
+        <p:column headerText="Unit of Measure (2)">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{var.it_5}" /></f:facet>
+                <f:facet name="input"><p:inputText value="#{var.it_5}" style="width:100%" label="it_5"/></f:facet>
+            </p:cellEditor>
+        </p:column>
+        
+        <p:column headerText="Quantity (2)">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{var.it_6}" /></f:facet>
+                <f:facet name="input"><p:inputText value="#{var.it_6}" style="width:100%" label="it_6"/></f:facet>
+            </p:cellEditor>
+        </p:column>
+        
+        <p:column headerText="Shipping Weight">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{var.it_7}" /></f:facet>
+                <f:facet name="input"><p:inputText value="#{var.it_7}" style="width:100%" label="it_7"/></f:facet>
+            </p:cellEditor>
+        </p:column>
+        
+        <p:column headerText="License Code">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{var.it_8}" /></f:facet>
+                <f:facet name="input"><p:inputText value="#{var.it_8}" style="width:100%" label="it_8"/></f:facet>
+            </p:cellEditor>
+        </p:column>
+        
+        <p:column headerText="ACM#">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{var.it_9}" /></f:facet>
+                <f:facet name="input"><p:inputText value="#{var.it_9}" style="width:100%" label="it_9"/></f:facet>
+            </p:cellEditor>
+        </p:column>
+        
+        <p:column headerText="License Value">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{var.it_10}" /></f:facet>
+                <f:facet name="input"><p:inputText value="#{var.it_10}" style="width:100%" label="it_10"/></f:facet>
+            </p:cellEditor>
+        </p:column>
+        
+       <p:column headerText="Commodity Description">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{var.it_12}" /></f:facet>
+                <f:facet name="input"><p:inputText value="#{var.it_12}" style="width:100%" label="it_12"/></f:facet>
+            </p:cellEditor>
+        </p:column>
+        
+        
+        <p:column headerText="HTS Number">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{var.it_13}" /></f:facet>
+                <f:facet name="input"><p:inputText value="#{var.it_13}" style="width:100%" label="it_13"/></f:facet>
+            </p:cellEditor>
+        </p:column>
+        
+        <p:column headerText="ECCN">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{var.it_20}" /></f:facet>
+                <f:facet name="input"><p:inputText value="#{var.it_20}" style="width:100%" label="it_20"/></f:facet>
+            </p:cellEditor>
+        </p:column>
+        
+         <p:column headerText="Foreign/Domestic Origin Indicator">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{var.it_21}" /></f:facet>
+                <f:facet name="input"><p:inputText value="#{var.it_21}" style="width:100%" label="it_21"/></f:facet>
+            </p:cellEditor>
+        </p:column>
+        
+        
+ 
+       
+ 
+       
+ 
+        <p:column style="width:35px">
+            <p:rowEditor />
+        </p:column>
+    </p:dataTable>
+												        </p:tab>
+												        
+												        
+												        <p:tab id="addedNewCommodiy" title="Add New Commodity">
+												        <h:panelGrid  columns="3" cellpadding="10">
+												       
+												            <h:panelGroup>
+                                                    			 <h:form>
+                                                                                    <p:selectOneMenu  effect="fade" filter="true" filterMatchMode="startsWith"  value="#{customBean.selectedCarIdToBeAddedInCommodities}" class="tbltxt" style="width:230px;height: 32px;border-top-width: thin;border-right-width: thin;margin-top: 8%;padding: 2%;">
+																							
+	 																					<f:selectItems value="#{customBean.carsForthisAccountCustoms}" var="var" itemLabel="#{var.uuid}" itemValue="#{var.id}"/>
+
+																					</p:selectOneMenu>
+																					
+																					<p:commandButton action="#{customBean.addCarToCommodities()}" style="width: 23px;height: 23px;background: #ffffff;margin-left: 6px;padding: 3px;margin-top: 9%;" value=""  class="fa fa-level-down"/>
+                                                                                </h:form>
+                                                    			</h:panelGroup> 
+                                                    			</h:panelGrid>
+                                                    			
+												            <h:panelGrid id="addedNewCommodiy3"  columns="3" cellpadding="10">
+												            
+												            
+												             <h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">Line Number</span></div>
+													            	<h:inputText disabled="true" value="#{customBean.addedNewCommoditiy.lineNum}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup> 
+												            	  
+												            	
+												            	
+												            	<h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">Export Information Code</span></div>
+													            	<h:inputText value="#{customBean.addedNewCommoditiy.it_1}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup>   
+												            	
+												            	
+												            	<h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">Value of Goods</span></div>
+													            	<h:inputText value="#{customBean.addedNewCommoditiy.it_2}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup>   
+												            	
+												            	
+												            	<h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">Unit of Measure (1)</span></div>
+													            	<h:inputText value="#{customBean.addedNewCommoditiy.it_3}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup>   
+												            	
+												            	<h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">Quantity (1)</span></div>
+													            	<h:inputText value="#{customBean.addedNewCommoditiy.it_4}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup>   
+												               
+												               
+												               <h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">Unit of Measure (2)</span></div>
+													            	<h:inputText value="#{customBean.addedNewCommoditiy.it_5}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup>   
+												               
+												               
+												               <h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">Quantity (2)</span></div>
+													            	<h:inputText value="#{customBean.addedNewCommoditiy.it_6}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup>   
+												               
+												               
+												               <h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">Shipping Weight</span></div>
+													            	<h:inputText value="#{customBean.addedNewCommoditiy.it_7}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup>   
+												               
+												               
+												               <h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">License Code</span></div>
+													            	<h:inputText value="#{customBean.addedNewCommoditiy.it_8}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup>   
+												               
+												               
+												               <h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">ACM#</span></div>
+													            	<h:inputText value="#{customBean.addedNewCommoditiy.it_9}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup>   
+												               
+												               
+												               <h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">License Value</span></div>
+													            	<h:inputText value="#{customBean.addedNewCommoditiy.it_10}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup>   
+												               
+												               
+												               <h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">Commodity Description</span></div>
+													            	<h:inputText value="#{customBean.addedNewCommoditiy.it_12}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup>   
+												            	
+												            	
+												            	
+												            	<h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">HTS Number</span></div>
+													            	<h:inputText value="#{customBean.addedNewCommoditiy.it_13}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup>   
+												            	
+												            	<h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">ECCN</span></div>
+													            	<h:inputText value="#{customBean.addedNewCommoditiy.it_20}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup>   
+												            	
+												            	<h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">Foreign/Domestic Origin Indicator</span></div>
+													            	<h:inputText value="#{customBean.addedNewCommoditiy.it_21}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup> 
+												            	
+												            	<h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">vin Number</span></div>
+													            	<h:inputText value="#{customBean.addedNewCommoditiy.it_17}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup> 
+												            	
+												            	<h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">Description</span></div>
+													            	<h:inputText value="#{customBean.addedNewCommoditiy.description}" style="font-size: 14px;    height: 27px;    width: 249px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup> 
+												            	
+												            	<h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">Title Number</span></div>
+													            	<h:inputText value="#{customBean.addedNewCommoditiy.it_18}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup> 
+												            	
+												            	
+												            	<h:panelGroup>
+													           	    <p:commandButton action="#{customBean.addTheNewCommodity()}" class="btn btn-default" name="addNewCommodity" value="Save" id="addNewCommodity" style="font-family:Verdana;font-size:10px;font-weight:bold;width:120px;" />
+                                                    			</h:panelGroup>  
+                                                    			
+												               
+												            </h:panelGrid>
+												        </p:tab>
+												       
+												    </p:tabView>
+												    
+												    
+												     <p:tabView id="tabs2">
+												        <p:tab title="All Transportation">
+												            <p:dataTable id="commodities" var="var" value="#{customBean.listOfTransportations}" editable="true" style="margin-bottom:20px">
+        <f:facet name="header">
+            Transportations
+        </f:facet>
+ 
+         <p:column headerText=" Line Number ">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{var.lineNum}" /></f:facet>
+                <f:facet name="input"><p:inputText id="lineNum" value="#{var.lineNum}" style="width:100%"/></f:facet>
+            </p:cellEditor>
+        </p:column>
+        
+        
+         <p:column headerText=" Equipment Number ">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{var.eqNumber}" /></f:facet>
+                <f:facet name="input"><p:inputText id="eq" value="#{var.eqNumber}" style="width:100%"/></f:facet>
+            </p:cellEditor>
+        </p:column>
+ 
+        <p:column headerText="Seal Number">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{var.sn}" /></f:facet>
+                <f:facet name="input"><p:inputText value="#{var.sn}" style="width:100%" label="sn"/></f:facet>
+            </p:cellEditor>
+        </p:column>
+        
+ 
+       
+ 
+       
+ 
+        <p:column style="width:35px">
+            <p:rowEditor />
+        </p:column>
+    </p:dataTable>
+												        </p:tab>
+												        
+												        
+												        <p:tab id="addedNewTransportation" title="Add New Transportation">
+												            <h:panelGrid  columns="3" cellpadding="10">
+												            	<h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">Line Number</span></div>
+													            	<h:inputText disabled="true" value="#{customBean.addedNewTransportations.lineNum}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup>   
+												            	
+												            	
+												            	<h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">Equipment Number</span></div>
+													            	<h:inputText value="#{customBean.addedNewTransportations.eqNumber}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup>   
+												            	
+												            	
+												            	<h:panelGroup>
+													            	<div><span style="font-size: 19px; font-weight: 500;">Seal Number</span></div>
+													            	<h:inputText value="#{customBean.addedNewTransportations.sn}" style="font-size: 14px;    height: 27px;    width: 309px;    border-radius: 6px;    padding-left: 1%;"/>
+												            	</h:panelGroup>   
+												            	
+												            	
+												            	
+												            	<h:panelGroup>
+													           	    <p:commandButton action="#{customBean.addTheNewcustomTransportation()}" class="btn btn-default" name="addTheNewcustomTransportation" value="Save" id="addTheNewcustomTransportation" style="font-family:Verdana;font-size:10px;font-weight:bold;width:120px;" />
+                                                    			</h:panelGroup>   
+												               
+												            </h:panelGrid>
+												        </p:tab>
+												       
+												    </p:tabView>
+												    
+												    <br></br>
+														<div class="container" style="    width: auto;">
+															<div class="row" style="    margin: 0;    padding: 0;
+">
+																<div class="col-md-1">
+																<!-- 	<p:commandButton action="#{customBean.updateTheSelectedCustomsData()}" class="btn btn-default" value="Save"  style="font-family:Verdana;font-size:10px;font-weight:bold;width:120px;" /> -->
+                                                            	</div>
+                                                            	<div class="col-md-3">
+																 	<p:commandButton  action="#{customBean.cancelCustom()}" class="btn btn-default" name="ctl00$BodyHolder$btnVehicleBack" value="Cancel" id="ctl00_BodyHolder_btnVehicleBack" style="font-family:Verdana;font-size:10px;font-weight:bold;width:120px;" />
+                                                   				</div>
+                                                   				<div class="col-md-6" style="    text-align: right;">
+																   <p:commandButton action="#{customBean.submitDataOfForm()}" class="btn btn-default" name="submitTheRequest" value="Submit" id="submitTheRequest" style="font-family:Verdana;font-size:10px;font-weight:bold;width:120px;" />
+                     											</div>
+															</div>
+														</div>
+                                                  
+                                                
+													</div>
+                                                <br />
+                                                
+                                                
+                                                <br />
+                                                
+                                            
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </h:panelGroup>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+            </div> 
+                                                   
+        </h:form>
+   
+         
+     <form style="display:none;" target="_blank" id="formOFSubmission" name="thisFormOfSubmission" action="https://ace.cbp.dhs.gov/aesd/ta/cert/aes-direct/secured/createWeblinkFiling" method="post">
+     
+     <br></br>wl_nosed_url <INPUT TYPE="TEXT" NAME="wl_nosed_url" VALUE="http://www.bing.com"/>
+<br></br>wl_success_url <INPUT TYPE="TEXT" NAME="wl_success_url" VALUE="http://www.cargomarin.com"/>
+<br></br>EMAIL <INPUT TYPE="TEXT" NAME="EMAIL" VALUE="#{customBean.theUserOfThisAccount.email}"/>
+
+<br></br>SRN <INPUT TYPE="TEXT" NAME="SRN" VALUE="#{customBean.selectedCustomData.srn}"/>
+<br></br>BN <INPUT TYPE="TEXT" NAME="BN" VALUE="#{customBean.selectedCustomData.bn}"/>
+<br></br>ST <INPUT TYPE="TEXT" NAME="ST" VALUE="#{customBean.selectedCustomData.st}"/>
+<br></br>IBT <INPUT TYPE="TEXT" NAME="IBT" VALUE="#{customBean.selectedCustomData.ibt}"/>
+<br></br>POE  <INPUT TYPE="TEXT" NAME="POE" VALUE="#{customBean.selectedCustomData.poe}"/>
+<br></br>COD <INPUT TYPE="TEXT" NAME="COD" VALUE="#{customBean.selectedCustomData.cod}"/>
+<br></br>POU <INPUT TYPE="TEXT" NAME="POU" VALUE="#{customBean.selectedCustomData.pou}"/>
+<br></br>EDA <INPUT TYPE="TEXT" NAME="EDA" VALUE="#{customBean.getTimeDateFormat(customBean.selectedCustomData.eda)}"/>
+<br></br>MOT <INPUT TYPE="TEXT" NAME="MOT" VALUE="#{customBean.selectedCustomData.mot}"/>
+<br></br>SCAC <INPUT TYPE="TEXT" NAME="SCAC" VALUE="#{customBean.selectedCustomData.scac}"/>
+<br></br>VN <INPUT TYPE="TEXT" NAME="VN" VALUE="#{customBean.selectedCustomData.vn}"/>
+<br></br>RCC <INPUT TYPE="TEXT" NAME="RCC" VALUE="#{customBean.selectedCustomData.rcc}"/>
+<br></br>HAZ <INPUT TYPE="TEXT" NAME="HAZ" VALUE="#{customBean.selectedCustomData.haz}"/>
+<br></br>RT <INPUT TYPE="TEXT" NAME="RT" VALUE="#{customBean.selectedCustomData.rt}"/>
+ 
+<br></br>AD0_1 <INPUT TYPE="TEXT" NAME="AD0_1" VALUE="#{customBean.selectedCustomData.usppiId.userId.userName}"/>
+<br></br>AD0_2 <INPUT TYPE="TEXT" NAME="AD0_2" VALUE="#{customBean.selectedCustomData.usppiId.idNumber}"/>
+<br></br>AD0_3 <INPUT TYPE="TEXT" NAME="AD0_3" VALUE="#{customBean.selectedCustomData.usppiId.idType}"/>
+<br></br>AD0_4 <INPUT TYPE="TEXT" NAME="AD0_4" VALUE="#{customBean.selectedCustomData.usppiId.userId.address1}"/>
+<br></br>AD0_5 <INPUT TYPE="TEXT" NAME="AD0_5" VALUE="#{customBean.selectedCustomData.usppiId.userId.address2}"/>
+<br></br>AD0_6 <INPUT TYPE="TEXT" NAME="AD0_6" VALUE="#{customBean.selectedCustomData.usppiId.userId.city}"/>
+<br></br>AD0_7 <INPUT TYPE="TEXT" NAME="AD0_7" VALUE="#{customBean.selectedCustomData.usppiId.userId.state}"/>
+<br></br>AD0_8 <INPUT TYPE="TEXT" NAME="AD0_8" VALUE="#{customBean.selectedCustomData.usppiId.userId.zip}"/>
+<br></br>AD0_9 <INPUT TYPE="TEXT" NAME="AD0_9" VALUE="#{customBean.selectedCustomData.usppiId.userId.firstName}"/>
+<br></br>AD0_11 <INPUT TYPE="TEXT" NAME="AD0_11" VALUE="#{customBean.selectedCustomData.usppiId.userId.lastName}"/>
+<br></br>AD0_12 <INPUT TYPE="TEXT" NAME="AD0_12" VALUE="#{customBean.selectedCustomData.usppiId.userId.mobilePhone}"/>
+
+<br></br>AD1_3 <INPUT TYPE="TEXT" NAME="AD1_3" VALUE="#{customBean.selectedCustomData.ulConsigneeId.userId.userName}"/>
+<br></br>AD1_5 <INPUT TYPE="TEXT" NAME="AD1_5" VALUE="#{customBean.selectedCustomData.ulConsigneeId.userId.firstName} #{customBean.selectedCustomData.ulConsigneeId.userId.lastName}"/>
+<br></br>AD1_6 <INPUT TYPE="TEXT" NAME="AD1_6" VALUE="#{customBean.selectedCustomData.soldEnRoute}"/>
+<br></br>AD1_7 <INPUT TYPE="TEXT" NAME="AD1_7" VALUE="#{customBean.selectedCustomData.ulConsigneeId.userId.mobilePhone}"/>
+<br></br>AD1_8 <INPUT TYPE="TEXT" NAME="AD1_8" VALUE="#{customBean.selectedCustomData.ulConsigneeId.userId.address1}"/>
+<br></br>AD1_9 <INPUT TYPE="TEXT" NAME="AD1_9" VALUE="#{customBean.selectedCustomData.ulConsigneeId.userId.address2}"/>
+<br></br>AD1_10 <INPUT TYPE="TEXT" NAME="AD1_10" VALUE="#{customBean.selectedCustomData.ulConsigneeId.userId.city}"/>
+<br></br>AD1_11 <INPUT TYPE="TEXT" NAME="AD1_11" VALUE="#{customBean.selectedCustomData.ulConsigneeId.userId.state}"/>
+<br></br>AD1_12  <INPUT TYPE="TEXT" NAME="AD1_12" VALUE="#{customBean.selectedCustomData.ulConsigneeId.userId.country}"/>
+<br></br>AD1_14  <INPUT TYPE="TEXT" NAME="AD1_14" VALUE="#{customBean.selectedCustomData.consigneeType}"/>
+
+<br></br>AD4_3 <INPUT TYPE="TEXT" NAME="AD4_3" VALUE="#{customBean.selectedCustomData.interConsigneeId.userId.userName}"/>
+<br></br>AD4_5 <INPUT TYPE="TEXT" NAME="AD4_5" VALUE="#{customBean.selectedCustomData.interConsigneeId.userId.firstName} #{customBean.selectedCustomData.interConsigneeId.userId.lastName}"/>
+<br></br>AD4_7 <INPUT TYPE="TEXT" NAME="AD4_7" VALUE="#{customBean.selectedCustomData.interConsigneeId.userId.mobilePhone}"/>
+<br></br>AD4_8 <INPUT TYPE="TEXT" NAME="AD4_8" VALUE="#{customBean.selectedCustomData.interConsigneeId.userId.address1}"/>
+<br></br>AD4_9 <INPUT TYPE="TEXT" NAME="AD4_9" VALUE="#{customBean.selectedCustomData.interConsigneeId.userId.address2}"/>
+<br></br>AD4_10 <INPUT TYPE="TEXT" NAME="AD4_10" VALUE="#{customBean.selectedCustomData.interConsigneeId.userId.city}"/>
+<br></br>AD4_11 <INPUT TYPE="TEXT" NAME="AD4_11" VALUE="#{customBean.selectedCustomData.interConsigneeId.userId.state}"/>
+<br></br>AD4_12 <INPUT TYPE="TEXT" NAME="AD4_12" VALUE="#{customBean.selectedCustomData.interConsigneeId.userId.country}"/>
+<br></br>AD4_13 <INPUT TYPE="TEXT" NAME="AD4_13" VALUE="#{customBean.selectedCustomData.interConsigneeId.userId.zip}"/>
+ 
+<br></br>AD3_3 <INPUT TYPE="TEXT" NAME="AD3_3" VALUE="#{customBean.selectedCustomData.freightForwardedId.userId.userName}"/>
+<br></br>AD3_4 <INPUT TYPE="TEXT" NAME="AD3_4" VALUE="#{customBean.selectedCustomData.freightForwardedId.idNumber}"/>
+<br></br>AD3_2 <INPUT TYPE="TEXT" NAME="AD3_2" VALUE="#{customBean.selectedCustomData.freightForwardedId.idType}"/>
+<br></br>AD3_5 <INPUT TYPE="TEXT" NAME="AD3_5" VALUE="#{customBean.selectedCustomData.freightForwardedId.userId.firstName} #{customBean.selectedCustomData.freightForwardedId.userId.lastName}"/>
+<br></br>AD3_7 <INPUT TYPE="TEXT" NAME="AD3_7" VALUE="#{customBean.selectedCustomData.freightForwardedId.userId.mobilePhone}"/>
+<br></br>AD3_8 <INPUT TYPE="TEXT" NAME="AD3_8" VALUE="#{customBean.selectedCustomData.freightForwardedId.userId.address1}"/>
+<br></br>AD3_9 <INPUT TYPE="TEXT" NAME="AD3_9" VALUE="#{customBean.selectedCustomData.freightForwardedId.userId.address2}"/>
+<br></br>AD3_10 <INPUT TYPE="TEXT" NAME="AD3_10" VALUE="#{customBean.selectedCustomData.freightForwardedId.userId.city}"/>
+<br></br>AD3_11 <INPUT TYPE="TEXT" NAME="AD3_11" VALUE="#{customBean.selectedCustomData.freightForwardedId.userId.state}"/>
+<br></br>AD3_13 <INPUT TYPE="TEXT" NAME="AD3_13" VALUE="#{customBean.selectedCustomData.freightForwardedId.userId.zip}"/>
+ 
+ 
+
+ <ui:repeat var="var" varStatus="status" value="#{customBean.listOfCommodities}">
+ <br></br>isLine#{status.index+1} <INPUT TYPE="TEXT" NAME="isLine#{status.index+1}" VALUE="#{var.isLine}"/>
+<br></br>IT#{status.index+1}_1 <INPUT TYPE="TEXT" NAME="IT#{status.index+1}_1" VALUE="#{var.it_1}"/>
+<br></br>IT#{status.index+1}_2 <INPUT TYPE="TEXT" NAME="IT#{status.index+1}_2" VALUE="#{var.it_2}"/>
+<br></br>IT#{status.index+1}_3 <INPUT TYPE="TEXT" NAME="IT#{status.index+1}_3" VALUE="#{var.it_3}"/>
+<br></br>IT#{status.index+1}_4 <INPUT TYPE="TEXT" NAME="IT#{status.index+1}_4" VALUE="#{var.it_4}"/>
+<br></br>IT#{status.index+1}_5 <INPUT TYPE="TEXT" NAME="IT#{status.index+1}_5" VALUE="#{var.it_5}"/>
+<br></br>IT#{status.index+1}_6 <INPUT TYPE="TEXT" NAME="IT#{status.index+1}_6" VALUE="#{var.it_6}"/>
+<br></br>IT#{status.index+1}_7 <INPUT TYPE="TEXT" NAME="IT#{status.index+1}_7" VALUE="#{var.it_7}"/>
+<br></br>IT#{status.index+1}_8 <INPUT TYPE="TEXT" NAME="IT#{status.index+1}_8" VALUE="#{var.it_8}"/>
+<br></br>IT#{status.index+1}_9 <INPUT TYPE="TEXT" NAME="IT#{status.index+1}_9" VALUE="#{var.it_9}"/>
+<br></br>IT#{status.index+1}_12 <INPUT TYPE="TEXT" NAME="IT#{status.index+1}_12" VALUE="#{var.it_12}"/>
+<br></br>IT#{status.index+1}_13 <INPUT TYPE="TEXT" NAME="IT#{status.index+1}_13" VALUE="#{var.it_13}"/>
+<br></br>IT#{status.index+1}_18 <INPUT TYPE="TEXT" NAME="IT#{status.index+1}_18" VALUE="#{var.it_18}"/>
+<br></br>IT#{status.index+1}_21 <INPUT TYPE="TEXT" NAME="IT#{status.index+1}_21" VALUE="#{var.it_21}"/>
+ </ui:repeat>
+
+  <ui:repeat var="var" varStatus="status" value="#{customBean.listOfTransportations}">
+
+<br></br>EQ#{status.index+1} <INPUT TYPE="TEXT" NAME="EQ#{status.index+1}" VALUE="#{var.eqNumber}"/>
+<br></br>SN#{status.index+1} <INPUT TYPE="TEXT" NAME="SN#{status.index+1}" VALUE="#{var.sn}"/>
+
+ </ui:repeat>
+ 
+ 
+<br></br>
+
+<br></br>
+<input id="submittButton" type="submit" ></input>
+     </form>
+     <script>
+
+       
+       function doRefreshAndSubmit(){
+    	   
+    	   
+    	   
+    	  
+    	   $('#formOFSubmission').load(document.URL +  ' #formOFSubmission');
+
+    	   setTimeout(function(e){
+
+    			$("#submittButton").click()
+    		   
+    		   },500);
+    	   
+    	    
+			
+	      }
+      
+       
+       
+       
+       </script>
+  
+	</ui:define>
+	
+		
+	
+</ui:composition>
+</html>
