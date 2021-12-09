@@ -41,7 +41,7 @@ $(document).ready(function() {
         $(document).ready(function(){
 
     
-            let featuresOffset  = $("#contact").offset().top;
+            //let featuresOffset  = $("#contact").offset().top;
             
             $(window).scroll(function () {  
                let wScroll=  $(window).scrollTop();

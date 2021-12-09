@@ -6,148 +6,67 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
-<ui:composition template="/templates/publicTemplatePrime.xhtml">
-
-
-<ui:define name="Banner-Part">
-<style>
-.img-fluid {
-    max-width: 100%;
-    height: 234px!important;
-}
-.ui-growl-image-error {
-    width: 100%;
-    background-position: 95% -2px!important;
-}
-.ui-growl-image {
-    width: 106%;
-    height: 32px;
-    float: left;
-    margin: 4px;
-    padding: 0;
-    display: block;
-    background: url(/javax.faces.resource/messages/messages.png.jsf?ln=primefaces) no-repeat;
-
-}
-
-.ui-growl-message {
-    padding: 0 0 8px 6px;
-    width: 100%;
-    float: right;
-}
-
-
-
-.ui-growl-item-container {
-z-index: 9999;
-    background: white;
-    height: 120px;
-    position: relative;
-    right: 91px;
-    margin: 0 0 6px 0;
-    opacity: .99;
-    width: 395px;
-}
-.ihref{
-font-size: 20px;
-    color: black;
-}
-
-.ihref:hover{
-color: #d29d3d;
-}
-</style>
-
- <div class="container ">
-                    <div class="text-contact">
-                        <h3 style="margin-top: 171px;">Contact Us</h3>
-            <p>We hope you enjoy our services as much as we enjoy offering them to you.
-            <br></br> If you have any questions or comments, please don't hesitate to contact us.
-            </p>
-                </div>
-            </div>
-				
-</ui:define>
-
-
-
-<ui:define name="Slicer">
-	 <svg  viewBox="0 0 1440 320">
-                    <path fill="#202020" fill-opacity="1" d="M0,224L1440,0L1440,0L0,0Z"></path></svg>
-</ui:define>
-
+<ui:composition template="/templates/publicTemplateAneas.xhtml">
 
 
 <ui:define name="content">
 		
-		<div class="img-item">
-		<section id="contact">
+		 <!-- Page Title Start -->
+        <div class="page-title title-bg-7">
+            <div class="container">
+                <div class="title-text text-center">
+                    <h2>Contact Us</h2>
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            Contact Us
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Page Title End -->
+
+        <!-- Contact Card Section Start -->
+        <div class="contact-card-section pt-100 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="contact-card">
+                            <i class="icofont-phone"></i>
+                            <a href="tel:+17738148912">+17738148912</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="contact-card">
+                            <i class="icofont-ui-message"></i>
+                            <a href="mailto:shipping.manager@aeaneasexporting.com">shipping.manager@aeaneasexporting.com</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 offset-lg-0 offset-sm-3">
+                        <div class="contact-card">
+                            <i class="icofont-location-pin"></i>
+                           <ul>
+                               <li>1348 Danchetz Ct, Rahway, NJ 07065</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+				<div  class="row map " style="height: 516px;">
+				<iframe style="width: 100%;height: 100%;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3093.597014993856!2d-86.49971631531727!3d39.16114647953076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886c669e5741e79b%3A0x19ca6b35c6f9ae35!2zMjUxMSBFIDJuZCBTdCAjMTYsIEJsb29taW5ndG9uLCBJTiA0NzQwMdiMINin2YTZiNmE2KfZitin2Kog2KfZhNmF2KrYrdiv2Kk!5e0!3m2!1sar!2seg!4v1638839696782!5m2!1sar!2seg"></iframe>
+				</div>
 			
-		</section>
-
-
-		<section id="features" class="pb-5">
-		<div class="container">
-			
-		</div>
-		</section>
-
-
-
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-<section id="body-contact">
-    
-<div class="container">
-    <div class="body-text">
-    <p>We Are Always With You</p>
-</div>
-    <div class="row">
-        <div class="col-md-7 map mr-5">
-<iframe style="width: 100%;height: 100%;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3468.072100368464!2d-95.2065247!3d29.6306491!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864099c83d15247d%3A0xace8de49801c59d7!2s9100%20Galveston%20Rd%2C%20Houston%2C%20TX%2077034!5e0!3m2!1sen!2sus!4v1623838992794!5m2!1sen!2sus"></iframe> 
+			</div>
         </div>
+        <!-- Contact Card Section End -->
 
-        <div class="col-md-4 information">
-            <div class="head-Information">
-            <h2>Our Information</h2>
-        </div>
-        <div class="body-Information">
-            <ul style="list-style-type: none;">
-				<li class="mt-2"><a class="mt-4 ihref"><i class="fas fa-map-marker-alt mr-2"></i> 9100 Galveston Rd Suite# 5, Houston, TX 77034, United States</a></li>
-				<li class="mt-2"><a class="mt-4 ihref" href="mailto:support@AeneasExportingllc.com"><i class="fa fa-envelope mr-2"></i>  support@AeneasExportingllc.com</a></li>
-				<li class="mt-2"><a class="mt-4 ihref" href="tel:+1 (832)-500-7007"> <i class="fas fa-phone-alt mr-2"></i>+1 (832)-500-7007</a></li>
-				<li class="mt-2"><a class="mt-4 ihref" href="fax:+1 (832)-905-9620"> <i class="fa fa-fax mr-2"></i>+1 (832)-905-9620</a></li>
-				<li class="mt-2"><a class="mt-4 ihref" href="whatsapp://send?abid=+1 (832)-449-8077&amp;text=Prime Shipping"> <i class="fa fa-whatsapp mr-2"></i>+1 (832)-449-8077</a></li>
-			</ul>
-
-            <h5>Business Hours</h5>
-            <p>Mon, Tue, Wed, Thu (	7:30AM - 5:00PM )<br></br>
-                Friday	(7:30AM - 12:45PM), (02:15 - 05:00PM)<br></br>
-                Sat, Sun (Closed)	
-            </p>
-        </div>
-        </div>
-        
-    </div>
-</div>
-</section>
-
-
-
-
-		#{formsBean.refresh()}
-<section id="contact-form">
-    <h:form class="layout">
+        <!-- Contact Section Start -->
+        <section class="contact-section contact-style-two pb-100">
+		 <h:form class="layout">
     <p:growl autoUpdate="true"  showDetail="true" life="9000">
     <script>
 			   $(".ui-growl-title").on('click', function(event){
@@ -155,32 +74,66 @@ color: #d29d3d;
 			   });
 		   </script>
     </p:growl>
-                <div class="container">
-                <h5>Have Any Question?</h5>
-                <P>If you would like to know more
-                    about our services, please contact
-                    us using this form</P>
+		
+            <div class="container">
+                <div class="section-title text-center">
+                    <h2>Have Any Question?</h2>
+                    <p>If you would like to know more about our services, please contact us using this form</p>
+                </div>
 
-                    <div class="row">
-                   
-                        <div class="col-md-4">
-                          <p:inputText type="text" class="form-control" required="true" requiredMessage="Need the name" value="#{formsBean.contactName}" placeholder="Name" aria-label="First name"/>
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="contact-area">
+                            <form id="contactForm">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+										
+                                            <p:inputText type="text"  class="form-control" required="true" data-error="Please enter your name" requiredMessage="Need the name" value="#{formsBean.contactName}" placeholder="Name" aria-label="First name"/>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <p:inputText type="email"  class="form-control" required="true" data-error="Please enter your email" requiredMessage="Need the mail" value="#{formsBean.contactMail}" placeholder="Email Adress" aria-label="Last name"/>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <p:inputText type="number" class="form-control"  data-error="Please enter your number" required="true" requiredMessage="Need the phone" value="#{formsBean.contactPhone}" placeholder="Phone Number" aria-label="Last name"/>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+    
+                                   
+                                
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <p:inputTextarea  value="#{formsBean.contactMessage}" name="message" class="message-field"  cols="30"  required="true" data-error="Please type your message" requiredMessage="Need the Message" id="exampleFormControlTextarea1" placeholder="Message" rows="5"></p:inputTextarea>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col-lg-12 col-md-12 text-center">
+                                        <p:commandButton action="#{formsBean.mail_Contact()}" class="default-btn contact-btn"  value="SEND MESSAGE" update=":scriptData ">
+                                           
+                                        </p:commandButton>
+                                        <div id="msgSubmit" class="h3 alert-text text-center hidden"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        <div class="col-md-4">
-                          <p:inputText type="text" class="form-control" required="true" requiredMessage="Need the phone" value="#{formsBean.contactPhone}" placeholder="Phone Number" aria-label="Last name"/>
-                        </div>
-                        <div class="col-md-4">
-                            <p:inputText type="text" class="form-control" required="true" requiredMessage="Need the mail" value="#{formsBean.contactMail}" placeholder="Email Adress" aria-label="Last name"/>
-                          </div>
-                          <div class="col-md-12">
-                            <p:inputTextarea class="form-control mt-4" value="#{formsBean.contactMessage}" required="true" requiredMessage="Need the Message" id="exampleFormControlTextarea1" placeholder="Message" rows="5"/>
-                          </div>
-
-                          <p:commandButton action="#{formsBean.mail_Contact()}" class="btn btn-secondary mt-4" value="SEND MESSAGE" update=":scriptData "/>
-					
-                      </div>
                     </div>
-                </h:form>
+                
+				
+			</div>
+            
+			</div>
+			</h:form>
        
        <h:form id="scriptData">
 			<div id="scriptForGrowl">
@@ -191,67 +144,19 @@ color: #d29d3d;
 		   </script>
 		</div>
 		</h:form>
-       
-            </section>
+		
+        </section>
+        <!-- Contact Section End -->
 		
 		
-		
-		<script>
-		
-		document.getElementById('mainHeadChange').id = 'head-contact';
-		</script>	
-		
+
 </ui:define>
-<!--  
-	<ui:define name="bodyBlock">
-		
-	#{carLandingBean.refresh()}
-	
-	
-	</ui:define>
 
-	<ui:define name="content">
-			
-			
-			
-			       <ui:repeat var="data" value="#{carLandingBean.listOfCarsLandingScroller}">
-        
-          
-			            <div>
-			                <div class="single-service">
-			                  <h:graphicImage value="#{data.mainImage}" alt="image#{var}" class="img-fluid" />
-							<div class="overlay">
-			             
-			              <h4> #{data.year} #{data.make}  #{data.model} <span>($#{data.currentBid})</span></h4>
-			              
-			              <p> #{data.year} #{data.make}</p>
-			              <a href="/pages/public/carsForDetails.jsf?id=#{data.id}"><button class="btn">المزيد</button></a>
-			              </div>
-			            </div>
-			          </div>
-			          
-			          
-			            
-        	
-        </ui:repeat>
-        	    
-			    
-			
-			
-			
-					
-			
-			
+	
+	<ui:define name="scriptsImport">
+	<script>
+$('#nav_contact').addClass("active");
+		</script>
 	</ui:define>
-	
-	
-	
-	<ui:define name="script">
-  	
-
-  	
-  	</ui:define>
-	-->
-	
 </ui:composition>
 </html>

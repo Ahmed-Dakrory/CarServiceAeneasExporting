@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" 
+	lang="zxx">
+    <h:head>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="stylesheet" href="#{resource['css:dashboard/assets/vendor/pnotify/pnotify.custom.css']}" />
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="#{resource['css:dashboardAneas/css/bootstrap.min.css']}" />
+        <!-- Animate CSS -->
+        <link rel="stylesheet" href="#{resource['css:dashboardAneas/css/animate.css']}" />
+        <!-- Icofont CSS -->
+        <link rel="stylesheet" href="#{resource['css:dashboardAneas/css/icofont.min.css']}" />
+        <!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="#{resource['css:dashboardAneas/css/owl.carousel.min.css']}" />
+        <!--  Owl Carousel Theme CSS -->
+        <link rel="stylesheet" href="#{resource['css:dashboardAneas/css/owl.theme.default.min.css']}" />
+        <!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="#{resource['css:dashboardAneas/css/magnific-popup.css']}" />
+        <!-- Meanmenu CSS -->
+        <link rel="stylesheet" href="#{resource['css:dashboardAneas/css/meanmenu.css']}" />
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="#{resource['css:dashboardAneas/css/style.css']}" />
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="#{resource['css:dashboardAneas/css/responsive.css']}" />
+        <!-- Title CSS -->
+        <title>
+			<ui:insert name="title"> 
+		   		Aeneas Exporting LLC
+			</ui:insert>
+		</title>
+
+        <!-- Favicon Link -->
+		<link rel="icon"  href="/resources/Image/logo.png"/> 
+    </h:head>
+
+    <h:body>
+        <!-- PreLoader Start -->
+        <div class="loader-content">
+            <div class="d-table">
+                <div class="d-table-cell">
+                    <div class="sk-folding-cube">
+                        <div class="sk-cube1 sk-cube"></div>
+                        <div class="sk-cube2 sk-cube"></div>
+                        <div class="sk-cube4 sk-cube"></div>
+                        <div class="sk-cube3 sk-cube"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- PreLoader End -->
+
+		<ui:insert name="headerMain">
+			
+		</ui:insert>
+		
+        <!-- Navbar Area Start -->
+        <div class="navbar-area">
+            <!-- For Mobile Device -->
+            <div class="mobile-nav">
+                <a href="/" class="logo">
+                    <img src="/resources/aneas_image/logo.png" alt="logo"/>
+                </a>
+            </div>
+        
+            <!-- For Desktop Device -->
+            <div class="main-nav">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="/">
+                            <img src="/resources/aneas_image/logo.png" alt="logo"/>
+                        </a>
+                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a href="/" class="nav-link " id="nav_home">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/pages/public/about.jsf" id="nav_about" class="nav-link">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/pages/public/gallery.jsf" id="nav_gallery" class="nav-link">Gallery</a>
+                                </li>
+                               <li class="nav-item">
+                                    <a href="/pages/public/terms.jsf" id="nav_terms" class="nav-link">Terms &amp; Conditions</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/pages/public/contactUs.jsf" id="nav_contact" class="nav-link">Contact Us</a>
+                                </li>
+								<li class="nav-item">
+                                    <a href="/pages/public/login.jsf" id="nav_login" class="nav-link">Login</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar Area End -->
+
+		
+		<ui:insert name="Banner-Part">
+			
+		</ui:insert>
+		
+		
+		
+<ui:insert name="content">
+        
+	</ui:insert>
+        
+
+       
+
+        <!-- Footer Area Start -->
+        <footer class="footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer-widget">
+                            <a href="/">
+                                <img src="/resources/aneas_image/logo-2.png" alt="logo"/>
+                            </a>
+                            <ul>
+                                <li>
+                                    <i class="icofont-phone"></i>
+                                    <a href="tel:+17738148912">
+                                        +17738148912
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <i class="icofont-ui-message"></i>
+                                    <a style="font-size:13px;" href="mailto:shipping.manager@aeaneasexporting.com">
+                                        shipping.manager@aeaneasexporting.com
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <i class="icofont-location-pin"></i>
+                                    1348 Danchetz Ct, Rahway, NJ 07065
+                                </li>
+                            </ul>
+
+                            <div class="footer-social">
+                                <a href="#" target="_blank">
+                                    <i class="icofont-facebook"></i>
+                                </a>
+								<a href="https://www.linkedin.com/in/anis-houssein-723907aa/" target="_blank">
+                                    <i class="icofont-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer-widget">
+                            <h3>Our Services</h3>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void()">CUSTOMS CLEARANCE</a>
+                                </li>         
+                                <li>
+                                    <a href="javascript:void()">MARINE INSURANCE</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void()">Project Cargo</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer-widget">
+                            <h3>Our Support</h3>
+                            <ul>
+                                <li>
+                                    <a href="/pages/public/terms.jsf">Terms &amp; Conditions</a>
+                                </li>
+                                <li>
+                                    <a href="/pages/public/contactUs.jsf">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="/pages/public/about.jsf">About Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer-widget">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li>
+                                    <a href="/">Home</a>
+                                </li>         
+                                <li>
+                                    <a href="/pages/public/about.jsf">About Us</a>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-area">
+                <p>Copyright @2021 Aeneas. Made by <a href="https://orspra.com" target="_blank">Orspra</a></p>
+            </div>
+
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </footer>
+        <!-- Footer Area End -->
+
+        <!-- Back top Button -->
+        <div class="top-btn">
+            <i class="icofont-scroll-bubble-up"></i>
+        </div>
+        
+        <!-- jQuery first, then Bootstrap JS -->
+        <h:outputScript name="js/dashboardAneas/js/jquery.min.js"/>
+        <h:outputScript name="js/dashboardAneas/js/bootstrap.bundle.min.js"/>
+        <!-- Subscribe From JS -->
+        <h:outputScript name="js/dashboardAneas/js/jquery.ajaxchimp.min.js"/>
+		<!-- Form Validator JS -->
+        <h:outputScript name="js/dashboardAneas/js/form-validator.min.js"/>
+        <!-- Contact JS -->
+        <h:outputScript name="js/dashboardAneas/js/contact-form-script.js"/>
+        <!-- Owl Carousel Slider JS -->
+        <h:outputScript name="js/dashboardAneas/js/owl.carousel.min.js"/>
+        <!-- Magnific Popup JS -->
+        <h:outputScript name="js/dashboardAneas/js/jquery.magnific-popup.min.js"/>
+        <!-- WOW JS -->
+        <h:outputScript name="js/dashboardAneas/js/wow.min.js"/>
+        <!-- Meanmenu JS -->
+        <h:outputScript name="js/dashboardAneas/js/meanmenu.js"/>
+        <!-- Custom JS -->
+        <h:outputScript name="js/dashboardAneas/js/custom.js"/>
+        
+        
+	<h:outputScript name="js/dashboard/assets/vendor/pnotify/pnotify.custom.js"/>
+		<h:outputScript name="js/dashboardPrime/bootstrap.min.js"/>
+		<script>
+
+		$('[data-toggle="tooltip"]').tooltip();
+		</script>
+		
+		
+		
+		
+		<ui:insert name="scriptsImport"> 
+					   
+			</ui:insert>
+		
+    </h:body>
+</html>

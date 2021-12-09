@@ -6,7 +6,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
-<ui:composition template="/templates/publicTemplatePrime.xhtml">
+<ui:composition template="/templates/publicTemplateAneas.xhtml">
 
 
 <ui:define name="Banner-Part">
@@ -18,26 +18,10 @@
 
 </style>
 
- <div class="container ">
-                    <div class="text-contact">
-                        <h3 style="margin-top: 171px;">Gallery</h3>
-            <p>By working with a Prime that offers the above qualities
-            <br></br> you will have a much smoother and less
-stressful shipping experience, regardless of your shipment’s size.
-     
-         
-            </p>
-                </div>
-            </div>
+
 				
 </ui:define>
 
-
-
-<ui:define name="Slicer">
-	 <svg  viewBox="0 0 1440 320">
-                    <path fill="#202020" fill-opacity="1" d="M0,224L1440,0L1440,0L0,0Z"></path></svg>
-</ui:define>
 
 
 
@@ -45,21 +29,6 @@ stressful shipping experience, regardless of your shipment’s size.
 		
         <link rel="stylesheet" href="#{resource['css:dashboardPrime/gallery.css']}" />
         
-		<div class="img-item">
-		<section id="contact">
-			
-		</section>
-
-
-		<section id="features" class="pb-5">
-		<div class="container">
-             
-		</div>
-		</section>
-
-
-
-		</div>
 		
 		
 		
@@ -67,20 +36,35 @@ stressful shipping experience, regardless of your shipment’s size.
 		
 		
 		
-		
-		
-		
+		<!-- Page Title Start -->
+        <div class="page-title title-bg-1">
+            <div class="container">
+                <div class="title-text text-center">
+                    <h2>Gallery</h2>
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>Gallery</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Page Title End -->
 		
 <section id="body-contact">
     
-<div class="container">
-<div class="body-text">
-      <p>If you are interested in shipping services,
+     <div class="container">
+                <div class="section-title text-center">
+                    <br></br>
+                    <h2>If you are interested in shipping services,
        contact Aeneas Exporting LLC.
       
        This company provides all the
-above qualities plus many more to ensure that your entire shipping needs are met.
-</p>
+above qualities plus many more to ensure that your entire shipping needs are met.</h2>
+                </div>
+    
+
 </div>
 
 
@@ -144,16 +128,11 @@ above qualities plus many more to ensure that your entire shipping needs are met
 	        
 			
   
- </div>
 </section>
 
 
 
 	
-		<script>
-		
-		document.getElementById('mainHeadChange').id = 'head-gallery';
-		</script>	
 		
 </ui:define>
 
@@ -191,61 +170,16 @@ var swiper = new Swiper( '.swiper-container.two', {
 	        slideShadows : true, // Enables slides shadows
 		}
 } );
+
+
+$('#nav_gallery').addClass("active");
+
+
 </script>
 
 
 </ui:define>
 
-<!--  
-	<ui:define name="bodyBlock">
-		
-	#{carLandingBean.refresh()}
-	
-	
-	</ui:define>
-
-	<ui:define name="content">
-			
-			
-			
-			       <ui:repeat var="data" value="#{carLandingBean.listOfCarsLandingScroller}">
-        
-          
-			            <div>
-			                <div class="single-service">
-			                  <h:graphicImage value="#{data.mainImage}" alt="image#{var}" class="img-fluid" />
-							<div class="overlay">
-			             
-			              <h4> #{data.year} #{data.make}  #{data.model} <span>($#{data.currentBid})</span></h4>
-			              
-			              <p> #{data.year} #{data.make}</p>
-			              <a href="/pages/public/carsForDetails.jsf?id=#{data.id}"><button class="btn">المزيد</button></a>
-			              </div>
-			            </div>
-			          </div>
-			          
-			          
-			            
-        	
-        </ui:repeat>
-        	    
-			    
-			
-			
-			
-					
-			
-			
-	</ui:define>
-	
-	
-	
-	<ui:define name="script">
-  	
-
-  	
-  	</ui:define>
-	-->
 	
 </ui:composition>
 </html>
