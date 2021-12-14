@@ -522,7 +522,7 @@ public class Constants {
 				"          	<table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\r\n" + 
 				"          		<tbody><tr>\r\n" + 
 				"          			<td class=\"logo\" style=\"text-align: center;\">\r\n" + 
-				"			            <h1><a href=\"http://AeneasExportingllc.com/\">Aeneas Exporting LLC</a></h1>\r\n" + 
+				"			            <h1><a href=\"http://aeneasexport.com/\">Aeneas Exporting LLC</a></h1>\r\n" + 
 				"			          </td>\r\n" + 
 				"          		</tr>\r\n" + 
 				"          	</tbody></table>\r\n" + 
@@ -540,7 +540,7 @@ public class Constants {
 				"    font-size: 22px;\r\n" + 
 				"    color: white;\r\n" + 
 				"    text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px #cacaca;\r\n" + 
-				"\">Please Check the Note to Car With Vin  "+selectedCar.getUuid()+"</p><p style=\"\r\n" + 
+				"\">Please Check the Note to Car With Vin  "+selectedCar.getUuid()+" and Year/Make/Model : "+selectedCar.getYear()+"/"+selectedCar.getMake()+"/"+selectedCar.getModel()+"</p><p style=\"\r\n" + 
 				"    font-size: 26px;\r\n" + 
 				"    color: white;\r\n" + 
 				"    text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px #cacaca;\r\n" + 
@@ -592,8 +592,8 @@ public class Constants {
 				"                      <td style=\"text-align: left; padding-left: 5px; padding-right: 5px;\">\r\n" + 
 				"                      	<h3 class=\"heading\">Contact Info</h3>\r\n" + 
 				"                      	<ul>\r\n" + 
-				"					                <li><span class=\"text\">9100 Galveston Rd Suite# 5, Houston, TX 77034, United States</span></li>\r\n" + 
-				"					                <li><span class=\"text\"> +1 (832)-500-7007</span></li>\r\n" + 
+				"					                <li><span class=\"text\"> 1348 Danchetz Ct, Rahway, NJ 07065</span></li>\r\n" + 
+				"					                <li><span class=\"text\">+1 (773)-814-8912</span></li>\r\n" + 
 				"					              </ul>\r\n" + 
 				"                      </td>\r\n" + 
 				"                    </tr>\r\n" + 
@@ -1132,7 +1132,7 @@ public class Constants {
 				"          	<table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\r\n" + 
 				"          		<tbody><tr>\r\n" + 
 				"          			<td class=\"logo\" style=\"text-align: center;\">\r\n" + 
-				"			            <h1><a href=\"http://AeneasExportingllc.com/\">Aeneas Exporting LLC</a></h1>\r\n" + 
+				"			            <h1><a href=\"http://aeneasexport.com/\">Aeneas Exporting LLC</a></h1>\r\n" + 
 				"			          </td>\r\n" + 
 				"          		</tr>\r\n" + 
 				"          	</tbody></table>\r\n" + 
@@ -1150,11 +1150,11 @@ public class Constants {
 				"    font-size: 26px;\r\n" + 
 				"    color: white;\r\n" + 
 				"    text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px #cacaca;\r\n" + 
-				"\">Please Check Updated Vin <p style=\"\r\n" + 
+				"\">Please Check Updated Car with <p style=\"\r\n" + 
 				"    font-size: 26px;\r\n" + 
 				"    color: white;\r\n" + 
 				"    text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px #cacaca;\r\n" + 
-				"\"> "+selectedCar.getUuid()+"</p></p>\r\n" + 
+				"\"> Vin: "+selectedCar.getUuid()+" and Year/Make/Model : "+selectedCar.getYear()+"/"+selectedCar.getMake()+"/"+selectedCar.getModel()+"</p></p>\r\n" + 
 				"\r\n" + 
 				"							<br>\r\n" + 
 				"            				\r\n" + 
@@ -1206,8 +1206,8 @@ public class Constants {
 				"                      <td style=\"text-align: left; padding-left: 5px; padding-right: 5px;\">\r\n" + 
 				"                      	<h3 class=\"heading\">Contact Info</h3>\r\n" + 
 				"                      	<ul>\r\n" + 
-				"					                <li><span class=\"text\">9100 Galveston Rd Suite# 5, Houston, TX 77034, United States</span></li>\r\n" + 
-				"					                <li><span class=\"text\"> +1 (832)-500-7007</span></li>\r\n" + 
+				"					                <li><span class=\"text\"> 1348 Danchetz Ct, Rahway, NJ 07065</span></li>\r\n" + 
+				"					                <li><span class=\"text\">+1 (773)-814-8912</span></li>\r\n" + 
 				"					              </ul>\r\n" + 
 				"                      </td>\r\n" + 
 				"                    </tr>\r\n" + 
@@ -1726,7 +1726,7 @@ public class Constants {
 				"          	<table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\r\n" + 
 				"          		<tbody><tr>\r\n" + 
 				"          			<td class=\"logo\" style=\"text-align: center;\">\r\n" + 
-				"			            <h1><a href=\"http://AeneasExportingllc.com/\">Aeneas Exporting LLC</a></h1>\r\n" + 
+				"			            <h1><a href=\"http://aeneasexport.com/\">Aeneas Exporting LLC</a></h1>\r\n" + 
 				"			          </td>\r\n" + 
 				"          		</tr>\r\n" + 
 				"          	</tbody></table>\r\n" + 
@@ -1790,8 +1790,8 @@ public class Constants {
 				"                      <td style=\"text-align: left; padding-left: 5px; padding-right: 5px;\">\r\n" + 
 				"                      	<h3 class=\"heading\">Contact Info</h3>\r\n" + 
 				"                      	<ul>\r\n" + 
-				"					                <li><span class=\"text\">9100 Galveston Rd Suite# 5, Houston, TX 77034, United States</span></li>\r\n" + 
-				"					                <li><span class=\"text\"> +1 (832)-500-7007</span></li>\r\n" + 
+				"					                <li><span class=\"text\"> 1348 Danchetz Ct, Rahway, NJ 07065</span></li>\r\n" + 
+				"					                <li><span class=\"text\">+1 (773)-814-8912</span></li>\r\n" + 
 				"					              </ul>\r\n" + 
 				"                      </td>\r\n" + 
 				"                    </tr>\r\n" + 
@@ -2302,7 +2302,7 @@ public class Constants {
         		"          	<table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\r\n" + 
         		"          		<tbody><tr>\r\n" + 
         		"          			<td class=\"logo\" style=\"text-align: center;\">\r\n" + 
-        		"			            <h1><a href=\"http://AeneasExportingllc.com/\">Aeneas Exporting LLC</a></h1>\r\n" + 
+        		"			            <h1><a href=\"http://aeneasexport.com/\">Aeneas Exporting LLC</a></h1>\r\n" + 
         		"			          </td>\r\n" + 
         		"          		</tr>\r\n" + 
         		"          	</tbody></table>\r\n" + 
@@ -2366,8 +2366,8 @@ public class Constants {
         		"                      <td style=\"text-align: left; padding-left: 5px; padding-right: 5px;\">\r\n" + 
         		"                      	<h3 class=\"heading\">Contact Info</h3>\r\n" + 
         		"                      	<ul>\r\n" + 
-        		"					                <li><span class=\"text\">9100 Galveston Rd Suite# 5, Houston, TX 77034, United States</span></li>\r\n" + 
-        		"					                <li><span class=\"text\"> +1 (832)-500-7007</span></li>\r\n" + 
+        		"					                <li><span class=\"text\"> 1348 Danchetz Ct, Rahway, NJ 07065</span></li>\r\n" + 
+        		"					                <li><span class=\"text\">+1 (773)-814-8912</span></li>\r\n" + 
         		"					              </ul>\r\n" + 
         		"                      </td>\r\n" + 
         		"                    </tr>\r\n" + 
@@ -2882,7 +2882,7 @@ public class Constants {
 	        		"          	<table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\r\n" + 
 	        		"          		<tbody><tr>\r\n" + 
 	        		"          			<td class=\"logo\" style=\"text-align: center;\">\r\n" + 
-	        		"			            <h1><a href=\"http://AeneasExportingllc.com/\">Aeneas Exporting LLC</a></h1>\r\n" + 
+	        		"			            <h1><a href=\"http://aeneasexport.com/\">Aeneas Exporting LLC</a></h1>\r\n" + 
 	        		"			          </td>\r\n" + 
 	        		"          		</tr>\r\n" + 
 	        		"          	</tbody></table>\r\n" + 
@@ -2946,8 +2946,8 @@ public class Constants {
 	        		"                      <td style=\"text-align: left; padding-left: 5px; padding-right: 5px;\">\r\n" + 
 	        		"                      	<h3 class=\"heading\">Contact Info</h3>\r\n" + 
 	        		"                      	<ul>\r\n" + 
-	        		"					                <li><span class=\"text\">9100 Galveston Rd Suite# 5, Houston, TX 77034, United States</span></li>\r\n" + 
-	        		"					                <li><span class=\"text\"> +1 (832)-500-7007</span></li>\r\n" + 
+	        		"					                <li><span class=\"text\"> 1348 Danchetz Ct, Rahway, NJ 07065</span></li>\r\n" + 
+	        		"					                <li><span class=\"text\">+1 (773)-814-8912</span></li>\r\n" + 
 	        		"					              </ul>\r\n" + 
 	        		"                      </td>\r\n" + 
 	        		"                    </tr>\r\n" + 
@@ -2979,13 +2979,13 @@ public class Constants {
 			public void run() {
 				
 				
-				String from = "support@AeneasExportingllc.com";
+				String from = "support@aeneasexport.com";
 		        String pass = "tqtqwruxkwiqnvgh";
 				
 				// TODO Auto-generated method stub
 				 Properties props = System.getProperties();
 
-			        String host = "smtp.gmail.com";
+			        String host = "smtpout.secureserver.net";
 			        props.put("mail.smtp.starttls.enable", "true");
 			        props.put("mail.smtp.host", host);
 			        props.put("mail.smtp.user", from);

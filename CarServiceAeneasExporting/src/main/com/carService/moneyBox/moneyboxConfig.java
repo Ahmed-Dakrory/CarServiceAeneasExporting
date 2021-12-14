@@ -12,7 +12,8 @@ public class moneyboxConfig {
 	public static void depositeMoney(float amount
 			,user fromMe
 			,userAppServiceImpl userFasced,moneyboxAppServiceImpl moneyfascede
-			,moneybox_transaction_detailsAppServiceImpl moneyBoxtransactionFasced) {
+			,moneybox_transaction_detailsAppServiceImpl moneyBoxtransactionFasced,
+			String description) {
 		
 		moneybox myMoneyBox = moneyfascede.getByUserId(fromMe.getId());
 		float totalAvailable = myMoneyBox.getAvailableMoney();
@@ -28,6 +29,7 @@ public class moneyboxConfig {
 		transaction.setTypeOfTransaction(moneybox_transaction_details.depositeTypes.Deposite.getType());
 		transaction.setDate(Calendar.getInstance().getTime());
 		transaction.setMoneyBoxId(myMoneyBox);
+		transaction.setDescription(description);
 		
 		moneyBoxtransactionFasced.addmoneybox_transaction_details(transaction);
 		
@@ -35,9 +37,11 @@ public class moneyboxConfig {
 	
 	
 	public static void makeaPayment(float amount
-			,user fromMe
+			,user fromMe,
+			user toAccount
 			,userAppServiceImpl userFasced,moneyboxAppServiceImpl moneyfascede
-			,moneybox_transaction_detailsAppServiceImpl moneyBoxtransactionFasced) {
+			,moneybox_transaction_detailsAppServiceImpl moneyBoxtransactionFasced,
+			String description) {
 		
 		moneybox myMoneyBox = moneyfascede.getByUserId(fromMe.getId());
 		float totalAvailable = myMoneyBox.getAvailableMoney();
@@ -55,11 +59,12 @@ public class moneyboxConfig {
 		transaction.setTypeOfTransaction(moneybox_transaction_details.depositeTypes.Payment.getType());
 		transaction.setDate(Calendar.getInstance().getTime());
 		transaction.setMoneyBoxId(myMoneyBox);
+		transaction.setDescription(description);
 		
 		moneyBoxtransactionFasced.addmoneybox_transaction_details(transaction);
 		
 		//AddMoneyToTheMainUser
-		user theMainAccount = userFasced.getById(1);
+		user theMainAccount = userFasced.getById(toAccount.getId());
 		moneybox mainAccountMoneyBox = moneyfascede.getByUserId(theMainAccount.getId());
 		float totalAvailableMainAccount = mainAccountMoneyBox.getAvailableMoney();
 		mainAccountMoneyBox.setAvailableMoney(totalAvailableMainAccount+amount);

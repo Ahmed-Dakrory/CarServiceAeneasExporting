@@ -44,6 +44,8 @@ import helpers.retrofit.mainFiles.OrderOutDetails;
 import main.com.carService.loginNeeds.user;
 import main.com.carService.mainTwo.mainTwo;
 import main.com.carService.mainTwo.mainTwoAppServiceImpl;
+import main.com.carService.moneyBox.moneybox;
+import main.com.carService.moneyBox.moneyboxConfig;
 import main.com.carService.shipper.shipper;
 import main.com.carService.shipper.shipperAppServiceImpl;
 import main.com.carService.tools.Constants;
@@ -122,6 +124,7 @@ public class carBean implements Serializable{
 	private car selectedCar;
 	private car addNewCar;
 	
+	private float amount_toPay=0;
 	
 	private List<String> carStates;
 	
@@ -859,11 +862,59 @@ public class carBean implements Serializable{
 				vendorSelectedId=selectedCar.getVendorId().getId();
 				}
 		}
+		
+		
+		public void makePaymentForACar() {
+			
+//			moneybox mB1 = loginBean.getMoneyBoxDataFacede().getByUserId(selectedCar.getShipperId().getUserId().getId());
+//			
+				moneyboxConfig.makeaPayment(amount_toPay, selectedCar.getShipperId().getUserId(),loginBean.getTheMainUserOfThisAccount(), loginBean.getUserDataFacede(), loginBean.getMoneyBoxDataFacede(), loginBean.getMoneybox_transaction_detailsDataFacede(),
+						"Payment to Car "+String.valueOf(selectedCar.getUuid()));
+				PrimeFaces.current().executeScript("new PNotify({\r\n" + 
+						"			title: 'Success',\r\n" + 
+						"			text: 'Payment Done',\r\n" + 
+						"			type: 'success'\r\n" + 
+						"		});");
+				selectedCar.setPayed(true);
+				selectedCar.setAmountPayed(amount_toPay);
+				FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add("aspnetForm:amounttoPayed");
+				FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add("aspnetForm:ispayed");
+		}
+		
+		
 		public void selectCarForMain(int idcar) {
 			refresh();
 
 			selectedCar=carFacade.getById(idcar);
 			refreshSelectedCarMain();
+			float land = 0;
+			float ocean = 0;
+			float comission = 0;
+			float storage = 0;
+			try {
+				land = selectedCar.getLandcost();
+			}catch(Exception ec) {
+				
+			}
+			
+			try {
+				ocean = selectedCar.getSeacost();
+			}catch(Exception ec) {
+				
+			}
+			
+			try {
+				comission = selectedCar.getCommision();
+			}catch(Exception ec) {
+				
+			}
+			
+			try {
+				storage = selectedCar.getFees();
+			}catch(Exception ec) {
+				
+			}
+			amount_toPay = land+ocean+comission+storage;
 			try {
 				FacesContext.getCurrentInstance()
 				   .getExternalContext().redirect("/pages/secured/shipper/car/vitViewEdit.jsf?faces-redirect=true");
@@ -2175,6 +2226,19 @@ public void deleteCar() {
 	public void setAddNewCar(car addNewCar) {
 		this.addNewCar = addNewCar;
 	}
+
+	
+	public float getAmount_toPay() {
+		return amount_toPay;
+	}
+
+
+
+	public void setAmount_toPay(float amount_toPay) {
+		this.amount_toPay = amount_toPay;
+	}
+
+
 
 	public vendorAppServiceImpl getVendorFacade() {
 		return vendorFacade;

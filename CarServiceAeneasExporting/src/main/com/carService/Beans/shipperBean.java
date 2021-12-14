@@ -71,8 +71,10 @@ public class shipperBean implements Serializable{
 	
 	@ManagedProperty(value = "#{invoiceCarFacadeImpl}")
 	private invoiceCarAppServiceImpl invoiceCarFacade;
-	
+
 	private List<shipper> allshippers;
+	private List<car> allcars;
+	private moneybox selectedShipperMoneyBox;
 	
 	private shipper selectedshipper;
 	
@@ -103,6 +105,75 @@ public class shipperBean implements Serializable{
 		addNewshipper.setParentId(loginBean.getTheUserOfThisAccount());
 		
 		invoiceData=new invoice();
+	}
+	
+	
+	public void allpayedCarsBreakout() {
+		System.out.println("Ahmed");
+		HttpServletRequest origRequest = (HttpServletRequest)FacesContext
+				.getCurrentInstance()
+				.getExternalContext()
+				.getRequest();
+		
+		try{
+			Integer id=Integer.parseInt(origRequest.getParameterValues("id")[0]);
+				if(id!=null){
+					selectedshipper=shipperFacade.getByUserId(id);
+					
+					selectedShipperMoneyBox = loginBean.getMoneyBoxDataFacede().getByUserId(selectedshipper.getUserId().getId());
+					
+					allcars = carFacade.getAllPayedCarsByShipper(selectedshipper.getId());
+
+					
+
+					carFeesInvoice=(float) 0;
+					System.out.println("AhmedMohamed:"+ String.valueOf(carsForInvoice.size()));
+					for(int i=0;i<allcars.size();i++) {
+						
+						float landCost = 0;
+						float Seacost=0;
+						float Commision=0;
+						float Fees=0;
+						try {
+							landCost=allcars.get(i).getLandcost();
+						}catch(Exception ee) {
+							
+						}
+						
+						try {
+							Seacost=allcars.get(i).getSeacost();
+						}catch(Exception ee) {
+							
+						}
+						
+						try {
+							Commision=allcars.get(i).getCommision();
+						}catch(Exception ee) {
+							
+						}
+						
+						try {
+							Fees=allcars.get(i).getFees();
+						}catch(Exception ee) {
+							
+						}
+						
+								
+						float totalForCar=(float) (landCost+Seacost
+								+Commision+Fees);
+						
+						carFeesInvoice+=totalForCar;
+					}
+					
+					FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add("aspnetForm");
+							
+				
+				
+				}
+		}catch(Exception exc) {
+			System.out.println("Error");
+			System.out.println(exc.toString());
+		}
 	}
 	
 	public void getTheInvoiceData(int invoiceId) {
@@ -923,6 +994,26 @@ public class shipperBean implements Serializable{
 
 	public void setTotalFees(float totalFees) {
 		this.totalFees = totalFees;
+	}
+
+
+	public List<car> getAllcars() {
+		return allcars;
+	}
+
+
+	public void setAllcars(List<car> allcars) {
+		this.allcars = allcars;
+	}
+
+
+	public moneybox getSelectedShipperMoneyBox() {
+		return selectedShipperMoneyBox;
+	}
+
+
+	public void setSelectedShipperMoneyBox(moneybox selectedShipperMoneyBox) {
+		this.selectedShipperMoneyBox = selectedShipperMoneyBox;
 	}
 
 	

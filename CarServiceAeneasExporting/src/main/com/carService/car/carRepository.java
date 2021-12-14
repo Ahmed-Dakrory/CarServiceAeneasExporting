@@ -18,6 +18,8 @@ public interface carRepository {
 	public long getAllCountSearch(int start, int number,String searchValue,int role,int state,int useridAny);
 	public List<car> getAllWithAllowSendState(boolean state);
 	
+
+	public List<car> getAllPayedCarsByShipper(int shipperId);
 	
 	public List<car> getAllForMainUser(int userId);
 	public List<car> getAllForMainUserTwo(int mainTwoId);

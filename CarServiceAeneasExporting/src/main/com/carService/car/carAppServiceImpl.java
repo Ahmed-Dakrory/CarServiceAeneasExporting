@@ -630,6 +630,22 @@ public class carAppServiceImpl implements IcarAppService{
 				return 0;
 			}
 	}
+
+
+
+	@Override
+	public List<car> getAllPayedCarsByShipper(int shipperId) {
+		try{
+			List<car> course=carDataRepository.getAllPayedCarsByShipper(shipperId);
+			
+			return course;
+			}
+			catch(Exception ex)
+			{
+				ex.printStackTrace();
+				return null;
+			}
+	}
 	
 	
 }

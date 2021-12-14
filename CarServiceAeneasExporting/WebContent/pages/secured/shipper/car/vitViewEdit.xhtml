@@ -209,7 +209,39 @@ td {
                                                                                                     
                                                                                                 </td>
                                                                                                 
-                                                                                                </tr>
+                                                                                                
+                                                                                                
+                                                                                                 <td bgcolor="#ffffff" colspan="6">
+                                                                                                
+	                                                                                                <p:commandButton disabled="#{carBean.selectedCar.payed}" class="btn btn-default" action="#{carBean.makePaymentForACar()}"  value="Make Payment"  style=" font-family:Verdana;font-size:10px;font-weight:bold;width:120px;" />
+	                                                                                                 
+                                                                                                	<h:inputText  type="text" value="#{carBean.amount_toPay}"  style="font-size:11px;height:19px;width:200px;" />
+                                                                                                	
+                                                                                                </td>
+                                                                                          </tr>
+                                                                                          
+                                                                                          
+                                                                                           <tr height="23">
+                                                                                                <td class="tbltxt" width="130">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        Is Payed:</div>
+                                                                                                </td>
+                                                                                                <td width="200">
+                                                                                                <h:selectBooleanCheckbox id="ispayed"  value="#{carBean.selectedCar.payed}" style="font-size:11px;height:19px;width:20px;" />
+                                                                                                
+                                                                                                </td>
+                                                                                                
+                                                                                                <td class="tbltxt" width="130">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                                        Amount Already Payed:</div>
+                                                                                                </td>
+                                                                                                <td class="tbltxt" width="130">
+                                                                                                    <div style="margin-left: 6px">
+                                                                                               				<h:inputText disabled="true" id="amounttoPayed" type="text" value="#{carBean.selectedCar.amountPayed}"  style="font-size:11px;height:19px;width:200px;" />
+                                                                                                	 </div>
+                                                                                                </td>
+                                                                                                
+                                                                                            </tr>
                                                                                             <tr height="23">
                                                                                                 <td class="tbltxt" width="130">
                                                                                                     <div style="margin-left: 6px">
@@ -7070,7 +7102,7 @@ td {
 		
      <script>
      $.ajax({
-         url: "https://find-spin-api.spincar.com/provider-api/smartopal/AeneasExportingllc.com/#{carBean.selectedCar.uuid}?auth=524491e15e7340e6f3963a14988a846d0b2e99f4ef024386d77590f389b4403ab424b06d317a29f4b8bc7e92f78897244faa0120d3e8d1d0bbc4ba17fede1da2",
+         url: "https://find-spin-api.spincar.com/provider-api/smartopal/aeneasexport.com/#{carBean.selectedCar.uuid}?auth=524491e15e7340e6f3963a14988a846d0b2e99f4ef024386d77590f389b4403ab424b06d317a29f4b8bc7e92f78897244faa0120d3e8d1d0bbc4ba17fede1da2",
          type: "GET",
          datatype: 'json',
          success: function( data, status, xhttp) {

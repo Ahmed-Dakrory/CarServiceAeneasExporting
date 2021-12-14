@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<title>Aeneas Exporting LLC - Breakout Print</title>
+		<!-- Web Fonts  -->
+		<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css"/>
+
+		<!-- Vendor CSS -->
+		
+    <link rel="stylesheet" href="#{resource['css:dashboard/assets/vendor/bootstrap/css/bootstrap.css']}" />
+
+		<!-- Invoice Print Style -->
+    <link rel="stylesheet" href="#{resource['css:dashboard/assets/stylesheets/invoice-print.css']}" />
+	 <!-- Favicon Link -->
+		<link rel="icon"  href="/resources/Image/logo.png"/> 
+		
+		</h:head>
+	<h:body>
+	<p:panel id="aspnetForm">
+	
+	#{shipperBean.allpayedCarsBreakout()}
+		<div class="invoice">
+			<header class="clearfix">
+				<div class="row">
+				<div class="col-md-7" >
+												<img style="width: 137px;height: auto;max-width: 443px;max-height: 179px;margin: 15px;" src="/resources/images/logoBill.png" alt="icone" />
+											</div>
+											
+											
+											<div class="col-md-5 text-right mt-md mb-md">
+						<address class="ib mr-xlg">
+												Company: #{shipperBean.selectedshipper.userId.company}
+												<br/>
+												Address: #{shipperBean.selectedshipper.userId.address1}
+												<br/>
+												Mail: #{shipperBean.selectedshipper.userId.email}
+											</address>
+						
+					</div>
+				
+					
+				</div>
+			</header>
+			
+			
+						<div class="table-responsive">
+									<table class="table invoice-items">
+										<thead>
+											<tr class="h4 text-dark">
+												<th id="cell-id"     class="text-semibold">#</th>
+												<th id="cell-item"   class="text-semibold">Vin</th>
+												<th id="cell-desc"   class="text-semibold">notes</th>
+												<th id="cell-desc"   class="text-semibold">Year/Make/Model</th>
+												<th id="cell-price"  class="text-center text-semibold">Land Cost</th>
+												<th id="cell-qty"    class="text-center text-semibold">Sea Cost</th>
+												<th id="cell-qty"    class="text-center text-semibold">Storage Cost</th>
+												<th id="cell-qty"    class="text-center text-semibold">Commision Cost</th>
+												<th id="cell-total"  class="text-center text-semibold">Total Cost</th>
+											</tr>
+										</thead>
+										<tbody>
+											<ui:repeat var="var" value="#{shipperBean.allcars}">
+											
+											<tr>
+												<td>#{var.id}</td>
+												<td class="text-semibold text-dark">#{var.uuid}</td>
+												<td>#{var.note}</td>
+												<td>#{var.year}/#{var.make}/#{var.model} </td>
+												<td class="text-center">$#{var.landcost}</td>
+												<td class="text-center">$#{var.seacost}</td>
+												<td class="text-center">$#{var.fees}</td>
+												<td class="text-center">$#{var.commision}</td>
+												<td class="text-center">$#{var.landcost+var.seacost+var.fees+var.commision}</td>
+											</tr>
+											
+											</ui:repeat>
+											
+										</tbody>
+									</table>
+								</div>
+		
+			<div class="invoice-summary">
+									<div class="row">
+									
+										<div class="col-sm-4 col-sm-offset-8">
+											<table class="table h5 text-dark">
+												<tbody>
+													<tr class="b-top-none">
+														<td colspan="2">Total Car Shipping Cost</td>
+														<td class="text-left">$#{shipperBean.carFeesInvoice}</td>
+													</tr>
+													
+													<tr>
+														<td colspan="2">Amount Payed</td>
+														<td class="text-left">$#{shipperBean.carFeesInvoice+shipperBean.selectedShipperMoneyBox.availableMoney}</td>
+													</tr>
+													
+													<tr>
+														<td colspan="2">Remind To Pay</td>
+														<td class="text-left">$#{-1*shipperBean.selectedShipperMoneyBox.availableMoney>=0?-1*shipperBean.selectedShipperMoneyBox.availableMoney:'0'}</td>
+													</tr> 
+													
+												</tbody>
+											</table>
+										</div>
+									</div>
+								
+								
+								</div>
+		</div>
+
+		<script>
+			window.print();
+		</script>
+	</p:panel>
+	</h:body>
+</html>

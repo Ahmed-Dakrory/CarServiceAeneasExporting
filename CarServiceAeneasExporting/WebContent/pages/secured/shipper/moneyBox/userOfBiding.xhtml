@@ -267,6 +267,11 @@ background: red  !important ;
 		 <p:column style="width:35px">
             <p:rowEditor />
         </p:column>
+        
+        
+         <p:column headerText="BreakOut" style="font-size: 13px;    text-align: center;" width="130" id="breakout" sortBy="#{row.userId.id}" filterBy="#{row.userId.id}">
+            <h:outputLink value="/pages/secured/shipper/moneyBox/breakout.jsf?id=#{row.userId.id}"  rendered="#{row.userId.role==1?'true':'false'}"   target="breakout">BreakOut</h:outputLink>
+        </p:column>
 		
 		
 		

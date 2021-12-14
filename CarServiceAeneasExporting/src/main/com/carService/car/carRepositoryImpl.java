@@ -676,6 +676,22 @@ public class carRepositoryImpl implements carRepository{
 			 return null;
 		 }
 	}
+
+
+
+
+	@Override
+	public List<car> getAllPayedCarsByShipper(int shipperId) {
+		 Query query 	=sessionFactory.getCurrentSession().getNamedQuery("car.getAllPayedCarsByShipper").setInteger("shipperId",shipperId);
+
+		 @SuppressWarnings("unchecked")
+		List<car> results=query.list();
+		 if(results.size()!=0){
+			 return results;
+		 }else{
+			 return null;
+		 }
+	}
 	
 
 

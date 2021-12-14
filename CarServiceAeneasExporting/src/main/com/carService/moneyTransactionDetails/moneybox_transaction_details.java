@@ -69,9 +69,14 @@ public class moneybox_transaction_details {
 	@Column(name = "date")
 	private Date date;
 	
-	
+
 	@Column(name = "typeOfTransaction")
 	private Integer typeOfTransaction;
+	
+	
+
+	@Column(name = "description")
+	private String description;
 
 
 
@@ -119,6 +124,20 @@ public class moneybox_transaction_details {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+
+
+	
+	
+	public String getDescription() {
+		return description;
+	}
+
+
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 

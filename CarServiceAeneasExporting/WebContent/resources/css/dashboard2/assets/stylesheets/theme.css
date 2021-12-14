@@ -70,7 +70,7 @@ a:active {
 
 /* Layout Base - Page Header */
 .page-header {
-	background: #19598f;
+	background: #892693;
 	border-bottom: none;
 	border-left: 1px solid #3a3a3a;
 	box-shadow: 1px 3px 0 1px #cccccc;
@@ -81,7 +81,7 @@ a:active {
 
 /* Layout Base - Sidebar Left */
 .sidebar-left {
-	background: #3c83b6;
+	background: #892693;
 	box-shadow: -5px 0 0 #2f3139 inset;
 	color: #777777;
 	display: table-cell;

@@ -52,9 +52,16 @@ import main.com.carService.vendor.vendor;
 	query = "from car d where d.uuid = :uuid and d.deleted = false"
 			)
 	,
+	@NamedQuery(name="car.getAllPayedCarsByShipper",
+	query = "from car d where shipperId = :shipperId and d.deleted = false  and d.payed = true order by d.cargoRecieved desc"
+			)
+	,
+	
+	
 	@NamedQuery(name="car.getAllForMainUser",
 	query = "from car d where mainId = :userId and d.deleted = false order by d.cargoRecieved desc"
 			)
+	
 	,
 	@NamedQuery(name="car.getAllForMainUserTwo",
 	query = "from car d where mainTwoId = :mainTwoId and d.deleted = false order by d.cargoRecieved desc"
@@ -377,6 +384,13 @@ public class car {
 	private boolean deleted;
 	
 	
+
+	@Column(name = "payed")
+	private boolean payed;
+	
+
+	@Column(name = "amountPayed")
+	private float amountPayed;
 
 	@Column(name = "emailToSendComment")
 	private String emailToSendComment;
@@ -1911,6 +1925,42 @@ public class car {
 
 	public void setDriverName(String driverName) {
 		this.driverName = driverName;
+	}
+
+
+
+
+
+
+	public boolean isPayed() {
+		return payed;
+	}
+
+
+
+
+
+
+	public void setPayed(boolean payed) {
+		this.payed = payed;
+	}
+
+
+
+
+
+
+	public float getAmountPayed() {
+		return amountPayed;
+	}
+
+
+
+
+
+
+	public void setAmountPayed(float amountPayed) {
+		this.amountPayed = amountPayed;
 	}
 
 
