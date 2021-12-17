@@ -876,6 +876,8 @@ public class carBean implements Serializable{
 						"			type: 'success'\r\n" + 
 						"		});");
 				selectedCar.setPayed(true);
+				
+				amount_toPay = amount_toPay + selectedCar.getAmountPayed();
 				selectedCar.setAmountPayed(amount_toPay);
 				FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add("aspnetForm:amounttoPayed");
 				FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add("aspnetForm:ispayed");
@@ -891,6 +893,7 @@ public class carBean implements Serializable{
 			float ocean = 0;
 			float comission = 0;
 			float storage = 0;
+			float priceOfCar = 0;
 			try {
 				land = selectedCar.getLandcost();
 			}catch(Exception ec) {
@@ -914,7 +917,14 @@ public class carBean implements Serializable{
 			}catch(Exception ec) {
 				
 			}
-			amount_toPay = land+ocean+comission+storage;
+			
+			try {
+				priceOfCar = selectedCar.getValueOfGood();
+			}catch(Exception ec) {
+				
+			}
+			
+			amount_toPay = priceOfCar+land+ocean+comission+storage;
 			try {
 				FacesContext.getCurrentInstance()
 				   .getExternalContext().redirect("/pages/secured/shipper/car/vitViewEdit.jsf?faces-redirect=true");

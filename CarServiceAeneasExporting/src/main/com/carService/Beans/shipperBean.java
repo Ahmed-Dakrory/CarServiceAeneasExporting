@@ -134,6 +134,7 @@ public class shipperBean implements Serializable{
 						float Seacost=0;
 						float Commision=0;
 						float Fees=0;
+						float priceOfCar=0;
 						try {
 							landCost=allcars.get(i).getLandcost();
 						}catch(Exception ee) {
@@ -158,9 +159,16 @@ public class shipperBean implements Serializable{
 							
 						}
 						
+						
+						try {
+							priceOfCar=allcars.get(i).getValueOfGood();
+						}catch(Exception ee) {
+							
+						}
+						
 								
 						float totalForCar=(float) (landCost+Seacost
-								+Commision+Fees);
+								+Commision+Fees+priceOfCar);
 						
 						carFeesInvoice+=totalForCar;
 					}
@@ -266,6 +274,7 @@ public class shipperBean implements Serializable{
 			float Seacost=0;
 			float Commision=0;
 			float Fees=0;
+			float priceOfCar=0;
 			try {
 				landCost=carsForInvoice.get(i).getLandcost();
 			}catch(Exception ee) {
@@ -290,9 +299,17 @@ public class shipperBean implements Serializable{
 				
 			}
 			
+			
+			
+			try {
+				priceOfCar=carsForInvoice.get(i).getValueOfGood();
+			}catch(Exception ee) {
+				
+			}
+			
 					
 			float totalForCar=(float) (landCost+Seacost
-					+Commision+Fees);
+					+Commision+Fees+priceOfCar);
 			
 			carFeesInvoice+=totalForCar;
 		}
@@ -409,15 +426,17 @@ public class shipperBean implements Serializable{
 				float Seacost=0;
 				float Commision=0;
 				float Fees=0;
+				float priceOfCar=0;
 				
 				
 				if(selectedCar.getLandcost()!=null) landCost=selectedCar.getLandcost();
 				if(selectedCar.getSeacost()!=null) Seacost=selectedCar.getSeacost();
 				if(selectedCar.getCommision()!=null) Commision=selectedCar.getCommision();
 				if(selectedCar.getFees()!=null) Fees=selectedCar.getFees();
+				if(selectedCar.getValueOfGood()!=null) priceOfCar=selectedCar.getValueOfGood();
 						
 				float totalForCar=(float) (landCost+Seacost
-						+Commision+Fees);
+						+Commision+Fees+priceOfCar);
 				
 				
 				//This for total Fees Without Transfer
@@ -574,12 +593,19 @@ public class shipperBean implements Serializable{
 				Fees=carsForInvoice.get(i).getFees();
 			}catch(NullPointerException exc) {
 			}
+			
+			
+			float priceOfCar = 0;
+			try {
+				priceOfCar=carsForInvoice.get(i).getValueOfGood();
+			}catch(NullPointerException exc) {
+			}
 
 			
 			
 					
 			float totalForCar=(float) (landCost+Seacost
-					+Commision+Fees);
+					+Commision+Fees+priceOfCar);
 			
 			carFeesInvoice+=totalForCar;
 		}

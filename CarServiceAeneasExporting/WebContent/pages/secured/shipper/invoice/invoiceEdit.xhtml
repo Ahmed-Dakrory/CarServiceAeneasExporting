@@ -684,12 +684,12 @@ moz-box-shadow: inset 0px 1px 0px 0px #ffa3a3;
 											<td class="center hidden-phone"><span style="overflow: hidden; display: inline-flex; height: 15px;">#{carBean.getFormatedDate(data.etd)}</span></td>
 											<td class="center hidden-phone" style="background:#{carBean.isTheRemainingDays30Day(data.eta)?'linear-gradient(to bottom, #c7898d 4%, #d42029 100%)':'none'};"><span style="overflow: hidden; display: inline-flex; height: 15px;">#{carBean.getFormatedDate(data.eta)}</span></td>
 											<td class="center hidden-phone"><span style="overflow: hidden; display: inline-flex; height: 15px;">#{data.consigneeId.userId.firstName}</span></td>
-											<td class="center hidden-phone"><span style="overflow: hidden; display: inline-flex; height: 15px;">$#{data.landcost}</span></td>
-											<td class="center hidden-phone"><span style="overflow: hidden; display: inline-flex; height: 15px;">$#{data.seacost}</span></td>
-											<td class="center hidden-phone"><span style="overflow: hidden; display: inline-flex; height: 15px;">$#{data.fees}</span></td>
-											<td class="center hidden-phone"><span style="overflow: hidden; display: inline-flex; height: 15px;">$#{data.commision}</span></td>
-											<td class="center hidden-phone"><span style="overflow: hidden; display: inline-flex; height: 15px;">$#{data.valueOfGood}</span></td>
-											<td class="center hidden-phone"><span style="overflow: hidden; display: inline-flex; height: 15px;">$#{data.commision+data.fees+data.seacost+data.landcost}</span></td>
+											<td class="center hidden-phone"><span style="overflow: hidden; display: inline-flex; height: 15px;">$#{data.landcost==null?0:data.landcost}</span></td>
+											<td class="center hidden-phone"><span style="overflow: hidden; display: inline-flex; height: 15px;">$#{data.seacost==null?0:data.seacost}</span></td>
+											<td class="center hidden-phone"><span style="overflow: hidden; display: inline-flex; height: 15px;">$#{data.fees==null?0:data.fees}</span></td>
+											<td class="center hidden-phone"><span style="overflow: hidden; display: inline-flex; height: 15px;">$#{data.commision==null?0:data.commision}</span></td>
+											<td class="center hidden-phone"><span style="overflow: hidden; display: inline-flex; height: 15px;">$#{data.valueOfGood==null?0:data.valueOfGood}</span></td>
+											<td class="center hidden-phone"><span style="overflow: hidden; display: inline-flex; height: 15px;">$#{data.commision+data.fees+data.seacost+data.landcost+data.valueOfGood}</span></td>
 											
 											<td class="center hidden-phone">
 											

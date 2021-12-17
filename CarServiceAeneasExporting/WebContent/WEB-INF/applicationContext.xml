@@ -45,7 +45,7 @@
 
 	<sec:http auto-config="true" access-denied-page="/pages/errors/403.html" >
 		<sec:form-login login-page="/" authentication-failure-url="/pages/errors/403.html"
-			default-target-url="/pages/public/index.xhtml" />
+			default-target-url="/pages/public/login.xhtml" />
 		<sec:intercept-url pattern="/pages/secured/userData/**"
 			access="ROLE_MAIN,ROLE_SHIPPER,ROLE_VENDOR,ROLE_CUSTOMER,ROLE_MAINTWO" />
 			<sec:intercept-url pattern="/pages/secured/vendor/**"
@@ -94,8 +94,7 @@
 
 
 	
-	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-		destroy-method="close">
+	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 
 		<beans:property name="driverClassName" value="${database.driverClassName}" />
 		<beans:property name="url" value="${database.url}" />

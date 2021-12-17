@@ -55,13 +55,14 @@
 										<thead>
 											<tr class="h4 text-dark">
 												<th id="cell-id"     class="text-semibold">#</th>
-												<th id="cell-item"   class="text-semibold">Vin</th>
 												<th id="cell-desc"   class="text-semibold">notes</th>
 												<th id="cell-desc"   class="text-semibold">Year/Make/Model</th>
+												<th id="cell-item"   class="text-semibold">Vin</th>
+												<th id="cell-price"  class="text-center text-semibold">Included Car Price</th>
 												<th id="cell-price"  class="text-center text-semibold">Land Cost</th>
 												<th id="cell-qty"    class="text-center text-semibold">Sea Cost</th>
 												<th id="cell-qty"    class="text-center text-semibold">Storage Cost</th>
-												<th id="cell-qty"    class="text-center text-semibold">Commision Cost</th>
+												<th id="cell-qty"    class="text-center text-semibold">Commission Cost</th>
 												<th id="cell-total"  class="text-center text-semibold">Total Cost</th>
 											</tr>
 										</thead>
@@ -70,14 +71,15 @@
 											
 											<tr>
 												<td>#{var.id}</td>
-												<td class="text-semibold text-dark">#{var.uuid}</td>
 												<td>#{var.note}</td>
 												<td>#{var.year}/#{var.make}/#{var.model} </td>
-												<td class="text-center">$#{var.landcost}</td>
-												<td class="text-center">$#{var.seacost}</td>
-												<td class="text-center">$#{var.fees}</td>
-												<td class="text-center">$#{var.commision}</td>
-												<td class="text-center">$#{var.landcost+var.seacost+var.fees+var.commision}</td>
+												<td class="text-semibold text-dark">#{var.uuid}</td>
+												<td class="text-center">$#{var.valueOfGood==null?0:var.valueOfGood}</td>
+												<td class="text-center">$#{var.landcost==null?0:var.landcost}</td>
+												<td class="text-center">$#{var.seacost==null?0:var.seacost}</td>
+												<td class="text-center">$#{var.fees==null?0:var.fees}</td>
+												<td class="text-center">$#{var.commision==null?0:var.commision}</td>
+												<td class="text-center">$#{var.valueOfGood+var.landcost+var.seacost+var.fees+var.commision}</td>
 											</tr>
 											
 											</ui:repeat>

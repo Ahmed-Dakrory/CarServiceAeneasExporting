@@ -189,16 +189,18 @@ public class vendorBean implements Serializable{
 				float Seacost=0;
 				float Commision=0;
 				float Fees=0;
+				float priceOfCar=0;
 				
 				
 				if(selectedCar.getLandcost()!=null) landCost=selectedCar.getLandcost();
 				if(selectedCar.getSeacost()!=null) Seacost=selectedCar.getSeacost();
 				if(selectedCar.getCommision()!=null) Commision=selectedCar.getCommision();
 				if(selectedCar.getFees()!=null) Fees=selectedCar.getFees();
+				if(selectedCar.getValueOfGood()!=null) priceOfCar=selectedCar.getValueOfGood();
 				
 						
 				float totalForCar=(float) (landCost+Seacost
-						+Commision+Fees);
+						+Commision+Fees+priceOfCar);
 				
 				
 				//This for total Fees Without Transfer
@@ -382,9 +384,10 @@ public void updateTheInvoice() {
 		float Seacost=carsForInvoice.get(i).getSeacost();
 		float Commision=carsForInvoice.get(i).getCommision();
 		float Fees=carsForInvoice.get(i).getFees();
+		float priceOfCar=carsForInvoice.get(i).getValueOfGood();
 				
 		float totalForCar=(float) (landCost+Seacost
-				+Commision+Fees);
+				+Commision+Fees+priceOfCar);
 		
 		carFeesInvoice+=totalForCar;
 	}
@@ -490,9 +493,10 @@ carsForthisAccount=new ArrayList<car>();
 			float Seacost=carsForInvoice.get(i).getSeacost();
 			float Commision=carsForInvoice.get(i).getCommision();
 			float Fees=carsForInvoice.get(i).getFees();
+			float priceOfCar=carsForInvoice.get(i).getValueOfGood();
 					
 			float totalForCar=(float) (landCost+Seacost
-					+Commision+Fees);
+					+Commision+Fees+priceOfCar);
 			
 			carFeesInvoice+=totalForCar;
 		}

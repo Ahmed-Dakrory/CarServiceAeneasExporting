@@ -740,9 +740,9 @@ vertical-align: middle;
 											<th></th>
 											<th style="display:none;">ID</th>
 											<th>Image</th>
-											<th>UID/Bill Of Lading</th>
-											<th>Car_Type</th>
 											<th class="hidden-phone">Year</th>
+											<th>Car_Type</th>
+											<th>UID/Bill Of Lading</th>
 											<th class="hidden-phone">Color</th>
 											<th class="hidden-phone">Shipper</th>
 											<th class="hidden-phone">Buyer</th>
@@ -872,13 +872,13 @@ vertical-align: middle;
 						'</a>';
                   }
                 },
-                {
-                    className: "styleUuid", "orderable": false, "mData": null, "sWidth": "100%","mRender": function (item) {
-                        
-                    return '<a onclick="opencarUUID('+item.id+')">'+item.uuid+'</a><br></br>'+
-					'<a href="/pages/secured/userData/BillOfLanding.jsf?imagesOfCarId='+item.id+'" target="other">BILL OF LADING</a>';
-                    }
-                  },
+				
+				   {
+                        className: "center hidden-phone", "orderable": false, "mData": null, "sWidth": "100%","mRender": function (item) {
+                            
+                        return '<span style="overflow: hidden; display: inline-flex;width: max-content; ">'+item.year+'</span>';
+                        }
+                      },
                   {
                       className: "center hidden-phone", "orderable": false, "mData": null, "sWidth": "100%","mRender": function (item) {
                           
@@ -886,13 +886,16 @@ vertical-align: middle;
                       }
                     },
                     
+                {
+                    className: "styleUuid", "orderable": false, "mData": null, "sWidth": "100%","mRender": function (item) {
+                        
+                    return '<a onclick="opencarUUID('+item.id+')">'+item.uuid+'</a><br></br>'+
+					'<a href="/pages/secured/userData/BillOfLanding.jsf?imagesOfCarId='+item.id+'" target="other">BILL OF LADING</a>';
+                    }
+                  },
+				  
                     
-                    {
-                        className: "center hidden-phone", "orderable": false, "mData": null, "sWidth": "100%","mRender": function (item) {
-                            
-                        return '<span style="overflow: hidden; display: inline-flex;width: max-content; ">'+item.year+'</span>';
-                        }
-                      },
+                   
                       
                       {
                           className: "center hidden-phone", "orderable": false, "mData": null, "sWidth": "100%","mRender": function (item) {
