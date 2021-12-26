@@ -97,7 +97,7 @@ public class carRepositoryImpl implements carRepository{
 				}else if(role==user.ROLE_CUSTOMER) {
 					 query = session.createQuery("select count(*) FROM car vehicle  left JOIN vehicle.shipperId shipper left JOIN shipper.userId userShipper left JOIN vehicle.vendorId vendor  left JOIN vendor.userId userVendor  where vehicle.customerId = "+String.valueOf(useridAny)+" and "+stateQuery+" and vehicle.deleted = false order by vehicle.cargoRecieved desc");
 				}
-			}else {
+			}else { 
 				if(role==user.ROLE_MAIN) {
 					 query = session.createQuery("select count(*) FROM car vehicle  left JOIN vehicle.shipperId shipper left JOIN shipper.userId userShipper left JOIN vehicle.vendorId vendor  left JOIN vendor.userId userVendor  where "+searchQuery+" and vehicle.mainId = "+String.valueOf(useridAny)+" and "+stateQuery+" and vehicle.deleted = false  order by vehicle.cargoRecieved desc");
 				}else if(role==user.ROLE_SHIPPER) {
