@@ -93,20 +93,34 @@
 
 
 
+<beans:bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+
+
+	 <beans:property name="driverClass" value="${database.driverClassName}" />
+    <beans:property name="jdbcUrl" value="${database.url}" />
+    <beans:property name="user" value="${database.username}" />
+    <beans:property name="password" value="${database.password}" />
+    <beans:property name="maxPoolSize" value="10" />
+    <beans:property name="maxStatements" value="0" />
+    <beans:property name="minPoolSize" value="3" />
+    <beans:property name="checkoutTimeout" value="300000" />
+    
+	</beans:bean>
 	
-	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	
+	<!-- <beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 
 		<beans:property name="driverClassName" value="${database.driverClassName}" />
 		<beans:property name="url" value="${database.url}" />
 		<beans:property name="username" value="${database.username}" />
 		<beans:property name="password" value="${database.password}" />
 		<beans:property name="initialSize" value="5" />
-		<beans:property name="maxActive" value="100" />
+		<beans:property name="maxActive" value="10000" />
 		<beans:property name="maxIdle" value="30" />
-		<beans:property name="maxWait" value="10000" />
+		<beans:property name="maxWait" value="500000" />
 		<beans:property name="validationQuery" value="Select 1" />
 	</beans:bean>
-
+ -->
 
 
 
