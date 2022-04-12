@@ -111,4 +111,29 @@
   <session-config>
     <session-timeout>2000</session-timeout>
   </session-config>
+  
+  
+  
+  <!-- Comment the coming lines to make the request https or http also make sure for this lines in the server.xml in config folder 
+  
+  
+ <Connector port="80" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="443" />
+  
+  -->
+  
+  
+  
+  <security-constraint>
+	 <web-resource-collection>
+		 <web-resource-name>Protected Context</web-resource-name>
+		 <url-pattern>/*</url-pattern>
+	 </web-resource-collection>
+	 <user-data-constraint>
+	 <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+	 </user-data-constraint>
+ </security-constraint>
+ 
+ 
 </web-app>
